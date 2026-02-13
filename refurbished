@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refurbished Computers | Hexa Computronics</title>
+<meta name="description" content="Buy refurbished desktops and laptops at affordable prices with warranty from Hexa Computronics.">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<div class="logo">HEXA COMPUTRONICS</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="hardware.html">Hardware</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="digital-products.html">Digital</a></li>
+<li><a href="refurbished.html">Refurbished</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="payment.html">Payment</a></li>
+</ul>
+</nav>
+
+<h2 class="page-title">Refurbished Deals</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>Refurbished Desktop</h3>
+<p class="desc">i5 / 8GB RAM / 256GB SSD (Editable)</p>
+<p class="price">₹ 12,999</p>
+<p class="warranty">Warranty: 3 Months (Editable)</p>
+<a href="contact.html" class="btn">Enquire Now</a>
+</div>
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>Refurbished Laptop</h3>
+<p class="desc">i5 / 8GB RAM / 512GB SSD (Editable)</p>
+<p class="price">₹ 18,999</p>
+<p class="warranty">Warranty: 3 Months (Editable)</p>
+<a href="contact.html" class="btn">Enquire Now</a>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Hexa Computronics</p>
+</footer>
+
+</body>
+</html>
