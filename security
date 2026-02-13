@@ -1,0 +1,25 @@
+<h2 class="page-title">Security Solutions</h2>
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>CCTV Camera (HD/IP)</h3>
+<p>Brand: <span>Editable Brand</span></p>
+<p class="price">₹ 00,000</p>
+</div>
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>DVR / NVR</h3>
+<p>Brand: <span>Editable Brand</span></p>
+<p class="price">₹ 00,000</p>
+</div>
+
+<div class="product-card">
+<h3>Accessories (SMPS/Wire)</h3>
+<p class="price">₹ 00,000</p>
+</div>
+
+<div class="product-card">
+<h3>Rack</h3>
+<p class="price">₹ 00,000</p>
+</div>
