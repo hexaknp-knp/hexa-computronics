@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEXA COMPUTRONICS | Future Tech Solutions</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ========================
+           1. CORE VARIABLES & RESET
+           ======================== */
+        :root {
+            --bg-deep: #05070a;
+            --bg-gradient: linear-gradient(135deg, #020205 0%, #0f0c29 40%, #1a0b2e 100%);
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --cta-orange: #ff8c00;
+            --cta-orange-glow: #ffaa33;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(0, 243, 255, 0.2);
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========================
+           2. BACKGROUND FX LAYER
+           ======================== */
+        .fx-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: var(--bg-gradient);
+            overflow: hidden;
+        }
+
+        /* Tech Grid */
+        .tech-grid {
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+            animation: gridScroll 20s linear infinite;
+        }
+        @keyframes gridScroll {
+            0% { transform: perspective(1000px) rotateX(60deg) translateY(0) translateZ(-200px); }
+            100% { transform: perspective(1000px) rotateX(60deg) translateY(60px) translateZ(-200px); }
+        }
+
+        /* Floating Silhouette Objects */
+        .silhouette {
+            position: absolute;
+            color: var(--neon-cyan);
+            opacity: 0.05; /* Very subtle ghost effect */
+            filter: blur(3px);
+            z-index: 0;
+            animation: floatDrift linear infinite;
+        }
+
+        /* Specific Icons */
+        .obj-laptop { font-size: 15rem; top: 10%; left: -20%; animation-duration: 35s; }
+        .obj-cctv { font-size: 12rem; top: 60%; left: -10%; animation-duration: 45s; animation-delay: 5s; }
+        .obj-server { font-size: 18rem; top: 30%; left: -30%; animation-duration: 40s; animation-delay: 2s; }
+        .obj-doc { font-size: 10rem; top: 80%; left: -15%; animation-duration: 30s; animation-delay: 10s; }
+        .obj-chip { font-size: 8rem; top: 15%; left: -10%; animation-duration: 25s; animation-delay: 15s; }
+
+        @keyframes floatDrift {
+            0% { transform: translateX(0) rotate(0deg); }
+            100% { transform: translateX(120vw) rotate(20deg); }
+        }
+
+        /* Light Streaks */
+        .streak {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--neon-cyan), transparent);
+            opacity: 0.3;
+            animation: rain 4s infinite linear;
+        }
+
+        @keyframes rain {
+            0% { transform: translateY(-100vh); }
+            100% { transform: translateY(100vh); }
+        }
+
+        /* ========================
+           3. UI COMPONENTS
+           ======================== */
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--cta-orange);
+            color: #fff;
+            padding: 15px 45px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-main:hover {
+            background: transparent;
+            border-color: var(--cta-orange);
+            color: var(--cta-orange);
+            box-shadow: 0 0 40px rgba(255, 140, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        .highlight {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+
+        /* ========================
+           4. SECTIONS
+           ======================== */
+        
+        /* --- HERO --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #fff, #a0cfff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: var(--neon-cyan);
+            margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        .social-row {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        .social-btn {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .social-btn:hover { transform: translateY(-5px); }
+        .social-btn.yt:hover { background: #ff0000; box-shadow: 0 0 15px #ff0000; border-color: #ff0000; }
+        .social-btn.fb:hover { background: #1877f2; box-shadow: 0 0 15px #1877f2; border-color: #1877f2; }
+        .social-btn.ig:hover { background: #d62976; box-shadow: 0 0 15px #d62976; border-color: #d62976; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- CATEGORIES --- */
+        .section-padding { padding: 100px 0; }
+        
+        .cat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .cat-banner {
+            display: flex;
+            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.4s;
+            position: relative;
+            backdrop-filter: blur(5px);
+            opacity: 0; /* JS Fade in */
+            transform: translateX(-50px);
+        }
+
+        .cat-banner.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .cat-banner:hover {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+            background: linear-gradient(90deg, rgba(0, 243, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        .cat-img {
+            width: 200px;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--neon-cyan);
+        }
+
+        .cat-text {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cat-info h3 { margin-bottom: 5px; font-size: 1.5rem; color: #fff; }
+        .cat-info p { color: var(--text-dim); letter-spacing: 1px; }
+
+        .btn-arrow {
+            color: var(--cta-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid var(--cta-orange);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-arrow:hover { background: var(--cta-orange); color: #fff; }
+
+        /* --- FEATURES --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-box {
+            background: rgba(5, 7, 10, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .feature-box:hover::before { transform: translateX(100%); }
+        .feature-box:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-color: var(--neon-cyan); }
+
+        .f-icon { font-size: 3rem; color: var(--neon-purple); margin-bottom: 20px; text-shadow: 0 0 15px var(--neon-purple); }
+
+        /* --- CONTACT & FOOTER --- */
+        .contact-sec {
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, rgba(11, 15, 41, 0.8) 0%, rgba(5, 7, 10, 0) 70%);
+        }
+
+        .contact-details {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            color: var(--text-dim);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background: #020205;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-glow-line {
+            position: absolute;
+            top: -1px; left: 0; width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .footer-socials a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+        .footer-socials a:hover { opacity: 1; color: var(--neon-cyan); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cat-text { flex-direction: column; text-align: left; align-items: flex-start; gap: 20px; }
+            .cat-img { width: 100px; font-size: 2.5rem; }
+            .cat-banner { flex-direction: row; }
+            .btn-arrow { font-size: 0.8rem; padding: 8px 15px; }
+            
+            /* Mobile adjustment for banners */
+            .cat-banner { flex-direction: column; text-align: center; }
+            .cat-img { width: 100%; height: 150px; }
+            .cat-text { align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fx-container">
+        <div class="tech-grid"></div>
+        
+        <i class="fas fa-laptop silhouette obj-laptop"></i>
+        <i class="fas fa-network-wired silhouette obj-server"></i>
+        <i class="fas fa-video silhouette obj-cctv"></i>
+        <i class="fas fa-file-code silhouette obj-doc"></i>
+        <i class="fas fa-microchip silhouette obj-chip"></i>
+
+        <div class="streak" style="left: 10%; animation-duration: 3s; animation-delay: 1s;"></div>
+        <div class="streak" style="left: 30%; animation-duration: 5s; animation-delay: 2s;"></div>
+        <div class="streak" style="left: 70%; animation-duration: 4s; animation-delay: 0s;"></div>
+        <div class="streak" style="left: 90%; animation-duration: 6s; animation-delay: 3s;"></div>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h1>HEXA COMPUTRONICS</h1>
+            <div class="hero-subtitle">Premium IT Solutions & Digital Products</div>
+            <p class="hero-desc">
+                Laptops | Networking | CCTV | Refurbished Systems <br>
+                Ebooks | Software Tools | Business Templates
+            </p>
+            
+            <a href="#categories" class="btn-main">Explore Products &rarr;</a>
+
+            <div class="social-row">
+                <a href="https://youtube.com/@hexacomputronics" target="_blank" class="social-btn yt"><i class="fab fa-youtube"></i></a>
+                <a href="https://facebook.com/hexacomputronics" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/hexacomputronics" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="section-padding">
+        <div class="container">
+            <div class="cat-container">
+                
+                <div class="cat-banner">
+                    <div class="cat-img"><i class="fas fa-laptop-code"></i></div>
+                    <div class="cat-text">
+                        <div class="cat-info">
+                            <h3>IT Hardware & Accessories</h3>
+                            <p>Laptops | Printers | UPS | Networking</p>
+                        </div>
+                        <a href="#" class="btn-arrow">View Hardware &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cat-banner">
+                    <div class="cat-img"><i class="fas fa-shield-halved"></i></div>
+                    <div class="cat-text">
+                        <div class="cat-info">
+                            <h3>CCTV & Security Systems</h3>
+                            <p>Office & Home Surveillance Solutions</p>
+                        </div>
+                        <a href="#" class="btn-arrow">View Security &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cat-banner">
+                    <div class="cat-img"><i class="fas fa-cloud-arrow-down"></i></div>
+                    <div class="cat-text">
+                        <div class="cat-info">
+                            <h3>Digital Products Store</h3>
+                            <p>Ebooks | Templates | Online Tools</p>
+                        </div>
+                        <a href="#" class="btn-arrow">Explore Digital &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="cat-banner">
+                    <div class="cat-img"><i class="fas fa-rotate"></i></div>
+                    <div class="cat-text">
+                        <div class="cat-info">
+                            <h3>Refurbished Computers</h3>
+                            <p>Budget Friendly High Performance Systems</p>
+                        </div>
+                        <a href="#" class="btn-arrow">Check Deals &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: rgba(0,0,0,0.2);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 20px;">Why Choose <span class="highlight">HEXA</span></h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <i class="fas fa-handshake f-icon"></i>
+                    <h4>Trusted IT Partner</h4>
+                    <p style="color:#aaa; margin-top:10px;">Reliable service history with thousands of satisfied clients.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-indian-rupee-sign f-icon"></i>
+                    <h4>Affordable Pricing</h4>
+                    <p style="color:#aaa; margin-top:10px;">Best market rates for hardware and digital assets.</p>
+                </div>
+                <div class="feature-box">
+                    <i class="fas fa-layer-group f-icon"></i>
+                    <h4>Complete Tech Solutions</h4>
+                    <p style="color:#aaa; margin-top:10px;">One stop shop for Networking, Repair, and Sales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-sec">
+        <div class="container">
+            <h2>Get in Touch With <span class="highlight">HEXA COMPUTRONICS</span></h2>
+            <div class="contact-details">
+                <p><i class="fas fa-phone-alt highlight"></i> 9935529306</p>
+                <p style="margin-top: 10px; font-size: 1.2rem;"><i class="fas fa-map-marker-alt highlight"></i> Kanpur, U.P</p>
+            </div>
+            <a href="tel:9935529306" class="btn-main">Contact Now &rarr;</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-glow-line"></div>
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://youtube.com/@hexacomputronics"><i class="fab fa-youtube"></i></a>
+                <a href="https://facebook.com/hexacomputronics"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/hexacomputronics"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
+                &copy; 2026 HEXA COMPUTRONICS. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Target banners for animation
+        document.querySelectorAll('.cat-banner').forEach((el, index) => {
+            el.style.transitionDelay = `${index * 100}ms`; // Stagger effect
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('.feature-box').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
