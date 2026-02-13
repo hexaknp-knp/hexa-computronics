@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Products | Hexa Computronics</title>
+<meta name="description" content="Buy premium digital products including ebooks, software tools and business templates from Hexa Computronics.">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<div class="logo">HEXA COMPUTRONICS</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="hardware.html">Hardware</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="digital-products.html">Digital</a></li>
+<li><a href="refurbished.html">Refurbished</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="payment.html">Payment</a></li>
+</ul>
+</nav>
+
+<h2 class="page-title">Premium Digital Products</h2>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>Ebook Collection</h3>
+<p class="desc">Editable description here. Add features & benefits.</p>
+<p class="price">₹ 999</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>Software Tools</h3>
+<p class="desc">Editable description here.</p>
+<p class="price">₹ 1,499</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+<div class="product-card">
+<img src="images/placeholder.jpg">
+<h3>Business Templates Pack</h3>
+<p class="desc">Editable description here.</p>
+<p class="price">₹ 799</p>
+<a href="payment.html" class="btn">Buy Now</a>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Hexa Computronics</p>
+</footer>
+
+</body>
+</html>
