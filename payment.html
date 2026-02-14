@@ -1,5 +1,79 @@
-<h2>Payment Page</h2>
-<p>Scan QR Code or Pay via UPI</p>
-<img src="images/placeholder.jpg" width="300">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment | HEXA COMPUTRONICS</title>
 
-<p>UPI ID: yourupi@bank</p>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.payment-container {
+max-width: 800px;
+margin: 120px auto;
+padding: 40px;
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(0,243,255,0.2);
+border-radius: 15px;
+text-align: center;
+}
+
+.payment-container h2 {
+color: #00f3ff;
+margin-bottom: 20px;
+}
+
+.steps {
+text-align: left;
+margin: 30px 0;
+line-height: 1.8;
+font-size: 1.1rem;
+}
+
+.qr-img {
+width: 250px;
+margin: 20px 0;
+}
+
+.pay-btn {
+display: inline-block;
+margin-top: 20px;
+padding: 15px 40px;
+background: #ff8c00;
+color: white;
+text-decoration: none;
+border-radius: 30px;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.pay-btn:hover {
+background: transparent;
+border: 2px solid #ff8c00;
+color: #ff8c00;
+}
+</style>
+</head>
+
+<body>
+
+<div class="payment-container">
+
+<h2>Complete Your Payment</h2>
+
+<img src="images/qr-code.jpg" alt="UPI QR Code" class="qr-img">
+
+<div class="steps">
+<p><strong>Step 1:</strong> QR Code scan karo.</p>
+<p><strong>Step 2:</strong> Payment karne ke baad screenshot lo.</p>
+<p><strong>Step 3:</strong> Pay Button pe click karke form fill karo aur screenshot upload karo.</p>
+</div>
+
+<a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank" class="pay-btn">
+Proceed to Submit Payment Details →
+</a>
+
+</div>
+
+</body>
+</html>
