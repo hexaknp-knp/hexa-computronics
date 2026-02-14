@@ -77,3 +77,14 @@ Proceed to Submit Payment Details →
 
 </body>
 </html>
+<h3 id="product-name"></h3>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+if(product){
+document.getElementById("product-name").innerText =
+"You are purchasing: " + product;
+}
+</script>
