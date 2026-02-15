@@ -6,6 +6,70 @@
 <title>Refurbished Computers | Hexa Computronics</title>
 <meta name="description" content="Buy refurbished desktops and laptops at affordable prices with warranty from Hexa Computronics.">
 <link rel="stylesheet" href="style.css">
+
+<style>
+.page-title{
+text-align:center;
+margin-top:120px;
+font-size:32px;
+color:#00F5FF;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+padding:60px 40px;
+}
+
+.product-card{
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:15px;
+text-align:center;
+color:white;
+transition:0.3s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+background:rgba(0,245,255,0.1);
+}
+
+.product-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.price{
+font-size:18px;
+color:#00F5FF;
+margin:10px 0;
+font-weight:bold;
+}
+
+.warranty{
+font-size:14px;
+color:#ccc;
+}
+
+.buy-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+background:#FF6B00;
+color:white;
+text-decoration:none;
+border-radius:6px;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#ff8c00;
+}
+</style>
 </head>
 
 <body>
@@ -27,22 +91,28 @@
 
 <div class="product-grid">
 
+<!-- PRODUCT 1 -->
 <div class="product-card">
-<img src="images/placeholder.jpg">
+<img src="images/placeholder.jpg" alt="Refurbished Desktop">
 <h3>Refurbished Desktop</h3>
-<p class="desc">i5 / 8GB RAM / 256GB SSD (Editable)</p>
+<p class="desc">i5 / 8GB RAM / 256GB SSD</p>
 <p class="price">₹ 12,999</p>
-<p class="warranty">Warranty: 3 Months (Editable)</p>
-<a href="contact.html" class="btn">Enquire Now</a>
+<p class="warranty">Warranty: 3 Months</p>
+<a href="payment.html?product=Refurbished Desktop i5 8GB 256GB SSD" class="buy-btn">
+Buy Now →
+</a>
 </div>
 
+<!-- PRODUCT 2 -->
 <div class="product-card">
-<img src="images/placeholder.jpg">
+<img src="images/placeholder.jpg" alt="Refurbished Laptop">
 <h3>Refurbished Laptop</h3>
-<p class="desc">i5 / 8GB RAM / 512GB SSD (Editable)</p>
+<p class="desc">i5 / 8GB RAM / 512GB SSD</p>
 <p class="price">₹ 18,999</p>
-<p class="warranty">Warranty: 3 Months (Editable)</p>
-<a href="contact.html" class="btn">Enquire Now</a>
+<p class="warranty">Warranty: 3 Months</p>
+<a href="payment.html?product=Refurbished Laptop i5 8GB 512GB SSD" class="buy-btn">
+Buy Now →
+</a>
 </div>
 
 </div>
