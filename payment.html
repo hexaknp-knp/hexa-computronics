@@ -1,23 +1,89 @@
-<a id="formBtn" target="_blank" class="pay-btn">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secure Payment | HEXA COMPUTRONICS</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+background:#05070a;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+
+.container{
+max-width:600px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 30px;
+background:#ff8c00;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#ffaa33;
+}
+
+.qr{
+margin:20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>HEXA COMPUTRONICS - Secure Payment</h2>
+
+<p>Step 1: Scan QR Code</p>
+
+<img src="images/qr.png" width="200" class="qr">
+
+<p>Step 2: Take Payment Screenshot</p>
+<p>Step 3: Click Submit & Fill Form</p>
+
+<a id="formLink" target="_blank" class="btn">
 Submit Payment Details →
 </a>
 
+</div>
+
 <script>
+
+// Get product from URL
 const params = new URLSearchParams(window.location.search);
+const product = params.get("product") || "HEXA Product";
 
-// Agar product parameter nahi mila to default value use kare
-const product = params.get("product") || "Manual Order";
+// Generate random Order ID
+const orderId = "HEX" + Math.floor(100000 + Math.random() * 900000);
 
-const orderID = "HX" + Math.floor(100000 + Math.random() * 900000);
+// ======= REPLACE FORM ID BELOW =======
+const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScInp8l5kRhPWYeXfz8C7fkzKM1FevalREWaDDKc9XKVBGY2Q/viewform?usp=pp_url";
 
-const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScInp815kRhPWYeXf-z8C7fkzKM1Feva1REWaDKc9XKVBQG2Q/viewform?usp=pp_url";
-
-const productEntry = "entry.1965798767";
-const orderEntry = "entry.1806519793";
-
-// Always set link (even if no product param)
-document.getElementById("formBtn").href =
+// Prefilled link
+const finalLink =
 formBase +
-"&" + productEntry + "=" + encodeURIComponent(product) +
-"&" + orderEntry + "=" + encodeURIComponent(orderID);
+"&entry.1505298207=" + encodeURIComponent(product) +
+"&entry.1806519742=" + encodeURIComponent(orderId);
+
+// Set button link
+document.getElementById("formLink").href = finalLink;
+
 </script>
+
+</body>
+</html>
