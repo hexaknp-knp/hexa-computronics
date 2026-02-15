@@ -61,30 +61,51 @@ color: #ff8c00;
 
 <h2>Complete Your Payment</h2>
 
+<h3 id="product-name" style="margin-top:20px;"></h3>
+<p id="order-id" style="color:#00f3ff;font-weight:bold;"></p>
+
 <img src="images/qr-code.jpg" alt="UPI QR Code" class="qr-img">
 
 <div class="steps">
 <p><strong>Step 1:</strong> QR Code scan karo.</p>
 <p><strong>Step 2:</strong> Payment karne ke baad screenshot lo.</p>
-<p><strong>Step 3:</strong> Pay Button pe click karke form fill karo aur screenshot upload karo.</p>
+<p><strong>Step 3:</strong> Neeche button pe click karke form fill karo aur screenshot upload karo.</p>
 </div>
 
-<a href="https://forms.gle/https://docs.google.com/forms/d/13ABh2zou_RSspDuolSo-XbwxCecv6TtAcuQkkx7GI-A/edit" target="_blank" class="pay-btn">
+<a id="formBtn" target="_blank" class="pay-btn">
 Proceed to Submit Payment Details →
 </a>
 
 </div>
 
-</body>
-</html>
-<h3 id="product-name"></h3>
-
 <script>
 const params = new URLSearchParams(window.location.search);
 const product = params.get("product");
 
+// Auto Order ID generate
+const orderID = "HX" + Math.floor(100000 + Math.random() * 900000);
+
+// ===== IMPORTANT =====
+// Replace these with your real Google Form IDs
+const formBase = "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?usp=pp_url";
+const productField = "entry.1234567890";  // product field ID
+const orderField = "entry.0987654321";    // order ID field ID
+
 if(product){
 document.getElementById("product-name").innerText =
 "You are purchasing: " + product;
+
+document.getElementById("order-id").innerText =
+"Order ID: " + orderID;
+
+const finalURL =
+formBase +
+"&" + productField + "=" + encodeURIComponent(product) +
+"&" + orderField + "=" + encodeURIComponent(orderID);
+
+document.getElementById("formBtn").href = finalURL;
 }
 </script>
+
+</body>
+</html>
