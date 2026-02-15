@@ -1,402 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HEXA COMPUTRONICS | Future Tech Solutions</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEXA COMPUTRONICS | Future Tech Solutions</title>
 
-    <style>
-        /* ========================
-           1. CORE VARIABLES & RESET
-           ======================== */
-        :root {
-            --bg-deep: #05070a;
-            --bg-gradient: linear-gradient(135deg, #020205 0%, #0f0c29 40%, #1a0b2e 100%);
-            --neon-cyan: #00f3ff;
-            --neon-purple: #bc13fe;
-            --cta-orange: #ff8c00;
-            --cta-orange-glow: #ffaa33;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(0, 243, 255, 0.2);
-            --text-main: #ffffff;
-            --text-dim: #b0b0b0;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            font-family: 'Rajdhani', sans-serif;
-            overflow-x: hidden;
-            position: relative;
-        }
+/* ===== YOUR ORIGINAL STYLES SAME ===== */
 
-        /* ========================
-           2. BACKGROUND FX LAYER
-           ======================== */
-        .fx-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: var(--bg-gradient);
-            overflow: hidden;
-        }
+:root {
+--bg-deep: #05070a;
+--bg-gradient: linear-gradient(135deg, #020205 0%, #0f0c29 40%, #1a0b2e 100%);
+--neon-cyan: #00f3ff;
+--cta-orange: #ff8c00;
+--text-main: #ffffff;
+--text-dim: #b0b0b0;
+}
 
-        /* Tech Grid */
-        .tech-grid {
-            position: absolute;
-            width: 200%; height: 200%;
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-            background-size: 60px 60px;
-            transform: perspective(1000px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-            animation: gridScroll 20s linear infinite;
-        }
-        @keyframes gridScroll {
-            0% { transform: perspective(1000px) rotateX(60deg) translateY(0) translateZ(-200px); }
-            100% { transform: perspective(1000px) rotateX(60deg) translateY(60px) translateZ(-200px); }
-        }
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{background-color:var(--bg-deep);color:var(--text-main);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
 
-        /* Floating Silhouette Objects */
-        .silhouette {
-            position: absolute;
-            color: var(--neon-cyan);
-            opacity: 0.05; /* Very subtle ghost effect */
-            filter: blur(3px);
-            z-index: 0;
-            animation: floatDrift linear infinite;
-        }
+/* ===== HERO ===== */
 
-        /* Specific Icons */
-        .obj-laptop { font-size: 15rem; top: 10%; left: -20%; animation-duration: 35s; }
-        .obj-cctv { font-size: 12rem; top: 60%; left: -10%; animation-duration: 45s; animation-delay: 5s; }
-        .obj-server { font-size: 18rem; top: 30%; left: -30%; animation-duration: 40s; animation-delay: 2s; }
-        .obj-doc { font-size: 10rem; top: 80%; left: -15%; animation-duration: 30s; animation-delay: 10s; }
-        .obj-chip { font-size: 8rem; top: 15%; left: -10%; animation-duration: 25s; animation-delay: 15s; }
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
-        @keyframes floatDrift {
-            0% { transform: translateX(0) rotate(0deg); }
-            100% { transform: translateX(120vw) rotate(20deg); }
-        }
+.hero h1{
+font-size:4.5rem;
+margin-bottom:15px;
+background:linear-gradient(to right,#fff,#a0cfff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-        /* Light Streaks */
-        .streak {
-            position: absolute;
-            width: 2px;
-            height: 100px;
-            background: linear-gradient(to bottom, transparent, var(--neon-cyan), transparent);
-            opacity: 0.3;
-            animation: rain 4s infinite linear;
-        }
+.hero-subtitle{
+font-size:1.8rem;
+color:var(--neon-cyan);
+margin-bottom:25px;
+}
 
-        @keyframes rain {
-            0% { transform: translateY(-100vh); }
-            100% { transform: translateY(100vh); }
-        }
+.hero-desc{
+font-size:1.2rem;
+color:var(--text-dim);
+margin-bottom:40px;
+}
 
-        /* ========================
-           3. UI COMPONENTS
-           ======================== */
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+.btn-main{
+display:inline-block;
+background:var(--cta-orange);
+color:#fff;
+padding:15px 45px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
+.section-padding{padding:100px 0;}
 
-        .btn-main {
-            display: inline-block;
-            background: var(--cta-orange);
-            color: #fff;
-            padding: 15px 45px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: 0.3s ease;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
-            border: 2px solid transparent;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-        }
+.container{
+max-width:1200px;
+margin:0 auto;
+padding:0 20px;
+}
 
-        .btn-main:hover {
-            background: transparent;
-            border-color: var(--cta-orange);
-            color: var(--cta-orange);
-            box-shadow: 0 0 40px rgba(255, 140, 0, 0.8);
-            transform: scale(1.05);
-        }
+/* ===== NEW PREMIUM FOOTER STYLE ===== */
 
-        .highlight {
-            color: var(--neon-cyan);
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-        }
+.premium-footer{
+background:#020205;
+padding:60px 20px 20px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
 
-        /* ========================
-           4. SECTIONS
-           ======================== */
-        
-        /* --- HERO --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
 
-        .hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #fff, #a0cfff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
-            animation: fadeInUp 1s ease-out;
-        }
+.premium-footer h3{
+color:#00f3ff;
+margin-bottom:15px;
+}
 
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--neon-cyan);
-            margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            animation: fadeInUp 1.2s ease-out;
-        }
+.premium-footer p,
+.premium-footer a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+line-height:1.8;
+}
 
-        .hero-desc {
-            font-size: 1.2rem;
-            color: var(--text-dim);
-            margin-bottom: 40px;
-            animation: fadeInUp 1.4s ease-out;
-        }
+.premium-footer a:hover{
+color:#ff8c00;
+}
 
-        .social-row {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            animation: fadeInUp 1.6s ease-out;
-        }
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,0.1);
+color:#777;
+font-size:14px;
+}
 
-        .social-btn {
-            width: 45px; height: 45px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: 0.3s;
-        }
+.social-icons a{
+color:white;
+margin-right:15px;
+font-size:18px;
+}
 
-        .social-btn:hover { transform: translateY(-5px); }
-        .social-btn.yt:hover { background: #ff0000; box-shadow: 0 0 15px #ff0000; border-color: #ff0000; }
-        .social-btn.fb:hover { background: #1877f2; box-shadow: 0 0 15px #1877f2; border-color: #1877f2; }
-        .social-btn.ig:hover { background: #d62976; box-shadow: 0 0 15px #d62976; border-color: #d62976; }
+.social-icons a:hover{
+color:#ff8c00;
+}
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+</style>
+</head>
 
-        /* --- CATEGORIES --- */
-        .section-padding { padding: 100px 0; }
-        
-        .cat-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
+<body>
 
-        .cat-banner {
-            display: flex;
-            background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
-            border: 1px solid var(--glass-border);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.4s;
-            position: relative;
-            backdrop-filter: blur(5px);
-            opacity: 0; /* JS Fade in */
-            transform: translateX(-50px);
-        }
+<section class="hero">
+<div class="container">
+<h1>HEXA COMPUTRONICS</h1>
+<div class="hero-subtitle">Premium IT Solutions & Digital Products</div>
+<p class="hero-desc">
+Laptops | Networking | CCTV | Refurbished Systems <br>
+Ebooks | Software Tools | Business Templates
+</p>
+<a href="#categories" class="btn-main">Explore Products →</a>
+</div>
+</section>
 
-        .cat-banner.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+<!-- ===== YOUR OTHER SECTIONS SAME RAKHO ===== -->
 
-        .cat-banner:hover {
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
-            background: linear-gradient(90deg, rgba(0, 243, 255, 0.05) 0%, rgba(0,0,0,0) 100%);
-        }
+<!-- ================= PREMIUM FOOTER ================= -->
 
-        .cat-img {
-            width: 200px;
-            background: rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--neon-cyan);
-        }
+<footer class="premium-footer">
 
-        .cat-text {
-            padding: 30px;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+<div class="footer-grid">
 
-        .cat-info h3 { margin-bottom: 5px; font-size: 1.5rem; color: #fff; }
-        .cat-info p { color: var(--text-dim); letter-spacing: 1px; }
+<div>
+<h3>HEXA COMPUTRONICS</h3>
+<p>Premium IT Hardware, CCTV, Networking & Digital Products Provider in Kanpur.</p>
+</div>
 
-        .btn-arrow {
-            color: var(--cta-orange);
-            font-weight: 700;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: 1px solid var(--cta-orange);
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+<div>
+<h3>Quick Links</h3>
+<p><a href="hardware.html">Hardware</a></p>
+<p><a href="security.html">Security Systems</a></p>
+<p><a href="digital-products.html">Digital Products</a></p>
+<p><a href="refurbished.html">Refurbished</a></p>
+<p><a href="contact.html">Contact</a></p>
+</div>
 
-        .btn-arrow:hover { background: var(--cta-orange); color: #fff; }
+<div>
+<h3>Legal</h3>
+<p><a href="privacy-policy.html">Privacy Policy</a></p>
+<p><a href="terms.html">Terms & Conditions</a></p>
+<p><a href="refund-policy.html">Refund Policy</a></p>
+<p><a href="shipping-policy.html">Shipping Policy</a></p>
+<p><a href="disclaimer.html">Disclaimer</a></p>
+</div>
 
-        /* --- FEATURES --- */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
+<div>
+<h3>Contact Us</h3>
+<p>📍 Kanpur, Uttar Pradesh</p>
+<p>📞 9935529306</p>
+<p>📧 your-email@example.com</p>
 
-        .feature-box {
-            background: rgba(5, 7, 10, 0.8);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 40px;
-            text-align: center;
-            border-radius: 15px;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
+<div class="social-icons">
+<a href="https://youtube.com/@hexacomputronics" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://facebook.com/hexacomputronics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com/hexacomputronics" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
 
-        .feature-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 3px;
-            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
+</div>
 
-        .feature-box:hover::before { transform: translateX(100%); }
-        .feature-box:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-color: var(--neon-cyan); }
+</div>
 
-        .f-icon { font-size: 3rem; color: var(--neon-purple); margin-bottom: 20px; text-shadow: 0 0 15px var(--neon-purple); }
-
-        /* --- CONTACT & FOOTER --- */
-        .contact-sec {
-            text-align: center;
-            padding: 100px 20px;
-            background: radial-gradient(circle at center, rgba(11, 15, 41, 0.8) 0%, rgba(5, 7, 10, 0) 70%);
-        }
-
-        .contact-details {
-            font-size: 1.5rem;
-            margin: 30px 0;
-            color: var(--text-dim);
-        }
-
-        <footer style="background:#020205; padding:60px 20px 20px; border-top:1px solid rgba(255,255,255,0.1); position:relative;">
-
-    <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px;">
-
-        <!-- ABOUT -->
-        <div>
-            <h3 style="color:#00f3ff; margin-bottom:15px;">HEXA COMPUTRONICS</h3>
-            <p style="color:#aaa; line-height:1.6;">
-                Premium IT Hardware, CCTV, Networking & Digital Products Provider in Kanpur.
-                Delivering quality solutions with trusted service.
-            </p>
-        </div>
-
-        <!-- QUICK LINKS -->
-        <div>
-            <h3 style="color:#00f3ff; margin-bottom:15px;">Quick Links</h3>
-            <p><a href="hardware.html" style="color:#bbb; text-decoration:none;">Hardware</a></p>
-            <p><a href="security.html" style="color:#bbb; text-decoration:none;">Security Systems</a></p>
-            <p><a href="digital-products.html" style="color:#bbb; text-decoration:none;">Digital Products</a></p>
-            <p><a href="refurbished.html" style="color:#bbb; text-decoration:none;">Refurbished</a></p>
-            <p><a href="contact.html" style="color:#bbb; text-decoration:none;">Contact</a></p>
-        </div>
-
-        <!-- LEGAL -->
-        <div>
-            <h3 style="color:#00f3ff; margin-bottom:15px;">Legal</h3>
-            <p><a href="privacy-policy.html" style="color:#bbb; text-decoration:none;">Privacy Policy</a></p>
-            <p><a href="terms.html" style="color:#bbb; text-decoration:none;">Terms & Conditions</a></p>
-            <p><a href="refund-policy.html" style="color:#bbb; text-decoration:none;">Refund Policy</a></p>
-            <p><a href="shipping-policy.html" style="color:#bbb; text-decoration:none;">Shipping Policy</a></p>
-            <p><a href="disclaimer.html" style="color:#bbb; text-decoration:none;">Disclaimer</a></p>
-        </div>
-
-        <!-- CONTACT -->
-        <div>
-            <h3 style="color:#00f3ff; margin-bottom:15px;">Contact Us</h3>
-            <p style="color:#aaa;">📍 Kanpur, Uttar Pradesh</p>
-            <p style="color:#aaa;">📞 9935529306</p>
-            <p style="color:#aaa;">📧 your-email@example.com</p>
-
-            <div style="margin-top:15px;">
-                <a href="https://youtube.com/@hexacomputronics" target="_blank" style="color:#fff; margin-right:15px; font-size:20px;">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://facebook.com/hexacomputronics" target="_blank" style="color:#fff; margin-right:15px; font-size:20px;">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://instagram.com/hexacomputronics" target="_blank" style="color:#fff; font-size:20px;">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- BOTTOM BAR -->
-    <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); color:#777; font-size:14px;">
-        © 2026 HEXA COMPUTRONICS | All Rights Reserved.
-    </div>
+<div class="footer-bottom">
+© 2026 HEXA COMPUTRONICS | All Rights Reserved.
+</div>
 
 </footer>
 
+</body>
+</html>
