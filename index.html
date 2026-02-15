@@ -338,205 +338,65 @@
             color: var(--text-dim);
         }
 
-        footer {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            background: #020205;
-            padding: 40px 0;
-            text-align: center;
-            position: relative;
-        }
+        <footer style="background:#020205; padding:60px 20px 20px; border-top:1px solid rgba(255,255,255,0.1); position:relative;">
 
-        .footer-glow-line {
-            position: absolute;
-            top: -1px; left: 0; width: 100%; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
-            box-shadow: 0 0 10px var(--neon-cyan);
-        }
+    <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px;">
 
-        .footer-socials a {
-            color: #fff;
-            font-size: 1.5rem;
-            margin: 0 15px;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-        .footer-socials a:hover { opacity: 1; color: var(--neon-cyan); }
+        <!-- ABOUT -->
+        <div>
+            <h3 style="color:#00f3ff; margin-bottom:15px;">HEXA COMPUTRONICS</h3>
+            <p style="color:#aaa; line-height:1.6;">
+                Premium IT Hardware, CCTV, Networking & Digital Products Provider in Kanpur.
+                Delivering quality solutions with trusted service.
+            </p>
+        </div>
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .cat-text { flex-direction: column; text-align: left; align-items: flex-start; gap: 20px; }
-            .cat-img { width: 100px; font-size: 2.5rem; }
-            .cat-banner { flex-direction: row; }
-            .btn-arrow { font-size: 0.8rem; padding: 8px 15px; }
-            
-            /* Mobile adjustment for banners */
-            .cat-banner { flex-direction: column; text-align: center; }
-            .cat-img { width: 100%; height: 150px; }
-            .cat-text { align-items: center; }
-        }
-    </style>
-</head>
-<body>
+        <!-- QUICK LINKS -->
+        <div>
+            <h3 style="color:#00f3ff; margin-bottom:15px;">Quick Links</h3>
+            <p><a href="hardware.html" style="color:#bbb; text-decoration:none;">Hardware</a></p>
+            <p><a href="security.html" style="color:#bbb; text-decoration:none;">Security Systems</a></p>
+            <p><a href="digital-products.html" style="color:#bbb; text-decoration:none;">Digital Products</a></p>
+            <p><a href="refurbished.html" style="color:#bbb; text-decoration:none;">Refurbished</a></p>
+            <p><a href="contact.html" style="color:#bbb; text-decoration:none;">Contact</a></p>
+        </div>
 
-    <div class="fx-container">
-        <div class="tech-grid"></div>
-        
-        <i class="fas fa-laptop silhouette obj-laptop"></i>
-        <i class="fas fa-network-wired silhouette obj-server"></i>
-        <i class="fas fa-video silhouette obj-cctv"></i>
-        <i class="fas fa-file-code silhouette obj-doc"></i>
-        <i class="fas fa-microchip silhouette obj-chip"></i>
+        <!-- LEGAL -->
+        <div>
+            <h3 style="color:#00f3ff; margin-bottom:15px;">Legal</h3>
+            <p><a href="privacy-policy.html" style="color:#bbb; text-decoration:none;">Privacy Policy</a></p>
+            <p><a href="terms.html" style="color:#bbb; text-decoration:none;">Terms & Conditions</a></p>
+            <p><a href="refund-policy.html" style="color:#bbb; text-decoration:none;">Refund Policy</a></p>
+            <p><a href="shipping-policy.html" style="color:#bbb; text-decoration:none;">Shipping Policy</a></p>
+            <p><a href="disclaimer.html" style="color:#bbb; text-decoration:none;">Disclaimer</a></p>
+        </div>
 
-        <div class="streak" style="left: 10%; animation-duration: 3s; animation-delay: 1s;"></div>
-        <div class="streak" style="left: 30%; animation-duration: 5s; animation-delay: 2s;"></div>
-        <div class="streak" style="left: 70%; animation-duration: 4s; animation-delay: 0s;"></div>
-        <div class="streak" style="left: 90%; animation-duration: 6s; animation-delay: 3s;"></div>
+        <!-- CONTACT -->
+        <div>
+            <h3 style="color:#00f3ff; margin-bottom:15px;">Contact Us</h3>
+            <p style="color:#aaa;">📍 Kanpur, Uttar Pradesh</p>
+            <p style="color:#aaa;">📞 9935529306</p>
+            <p style="color:#aaa;">📧 your-email@example.com</p>
+
+            <div style="margin-top:15px;">
+                <a href="https://youtube.com/@hexacomputronics" target="_blank" style="color:#fff; margin-right:15px; font-size:20px;">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://facebook.com/hexacomputronics" target="_blank" style="color:#fff; margin-right:15px; font-size:20px;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/hexacomputronics" target="_blank" style="color:#fff; font-size:20px;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
     </div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>HEXA COMPUTRONICS</h1>
-            <div class="hero-subtitle">Premium IT Solutions & Digital Products</div>
-            <p class="hero-desc">
-                Laptops | Networking | CCTV | Refurbished Systems <br>
-                Ebooks | Software Tools | Business Templates
-            </p>
-            
-            <a href="#categories" class="btn-main">Explore Products &rarr;</a>
+    <!-- BOTTOM BAR -->
+    <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); color:#777; font-size:14px;">
+        © 2026 HEXA COMPUTRONICS | All Rights Reserved.
+    </div>
 
-            <div class="social-row">
-                <a href="https://youtube.com/@hexacomputronics" target="_blank" class="social-btn yt"><i class="fab fa-youtube"></i></a>
-                <a href="https://facebook.com/hexacomputronics" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/hexacomputronics" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </section>
+</footer>
 
-    <section id="categories" class="section-padding">
-        <div class="container">
-            <div class="cat-container">
-                
-                <div class="cat-banner">
-                    <div class="cat-img"><i class="fas fa-laptop-code"></i></div>
-                    <div class="cat-text">
-                        <div class="cat-info">
-                            <h3>IT Hardware & Accessories</h3>
-                            <p>Laptops | Printers | UPS | Networking</p>
-                        </div>
-                       <a href="hardware.html" class="btn-arrow">View Hardware &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="cat-banner">
-                    <div class="cat-img"><i class="fas fa-shield-halved"></i></div>
-                    <div class="cat-text">
-                        <div class="cat-info">
-                            <h3>CCTV & Security Systems</h3>
-                            <p>Office & Home Surveillance Solutions</p>
-                        </div>
-                        <a href="security.html" class="btn-arrow">View Security &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="cat-banner">
-                    <div class="cat-img"><i class="fas fa-cloud-arrow-down"></i></div>
-                    <div class="cat-text">
-                        <div class="cat-info">
-                            <h3>Digital Products Store</h3>
-                            <p>Ebooks | Templates | Online Tools</p>
-                        </div>
-                        <a href="digital-products.html" class="btn-arrow">Explore Digital &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="cat-banner">
-                    <div class="cat-img"><i class="fas fa-rotate"></i></div>
-                    <div class="cat-text">
-                        <div class="cat-info">
-                            <h3>Refurbished Computers</h3>
-                            <p>Budget Friendly High Performance Systems</p>
-                        </div>
-                        <a href="refurbished.html" class="btn-arrow">Check Deals &rarr;</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: rgba(0,0,0,0.2);">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px;">Why Choose <span class="highlight">HEXA</span></h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <i class="fas fa-handshake f-icon"></i>
-                    <h4>Trusted IT Partner</h4>
-                    <p style="color:#aaa; margin-top:10px;">Reliable service history with thousands of satisfied clients.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-indian-rupee-sign f-icon"></i>
-                    <h4>Affordable Pricing</h4>
-                    <p style="color:#aaa; margin-top:10px;">Best market rates for hardware and digital assets.</p>
-                </div>
-                <div class="feature-box">
-                    <i class="fas fa-layer-group f-icon"></i>
-                    <h4>Complete Tech Solutions</h4>
-                    <p style="color:#aaa; margin-top:10px;">One stop shop for Networking, Repair, and Sales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact-sec">
-        <div class="container">
-            <h2>Get in Touch With <span class="highlight">HEXA COMPUTRONICS</span></h2>
-            <div class="contact-details">
-                <p><i class="fas fa-phone-alt highlight"></i> 9935529306</p>
-                <p style="margin-top: 10px; font-size: 1.2rem;"><i class="fas fa-map-marker-alt highlight"></i> Kanpur, U.P</p>
-            </div>
-            <a href="tel:9935529306" class="btn-main">Contact Now &rarr;</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-glow-line"></div>
-        <div class="container">
-            <div class="footer-socials">
-                <a href="https://youtube.com/@hexacomputronics"><i class="fab fa-youtube"></i></a>
-                <a href="https://facebook.com/hexacomputronics"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/hexacomputronics"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p style="margin-top: 20px; color: #666; font-size: 0.9rem;">
-                &copy; 2026 HEXA COMPUTRONICS. All Rights Reserved.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Target banners for animation
-        document.querySelectorAll('.cat-banner').forEach((el, index) => {
-            el.style.transitionDelay = `${index * 100}ms`; // Stagger effect
-            observer.observe(el);
-        });
-
-        document.querySelectorAll('.feature-box').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
