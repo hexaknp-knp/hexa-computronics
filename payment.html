@@ -109,3 +109,22 @@ document.getElementById("formBtn").href = finalURL;
 
 </body>
 </html>
+<script>
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+const orderID = "HX" + Math.floor(100000 + Math.random() * 900000);
+
+const formBase = "https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url";
+
+const productEntry = "entry.123456";   // replace with your real ID
+const orderEntry = "entry.654321";     // replace with your real ID
+
+if(product){
+document.getElementById("formBtn").href =
+formBase + "&" +
+productEntry + "=" + encodeURIComponent(product) +
+"&" +
+orderEntry + "=" + encodeURIComponent(orderID);
+}
+</script>
