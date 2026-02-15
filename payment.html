@@ -4,7 +4,9 @@ Submit Payment Details →
 
 <script>
 const params = new URLSearchParams(window.location.search);
-const product = params.get("product");
+
+// Agar product parameter nahi mila to default value use kare
+const product = params.get("product") || "Manual Order";
 
 const orderID = "HX" + Math.floor(100000 + Math.random() * 900000);
 
@@ -13,10 +15,9 @@ const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScInp815kRhPWYeXf-z8C
 const productEntry = "entry.1965798767";
 const orderEntry = "entry.1806519793";
 
-if(product){
+// Always set link (even if no product param)
 document.getElementById("formBtn").href =
 formBase +
 "&" + productEntry + "=" + encodeURIComponent(product) +
 "&" + orderEntry + "=" + encodeURIComponent(orderID);
-}
 </script>
