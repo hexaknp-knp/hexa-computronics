@@ -10,17 +10,17 @@
 
 <style>
 
-/* ================= PREMIUM LOGO COLOR BACKGROUND ================= */
+/* ================= PREMIUM BACKGROUND ================= */
 
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
 color:white;
 overflow-x:hidden;
-background: linear-gradient(135deg,#0a0f2c,#111a40,#1a0f3f,#0d1b3f);
+background: linear-gradient(135deg,#0b0f2a,#111a40,#1b0f3f,#0d1b3f);
 }
 
-/* Glow Overlay */
+/* Logo Color Glow Overlay */
 body::before{
 content:"";
 position:fixed;
@@ -37,30 +37,37 @@ z-index:-1;
 .social-left{
 position:fixed;
 top:50%;
-left:10px;
+left:15px;
 transform:translateY(-50%);
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:18px;
 z-index:1000;
 }
 
 .social-left a{
-width:45px;
-height:45px;
+width:48px;
+height:48px;
 display:flex;
 justify-content:center;
 align-items:center;
 border-radius:50%;
 color:white;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
+font-size:20px;
 transition:0.3s;
 }
 
+/* Brand Colors */
+.youtube{background:#FF0000;}
+.facebook{background:#1877F2;}
+.instagram{
+background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
+}
+.linkedin{background:#0A66C2;}
+
 .social-left a:hover{
-background:#00f3ff;
-transform:scale(1.1);
+transform:scale(1.15);
+box-shadow:0 0 20px rgba(255,255,255,0.4);
 }
 
 /* ================= HERO ================= */
@@ -76,13 +83,13 @@ padding:20px;
 }
 
 .logo{
-width:130px;
-filter:drop-shadow(0 0 20px #ffaa33);
+width:140px;
+filter:drop-shadow(0 0 25px #ffaa33);
 }
 
 .hero h1{
 font-family:'Orbitron',sans-serif;
-font-size:2.5rem;
+font-size:2.6rem;
 margin-top:15px;
 background:linear-gradient(to right,#ffaa33,#00f3ff);
 -webkit-background-clip:text;
@@ -92,23 +99,24 @@ background:linear-gradient(to right,#ffaa33,#00f3ff);
 .hero p{
 color:#ccc;
 margin-top:10px;
+font-size:1.1rem;
 }
 
-/* Glass Effect */
+/* Glass Card */
 .glass{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.06);
 backdrop-filter:blur(15px);
 border-radius:20px;
-padding:30px;
-max-width:800px;
+padding:35px;
+max-width:850px;
 }
 
 /* ================= CATEGORY GRID ================= */
 
 .categories{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 padding:20px 40px 60px 40px;
 max-width:1200px;
 margin:auto;
@@ -125,7 +133,7 @@ border:1px solid rgba(255,255,255,0.1);
 
 .card img{
 width:100%;
-height:150px;
+height:160px;
 object-fit:cover;
 }
 
@@ -239,11 +247,19 @@ font-size:13px;
 </head>
 <body>
 
-<!-- LEFT SOCIAL -->
+<!-- LEFT SOCIAL BAR -->
 <div class="social-left">
-<a href="https://youtube.com/@hexacomputronics" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://facebook.com/hexacomputronics" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://instagram.com/hexacomputronics" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://youtube.com/@hexacomputronics" target="_blank" class="youtube">
+<i class="fab fa-youtube"></i></a>
+
+<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook">
+<i class="fab fa-facebook-f"></i></a>
+
+<a href="https://instagram.com/hexacomputronics" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i></a>
+
+<a href="#" target="_blank" class="linkedin">
+<i class="fab fa-linkedin-in"></i></a>
 </div>
 
 <!-- HERO -->
