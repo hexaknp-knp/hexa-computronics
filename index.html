@@ -332,6 +332,58 @@ const chat=document.getElementById("chatBox");
 chat.style.display = chat.style.display==="block" ? "none" : "block";
 }
 </script>
+<script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+</script>
+
+<!-- FIREBASE SCRIPT START -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBW7YCTsx-MNnTNrLSvbVQu8PHL36Y-NP4",
+  authDomain: "hexa-computronics-45bfe.firebaseapp.com",
+  projectId: "hexa-computronics-45bfe",
+  storageBucket: "hexa-computronics-45bfe.firebasestorage.app",
+  messagingSenderId: "55424020610",
+  appId: "1:55424020610:web:b1ae85ec4c43c9a889049b"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadProducts() {
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const container = document.querySelector(".categories");
+
+  container.innerHTML = "";
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+
+    container.innerHTML += `
+      <div class="card">
+        <img src="${data.image}">
+        <h3>${data.name}</h3>
+        <p>${data.description}</p>
+        <p style="color:#ffaa33;font-weight:bold;">₹ ${data.price}</p>
+      </div>
+    `;
+  });
+}
+
+loadProducts();
+
+</script>
+<!-- FIREBASE SCRIPT END -->
+
+</body>
+</html>
 
 </body>
 </html>
