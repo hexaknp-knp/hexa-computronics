@@ -34,3 +34,11 @@ document.getElementById("offerPopup").style.display="flex";
 function closePopup() {
 document.getElementById("offerPopup").style.display="none";
 }
+container.innerHTML += `
+  <div class="card">
+    <img src="${data.image}">
+    <h3>${data.name}</h3>
+    <p>${data.description}</p>
+    <p class="price">₹ ${data.price}</p>
+  </div>
+`;
