@@ -130,35 +130,27 @@ async function loadProducts() {
 
   container.innerHTML = "";
 
-  const pageName = window.location.pathname
-    .split("/")
-    .pop()
-    .replace(".html", "");
+ const pageName = window.location.pathname
+  .split("/")
+  .pop()
+  .replace(".html", "")
+  .toLowerCase();
 
-  const querySnapshot = await getDocs(collection(db, "products"));
+const querySnapshot = await getDocs(collection(db, "products"));
 
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
+querySnapshot.forEach((doc) => {
+  const data = doc.data();
 
-    if (data.category === pageName) {
+  if (data.category && data.category.toLowerCase() === pageName) {
 
-      container.innerHTML += `
-        <div class="product-card">
-          <img src="${data.image}">
-          <h3>${data.name}</h3>
-          <p>${data.description}</p>
-          <p class="price">₹ ${data.price}</p>
-        </div>
-      `;
-    }
+    container.innerHTML += `
+      <div class="product-card">
+        <img src="${data.image}">
+        <h3>${data.name}</h3>
+        <p>${data.description}</p>
+        <p class="price">₹ ${data.price}</p>
+      </div>
+    `;
+  }
 
-  });
-
-}
-
-loadProducts();
-
-</script>
-
-</body>
-</html>
+});
