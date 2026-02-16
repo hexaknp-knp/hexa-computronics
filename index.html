@@ -5,53 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HEXA COMPUTRONICS | Premium IT Solutions</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-/* ================= PREMIUM ANIMATED BACKGROUND ================= */
+/* ================= PREMIUM LOGO COLOR BACKGROUND ================= */
 
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
 color:white;
 overflow-x:hidden;
-background: linear-gradient(135deg,#0f0c29,#1a1a2e,#16213e,#0f3460,#1f1c2c);
-background-size:400% 400%;
-animation: meshGradient 15s ease infinite;
+background: linear-gradient(135deg,#0a0f2c,#111a40,#1a0f3f,#0d1b3f);
 }
 
-@keyframes meshGradient{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
+/* Glow Overlay */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:
-radial-gradient(circle at 20% 30%, rgba(0,255,255,0.2), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(255,0,255,0.2), transparent 40%),
-radial-gradient(circle at 50% 90%, rgba(0,150,255,0.15), transparent 50%);
+radial-gradient(circle at 20% 30%, rgba(0,243,255,0.25), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(255,170,0,0.25), transparent 40%);
 z-index:-1;
-animation: floatLights 18s ease-in-out infinite alternate;
 }
 
-@keyframes floatLights{
-0%{transform: translateY(0px);}
-50%{transform: translateY(-40px);}
-100%{transform: translateY(0px);}
+/* ================= LEFT SOCIAL BAR ================= */
+
+.social-left{
+position:fixed;
+top:50%;
+left:10px;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:1000;
+}
+
+.social-left a{
+width:45px;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+color:white;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.social-left a:hover{
+background:#00f3ff;
+transform:scale(1.1);
 }
 
 /* ================= HERO ================= */
 
 .hero{
-height:100vh;
+min-height:60vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -61,46 +76,46 @@ padding:20px;
 }
 
 .logo{
-width:120px;
-margin-bottom:20px;
+width:130px;
+filter:drop-shadow(0 0 20px #ffaa33);
 }
 
 .hero h1{
 font-family:'Orbitron',sans-serif;
-font-size:3rem;
-letter-spacing:2px;
+font-size:2.5rem;
+margin-top:15px;
+background:linear-gradient(to right,#ffaa33,#00f3ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
 color:#ccc;
 margin-top:10px;
-font-size:1.2rem;
 }
 
 /* Glass Effect */
 .glass{
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.1);
 border-radius:20px;
-padding:40px;
-box-shadow:0 8px 32px rgba(0,0,0,0.5);
+padding:30px;
+max-width:800px;
 }
 
 /* ================= CATEGORY GRID ================= */
 
 .categories{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:60px 40px;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:20px 40px 60px 40px;
 max-width:1200px;
 margin:auto;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
 border-radius:15px;
 overflow:hidden;
 text-align:center;
@@ -110,7 +125,7 @@ border:1px solid rgba(255,255,255,0.1);
 
 .card img{
 width:100%;
-height:180px;
+height:150px;
 object-fit:cover;
 }
 
@@ -121,30 +136,80 @@ margin:15px 0 10px;
 .card a{
 display:inline-block;
 margin:15px;
-padding:10px 25px;
-background:#ff8c00;
+padding:8px 20px;
+background:linear-gradient(45deg,#ffaa33,#00f3ff);
 color:white;
 text-decoration:none;
-border-radius:30px;
+border-radius:25px;
 transition:0.3s;
 }
 
-.card a:hover{
-background:#ffaa33;
-transform:scale(1.05);
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
+/* ================= AI CHATBOT ================= */
+
+.chat-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+width:55px;
+height:55px;
+background:#00f3ff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+cursor:pointer;
+z-index:1000;
+}
+
+.chat-box{
+position:fixed;
+bottom:160px;
+right:20px;
+width:280px;
+background:#111;
+border-radius:15px;
+padding:15px;
+display:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
+}
+
+.chat-box h4{margin:0 0 8px;}
+.chat-box input{
+width:100%;
+padding:6px;
+border:none;
+border-radius:5px;
+margin-top:5px;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:55px;
+height:55px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+font-size:22px;
+color:white;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:20px;
 border-top:1px solid rgba(255,255,255,0.1);
 background:rgba(0,0,0,0.3);
 }
@@ -152,67 +217,92 @@ background:rgba(0,0,0,0.3);
 footer a{
 color:#00f3ff;
 text-decoration:none;
-margin:0 10px;
+margin:0 8px;
+font-size:14px;
 }
 
 footer p{
 color:#aaa;
 margin-top:10px;
-font-size:14px;
+font-size:13px;
 }
 
 /* Responsive */
 
 @media(max-width:768px){
-.hero h1{font-size:2rem;}
-.categories{padding:40px 20px;}
+.hero h1{font-size:1.8rem;}
+.categories{padding:20px;}
+.social-left{display:none;}
 }
 
 </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
+<!-- LEFT SOCIAL -->
+<div class="social-left">
+<a href="https://youtube.com/@hexacomputronics" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://facebook.com/hexacomputronics" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com/hexacomputronics" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
 <div class="glass">
-<img src="images/logo.jpg" class="logo" alt="HEXA Logo">
+<img src="images/logo.jpg" class="logo">
 <h1>HEXA COMPUTRONICS</h1>
-<p>Premium IT Hardware | CCTV | Digital Products | Refurbished Systems</p>
+<p>Premium IT Hardware | CCTV | Networking | Digital Products</p>
 </div>
 </section>
 
-<!-- CATEGORY SECTION -->
+<!-- CATEGORIES -->
 <section class="categories">
 
 <div class="card">
-<img src="images/laptop.jpg" alt="Hardware">
+<img src="images/laptop.jpg">
 <h3>IT Hardware</h3>
 <a href="hardware.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/cctv.jpg" alt="Security">
+<img src="images/cctv.jpg">
 <h3>Security Systems</h3>
 <a href="security.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/switch.jpg" alt="Networking">
+<img src="images/switch.jpg">
 <h3>Networking</h3>
 <a href="hardware.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/digitalproduct.jpg" alt="Digital">
+<img src="images/digitalproduct.jpg">
 <h3>Digital Products</h3>
 <a href="digital-products.html">Explore</a>
 </div>
 
 </section>
 
+<!-- AI CHATBOT -->
+<div class="chat-btn" onclick="toggleChat()">
+<i class="fas fa-robot"></i>
+</div>
+
+<div class="chat-box" id="chatBox">
+<h4>AI Assistant</h4>
+<p>Hello! How can we help you?</p>
+<input type="text" placeholder="Type message...">
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919935529306" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <!-- FOOTER -->
 <footer>
-<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="privacy-policy.html">Privacy</a> |
 <a href="terms.html">Terms</a> |
 <a href="refund-policy.html">Refund</a> |
 <a href="contact.html">Contact</a>
@@ -220,7 +310,12 @@ font-size:14px;
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
 
+<script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+</script>
+
 </body>
 </html>
-
-
