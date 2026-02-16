@@ -10,6 +10,8 @@
 
 <style>
 
+/* ================= PREMIUM BACKGROUND ================= */
+
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
@@ -18,6 +20,7 @@ overflow-x:hidden;
 background: linear-gradient(135deg,#0b0f2a,#111a40,#1b0f3f,#0d1b3f);
 }
 
+/* Logo Color Glow Overlay */
 body::before{
 content:"";
 position:fixed;
@@ -29,7 +32,8 @@ radial-gradient(circle at 80% 70%, rgba(255,170,0,0.25), transparent 40%);
 z-index:-1;
 }
 
-/* LEFT SOCIAL */
+/* ================= LEFT SOCIAL BAR ================= */
+
 .social-left{
 position:fixed;
 top:50%;
@@ -53,6 +57,7 @@ font-size:20px;
 transition:0.3s;
 }
 
+/* Brand Colors */
 .youtube{background:#FF0000;}
 .facebook{background:#1877F2;}
 .instagram{
@@ -65,7 +70,8 @@ transform:scale(1.15);
 box-shadow:0 0 20px rgba(255,255,255,0.4);
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
 min-height:60vh;
 display:flex;
@@ -96,6 +102,7 @@ margin-top:10px;
 font-size:1.1rem;
 }
 
+/* Glass Card */
 .glass{
 background:rgba(255,255,255,0.06);
 backdrop-filter:blur(15px);
@@ -104,7 +111,8 @@ padding:35px;
 max-width:850px;
 }
 
-/* PRODUCTS GRID */
+/* ================= CATEGORY GRID ================= */
+
 .categories{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -133,17 +141,6 @@ object-fit:cover;
 margin:15px 0 10px;
 }
 
-.card p{
-font-size:14px;
-color:#ccc;
-padding:0 10px;
-}
-
-.card h4{
-color:#00f3ff;
-margin:10px 0;
-}
-
 .card a{
 display:inline-block;
 margin:15px;
@@ -152,6 +149,7 @@ background:linear-gradient(45deg,#ffaa33,#00f3ff);
 color:white;
 text-decoration:none;
 border-radius:25px;
+transition:0.3s;
 }
 
 .card:hover{
@@ -159,7 +157,8 @@ transform:translateY(-8px);
 box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* CHAT + WHATSAPP */
+/* ================= AI CHATBOT ================= */
+
 .chat-btn{
 position:fixed;
 bottom:90px;
@@ -188,6 +187,17 @@ display:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
+.chat-box h4{margin:0 0 8px;}
+.chat-box input{
+width:100%;
+padding:6px;
+border:none;
+border-radius:5px;
+margin-top:5px;
+}
+
+/* ================= WHATSAPP ================= */
+
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -203,7 +213,8 @@ font-size:22px;
 color:white;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
 text-align:center;
 padding:20px;
@@ -224,6 +235,8 @@ margin-top:10px;
 font-size:13px;
 }
 
+/* Responsive */
+
 @media(max-width:768px){
 .hero h1{font-size:1.8rem;}
 .categories{padding:20px;}
@@ -234,13 +247,22 @@ font-size:13px;
 </head>
 <body>
 
+<!-- LEFT SOCIAL BAR -->
 <div class="social-left">
-<a href="https://youtube.com/@hexacomputronics" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-<a href="https://instagram.com/hexacomputronics" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-<a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://youtube.com/@hexacomputronics" target="_blank" class="youtube">
+<i class="fab fa-youtube"></i></a>
+
+<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook">
+<i class="fab fa-facebook-f"></i></a>
+
+<a href="https://instagram.com/hexacomputronics" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i></a>
+
+<a href="#" target="_blank" class="linkedin">
+<i class="fab fa-linkedin-in"></i></a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="glass">
 <img src="images/logo.jpg" class="logo">
@@ -249,10 +271,36 @@ font-size:13px;
 </div>
 </section>
 
+<!-- CATEGORIES -->
 <section class="categories">
-<!-- FIREBASE PRODUCTS AUTO LOAD HERE -->
+
+<div class="card">
+<img src="images/laptop.jpg">
+<h3>IT Hardware</h3>
+<a href="hardware.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/cctv.jpg">
+<h3>Security Systems</h3>
+<a href="security.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/switch.jpg">
+<h3>Networking</h3>
+<a href="hardware.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/digitalproduct.jpg">
+<h3>Digital Products</h3>
+<a href="digital-products.html">Explore</a>
+</div>
+
 </section>
 
+<!-- AI CHATBOT -->
 <div class="chat-btn" onclick="toggleChat()">
 <i class="fas fa-robot"></i>
 </div>
@@ -263,15 +311,18 @@ font-size:13px;
 <input type="text" placeholder="Type message...">
 </div>
 
+<!-- WHATSAPP -->
 <a href="https://wa.me/919935529306" class="whatsapp" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- FOOTER -->
 <footer>
 <a href="privacy-policy.html">Privacy</a> |
 <a href="terms.html">Terms</a> |
 <a href="refund-policy.html">Refund</a> |
 <a href="contact.html">Contact</a>
+
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
 
@@ -280,43 +331,6 @@ function toggleChat(){
 const chat=document.getElementById("chatBox");
 chat.style.display = chat.style.display==="block" ? "none" : "block";
 }
-</script>
-
-<!-- 🔥 FIREBASE AUTO PRODUCT LOAD -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBW7YCTsx-MNnTNrLSvbVQu8PHL36Y-NP4",
-  authDomain: "hexa-computronics-45bfe.firebaseapp.com",
-  projectId: "hexa-computronics-45bfe",
-  storageBucket: "hexa-computronics-45bfe.firebasestorage.app",
-  messagingSenderId: "55424020610",
-  appId: "1:55424020610:web:b1ae85ec4c43c9a889049b"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const container = document.querySelector(".categories");
-
-async function loadProducts(){
-const querySnapshot = await getDocs(collection(db,"products"));
-querySnapshot.forEach((doc)=>{
-const data = doc.data();
-container.innerHTML += `
-<div class="card">
-<img src="${data.image}">
-<h3>${data.name}</h3>
-<p>${data.description}</p>
-<h4>${data.price}</h4>
-<a href="payment.html">Buy Now</a>
-</div>
-`;
-});
-}
-
-loadProducts();
 </script>
 
 </body>
