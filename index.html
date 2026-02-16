@@ -20,6 +20,7 @@ overflow-x:hidden;
 background: linear-gradient(135deg,#0b0f2a,#111a40,#1b0f3f,#0d1b3f);
 }
 
+/* Logo Color Glow Overlay */
 body::before{
 content:"";
 position:fixed;
@@ -56,6 +57,7 @@ font-size:20px;
 transition:0.3s;
 }
 
+/* Brand Colors */
 .youtube{background:#FF0000;}
 .facebook{background:#1877F2;}
 .instagram{
@@ -100,6 +102,7 @@ margin-top:10px;
 font-size:1.1rem;
 }
 
+/* Glass Card */
 .glass{
 background:rgba(255,255,255,0.06);
 backdrop-filter:blur(15px);
@@ -184,6 +187,7 @@ display:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
+.chat-box h4{margin:0 0 8px;}
 .chat-box input{
 width:100%;
 padding:6px;
@@ -214,4 +218,172 @@ color:white;
 footer{
 text-align:center;
 padding:20px;
-border-top:1px solid rgba(
+border-top:1px solid rgba(255,255,255,0.1);
+background:rgba(0,0,0,0.3);
+}
+
+footer a{
+color:#00f3ff;
+text-decoration:none;
+margin:0 8px;
+font-size:14px;
+}
+
+footer p{
+color:#aaa;
+margin-top:10px;
+font-size:13px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+.hero h1{font-size:1.8rem;}
+.categories{padding:20px;}
+.social-left{display:none;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- LEFT SOCIAL BAR -->
+<div class="social-left">
+<a href="https://youtube.com/@hexacomputronics" target="_blank" class="youtube">
+<i class="fab fa-youtube"></i></a>
+
+<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook">
+<i class="fab fa-facebook-f"></i></a>
+
+<a href="https://instagram.com/hexacomputronics" target="_blank" class="instagram">
+<i class="fab fa-instagram"></i></a>
+
+<a href="#" target="_blank" class="linkedin">
+<i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+<div class="glass">
+<img src="images/logo.jpg" class="logo">
+<h1>HEXA COMPUTRONICS</h1>
+<p>Premium IT Hardware | CCTV | Networking | Digital Products</p>
+</div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+
+<div class="card">
+<img src="images/laptop.jpg">
+<h3>IT Hardware</h3>
+<a href="hardware.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/cctv.jpg">
+<h3>Security Systems</h3>
+<a href="security.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/switch.jpg">
+<h3>Networking</h3>
+<a href="hardware.html">Explore</a>
+</div>
+
+<div class="card">
+<img src="images/digitalproduct.jpg">
+<h3>Digital Products</h3>
+<a href="digital-products.html">Explore</a>
+</div>
+
+</section>
+
+<!-- AI CHATBOT -->
+<div class="chat-btn" onclick="toggleChat()">
+<i class="fas fa-robot"></i>
+</div>
+
+<div class="chat-box" id="chatBox">
+<h4>AI Assistant</h4>
+<p>Hello! How can we help you?</p>
+<input type="text" placeholder="Type message...">
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919935529306" class="whatsapp" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- FOOTER -->
+<footer>
+<a href="privacy-policy.html">Privacy</a> |
+<a href="terms.html">Terms</a> |
+<a href="refund-policy.html">Refund</a> |
+<a href="contact.html">Contact</a>
+
+<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
+</footer>
+
+<script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+</script>
+<script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+</script>
+
+<!-- FIREBASE SCRIPT START -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBW7YCTsx-MNnTNrLSvbVQu8PHL36Y-NP4",
+  authDomain: "hexa-computronics-45bfe.firebaseapp.com",
+  projectId: "hexa-computronics-45bfe",
+  storageBucket: "hexa-computronics-45bfe.firebasestorage.app",
+  messagingSenderId: "55424020610",
+  appId: "1:55424020610:web:b1ae85ec4c43c9a889049b"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function loadProducts() {
+  const querySnapshot = await getDocs(collection(db, "products"));
+  const container = document.querySelector(".categories");
+
+  container.innerHTML = "";
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+
+    container.innerHTML += `
+      <div class="card">
+        <img src="${data.image}">
+        <h3>${data.name}</h3>
+        <p>${data.description}</p>
+        <p style="color:#ffaa33;font-weight:bold;">₹ ${data.price}</p>
+      </div>
+    `;
+  });
+}
+
+loadProducts();
+
+</script>
+<!-- FIREBASE SCRIPT END -->
+
+</body>
+</html>
+
+</body>
+</html>
