@@ -301,6 +301,51 @@ font-size:13px;
 </div>
 
 </section>
+  
+<!-- PRODUCT LIST SECTION -->
+<section class="categories" id="product-list"></section>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBW7YCTsx-MNnTNrLSvbVQu8PHL36Y-NP4",
+  authDomain: "hexa-computronics-45bfe.firebaseapp.com",
+  projectId: "hexa-computronics-45bfe",
+  storageBucket: "hexa-computronics-45bfe.firebasestorage.app",
+  messagingSenderId: "55424020610",
+  appId: "1:55424020610:web:b1ae85ec4c43c9a889049b"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const productContainer = document.getElementById("product-list");
+
+async function loadProducts() {
+  const querySnapshot = await getDocs(collection(db, "products"));
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+
+    const card = `
+      <div class="card">
+        <img src="${data.image}" alt="${data.name}">
+        <h3>${data.name}</h3>
+        <p>${data.description}</p>
+        <h4>₹ ${data.price}</h4>
+        <a href="payment.html?name=${encodeURIComponent(data.name)}&price=${data.price}">Buy Now</a>
+      </div>
+    `;
+
+    productContainer.innerHTML += card;
+  });
+}
+
+loadProducts();
+
+</script>
 
 <!-- AI CHATBOT -->
 <div class="chat-btn" onclick="toggleChat()">
@@ -389,5 +434,6 @@ loadProducts();
 
 </body>
 </html>
+
 
 
