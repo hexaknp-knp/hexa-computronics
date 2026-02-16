@@ -206,12 +206,4 @@ border-top:1px solid #222;
 font-size:14px;
 color:#777;
 }
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:20px 40px 60px 40px;
-max-width:1200px;
-margin:auto;
-}
 
