@@ -206,4 +206,7 @@ border-top:1px solid #222;
 font-size:14px;
 color:#777;
 }
+.home-page .price {
+    display: none;
+}
 
