@@ -6,9 +6,18 @@ color:white;
 }
 
 /* ===== NAVBAR ===== */
-nav {
+.navbar {
 display:flex;
-justify-content:space-between;
+justify-content:flex-end;
+align-items:center;
+padding:15px 50px;
+background:rgba(0,0,0,0.7);
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
+
 padding:15px 40px;
 background:#000;
 }
@@ -225,5 +234,49 @@ color:#777;
 transform:translateY(-5px);
 transition:0.3s;
 box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+/* ===== HARDWARE GRID (Universal Template Fix) ===== */
+
+.hardware-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 25px;
+padding: 100px 40px 40px 40px;
+max-width: 1200px;
+margin: auto;
+}
+
+.hardware-card {
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.hardware-card img {
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.hardware-card:hover {
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+.hardware-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (max-width: 576px) {
+.hardware-grid {
+grid-template-columns: repeat(1, 1fr);
+}
 }
 
