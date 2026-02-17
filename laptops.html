@@ -3,91 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laptops | HEXA COMPUTRONICS</title>
+<title>Category Name | HEXA COMPUTRONICS</title>
 
 <link rel="stylesheet" href="style.css">
-
-<style>
-.product-grid {
-display:grid;
-grid-template-columns:repeat(4, 1fr);
-gap:25px;
-padding:40px 50px;
-}
-
-@media(max-width:1200px){
-.product-grid { grid-template-columns:repeat(3,1fr); }
-}
-@media(max-width:900px){
-.product-grid { grid-template-columns:repeat(2,1fr); }
-}
-@media(max-width:600px){
-.product-grid { grid-template-columns:1fr; }
-}
-</style>
-
 </head>
 <body>
 
-<!-- ===== NAVBAR LEFT HORIZONTAL ===== -->
+<!-- ===== NAVBAR RIGHT SIDE ===== -->
 <nav class="navbar">
+    <div style="flex:1;"></div>
 
-<div style="width:100%; display:flex; justify-content:flex-start;">
-<ul style="display:flex; list-style:none; gap:30px; margin:0; padding:0;">
-<li><a href="index.html">Home</a></li>
-<li><a href="hardware.html">Hardware</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="digital-products.html">Digital</a></li>
-<li><a href="refurbished.html">Refurbished</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-
+    <ul style="display:flex; list-style:none; margin:0; padding:0;">
+        <li style="margin:0 15px;"><a href="index.html">Home</a></li>
+        <li style="margin:0 15px;"><a href="hardware.html">Hardware</a></li>
+        <li style="margin:0 15px;"><a href="security.html">Security</a></li>
+        <li style="margin:0 15px;"><a href="digital-products.html">Digital</a></li>
+        <li style="margin:0 15px;"><a href="refurbished.html">Refurbished</a></li>
+        <li style="margin:0 15px;"><a href="contact.html">Contact</a></li>
+    </ul>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="page-hero">
+<!-- ===== HERO SECTION ===== -->
+<section class="page-hero" style="margin-top:100px; text-align:center;">
 <h1>Laptops</h1>
 <p>High Performance Business & Gaming Laptops</p>
 </section>
 
-<!-- ===== PRODUCTS ===== -->
-<section class="product-grid">
+<!-- ===== PRODUCT GRID (4 IN ONE LINE) ===== -->
+<section style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+padding:40px;
+max-width:1300px;
+margin:auto;
+">
 
+<!-- PRODUCT 1 -->
 <div class="product-card">
-<img src="images/laptop1.jpg">
+<img src="images/laptop1.jpg" alt="Laptop">
 <h3>HP i5 8GB RAM</h3>
 <p>8GB RAM | 256GB SSD | 14 inch</p>
 <p class="price">₹ 25,999</p>
-<a href="payment.html?product=HP i5 Laptop" class="buy-btn">Buy Now</a>
+<a href="payment.html?product=HP-i5" class="buy-btn">Buy Now</a>
 </div>
 
+<!-- PRODUCT 2 -->
 <div class="product-card">
-<img src="images/laptop2.jpg">
+<img src="images/laptop2.jpg" alt="Laptop">
 <h3>Dell i7 16GB RAM</h3>
 <p>16GB RAM | 512GB SSD | 15.6 inch</p>
 <p class="price">₹ 45,999</p>
-<a href="payment.html?product=Dell i7 Laptop" class="buy-btn">Buy Now</a>
+<a href="payment.html?product=Dell-i7" class="buy-btn">Buy Now</a>
 </div>
 
+<!-- PRODUCT 3 -->
 <div class="product-card">
-<img src="images/laptop3.jpg">
+<img src="images/laptop3.jpg" alt="Laptop">
 <h3>Lenovo Ryzen 5</h3>
 <p>8GB RAM | 512GB SSD | FHD Display</p>
 <p class="price">₹ 39,999</p>
-<a href="payment.html?product=Lenovo Ryzen 5" class="buy-btn">Buy Now</a>
+<a href="payment.html?product=Lenovo-R5" class="buy-btn">Buy Now</a>
 </div>
 
+<!-- PRODUCT 4 -->
 <div class="product-card">
-<img src="images/laptop4.jpg">
-<h3>Acer i5 12th Gen</h3>
-<p>16GB RAM | 512GB SSD | Windows 11</p>
-<p class="price">₹ 52,999</p>
-<a href="payment.html?product=Acer i5 12th Gen" class="buy-btn">Buy Now</a>
+<img src="images/laptop4.jpg" alt="Laptop">
+<h3>ASUS Gaming</h3>
+<p>16GB RAM | 1TB SSD | RTX Graphics</p>
+<p class="price">₹ 69,999</p>
+<a href="payment.html?product=ASUS-Gaming" class="buy-btn">Buy Now</a>
 </div>
 
 </section>
 
+<!-- ===== FOOTER ===== -->
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
