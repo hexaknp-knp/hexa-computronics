@@ -92,19 +92,63 @@ color:white;
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
-   
+
 <section class="page-hero">
-    <h1>IT Hardware</h1>
+<h1>IT Hardware & Accessories</h1>
+<p>High Performance Business & Home IT Solutions</p>
 </section>
 
-<section class="product-grid"></section>
+<section class="hardware-grid">
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="Laptop">
+<h3>Laptops</h3>
+<p>Business & Gaming Laptops Available</p>
+<a href="payment.html?product=Laptop" class="buy-btn">Buy Now →</a>
+</div>
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="Desktop">
+<h3>Desktop Systems</h3>
+<p>Custom & Branded Desktop Computers</p>
+<a href="payment.html?product=Desktop System" class="buy-btn">Buy Now →</a>
+</div>
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="Networking">
+<h3>Networking Equipment</h3>
+<p>Switches, Routers & Structured Cabling</p>
+<a href="payment.html?product=Networking Equipment" class="buy-btn">Buy Now →</a>
+</div>
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="Printer">
+<h3>Printers</h3>
+<p>Laser & Inkjet Printers for Office</p>
+<a href="payment.html?product=Printer" class="buy-btn">Buy Now →</a>
+</div>
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="UPS">
+<h3>UPS & Power Backup</h3>
+<p>Reliable Power Solutions</p>
+<a href="payment.html?product=UPS Power Backup" class="buy-btn">Buy Now →</a>
+</div>
+
+<div class="hardware-card">
+<img src="images/placeholder.jpg" alt="Accessories">
+<h3>Computer Accessories</h3>
+<p>Keyboard, Mouse, Cables & More</p>
+<a href="payment.html?product=Computer Accessories" class="buy-btn">Buy Now →</a>
+</div>
+
+</section>
 
 <section class="cta-section">
-    <h2>Need Complete Office IT Setup?</h2>
-    <p>Contact HEXA COMPUTRONICS Today</p>
-    <a href="contact.html" class="buy-btn">Contact Now</a>
+<h2>Need Complete Office IT Setup?</h2>
+<p>Contact HEXA COMPUTRONICS Today</p>
+<a href="contact.html" class="buy-btn">Contact Now</a>
 </section>
-
 
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
@@ -130,27 +174,35 @@ async function loadProducts() {
 
   container.innerHTML = "";
 
- const pageName = window.location.pathname
-  .split("/")
-  .pop()
-  .replace(".html", "")
-  .toLowerCase();
+  const pageName = window.location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
 
-const querySnapshot = await getDocs(collection(db, "products"));
+  const querySnapshot = await getDocs(collection(db, "products"));
 
-querySnapshot.forEach((doc) => {
-  const data = doc.data();
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
 
-  if (data.category && data.category.toLowerCase() === pageName) {
+    if (data.category === pageName) {
 
-    container.innerHTML += `
-      <div class="product-card">
-        <img src="${data.image}">
-        <h3>${data.name}</h3>
-        <p>${data.description}</p>
-        <p class="price">₹ ${data.price}</p>
-      </div>
-    `;
-  }
+      container.innerHTML += `
+        <div class="product-card">
+          <img src="${data.image}">
+          <h3>${data.name}</h3>
+          <p>${data.description}</p>
+          <p class="price">₹ ${data.price}</p>
+        </div>
+      `;
+    }
 
-});
+  });
+
+}
+
+loadProducts();
+
+</script>
+
+</body>
+</html>
