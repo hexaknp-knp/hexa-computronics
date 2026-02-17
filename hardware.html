@@ -3,201 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IT Hardware | HEXA COMPUTRONICS</title>
+<title>Page Name | HEXA COMPUTRONICS</title>
+
 <link rel="stylesheet" href="style.css">
-
 <style>
-.page-hero {
-height: 60vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background: linear-gradient(135deg,#0F172A,#4C1D95);
-color:white;
-}
-
-.hardware-grid {
+.product-grid {
 display:grid;
-grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-gap:30px;
-padding:80px 50px;
-background:#111;
+grid-template-columns:repeat(4, 1fr);
+gap:25px;
+padding:40px 50px;
 }
 
-.hardware-card {
-background:rgba(255,255,255,0.05);
-border-radius:15px;
-padding:20px;
-text-align:center;
-transition:0.3s;
-color:white;
+@media(max-width:1200px){
+.product-grid { grid-template-columns:repeat(3,1fr); }
 }
-
-.hardware-card img {
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
+@media(max-width:900px){
+.product-grid { grid-template-columns:repeat(2,1fr); }
 }
-
-.hardware-card h3 {
-margin:15px 0 10px;
-}
-
-.hardware-card p {
-font-size:14px;
-color:#ccc;
-}
-
-.buy-btn {
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
-background:#FF6B00;
-color:white;
-text-decoration:none;
-border-radius:5px;
-transition:0.3s;
-}
-
-.buy-btn:hover {
-background:#ff8c00;
-}
-
-.hardware-card:hover {
-transform: translateY(-10px);
-background:rgba(0,245,255,0.1);
-}
-
-.cta-section {
-padding:60px;
-text-align:center;
-background: linear-gradient(135deg,#4C1D95,#0F172A);
-color:white;
+@media(max-width:600px){
+.product-grid { grid-template-columns:1fr; }
 }
 </style>
-</head>
 
+</head>.
 <body>
 
-<nav>
-<div class="logo">HEXA COMPUTRONICS</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="hardware.html">Hardware</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="digital-products.html">Digital</a></li>
-<li><a href="refurbished.html">Refurbished</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
 
+<!-- ===== HERO SECTION ===== -->
 <section class="page-hero">
-<h1>IT Hardware & Accessories</h1>
-<p>High Performance Business & Home IT Solutions</p>
+<h1>PAGE HEADING</h1>
+<p>Short description of this category</p>
 </section>
 
-<section class="hardware-grid">
+<!-- ===== PRODUCT GRID ===== -->
+<section class="product-grid">
 
-<div class="hardware-card">
-<img src="images/laptop2.jpg" alt="Laptop">
-<h3>Laptops</h3>
-<p>Business & Gaming Laptops Available</p>
-<a href="laptops.html" class="buy-btn">View Products</a>
+<div class="product-card">
+<img src="images/product1.jpg" alt="Product">
+<h3>Product Name 1</h3>
+<p>Short product description here</p>
+<p class="price">₹ 25,999</p>
+<a href="payment.html?product=Product1" class="buy-btn">Buy Now</a>
 </div>
 
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Desktop">
-<h3>Desktop Systems</h3>
-<p>Custom & Branded Desktop Computers</p>
-<a href="desktops.html" class="buy-btn">View Products</a>
+<div class="product-card">
+<img src="images/product2.jpg" alt="Product">
+<h3>Product Name 2</h3>
+<p>Short product description here</p>
+<p class="price">₹ 32,999</p>
+<a href="payment.html?product=Product2" class="buy-btn">Buy Now</a>
 </div>
 
-
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Printer">
-<h3>Printers</h3>
-<p>Laser & Inkjet Printers for Office</p>
-<a href="printers.html" class="buy-btn">View Products</a>
-</div>
-
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="UPS">
-<h3>UPS & Power Backup</h3>
-<p>Reliable Power Solutions</p>
-<a href="ups.html" class="buy-btn">View Products</a>
-</div>
-
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Accessories">
-<h3>Computer Accessories</h3>
-<p>Keyboard, Mouse, Cables & More</p>
-<a href="accessories.html" class="buy-btn">View Products</a>
+<div class="product-card">
+<img src="images/product3.jpg" alt="Product">
+<h3>Product Name 3</h3>
+<p>Short product description here</p>
+<p class="price">₹ 18,499</p>
+<a href="payment.html?product=Product3" class="buy-btn">Buy Now</a>
 </div>
 
 </section>
 
-<section class="cta-section">
-<h2>Need Complete Office IT Setup?</h2>
-<p>Contact HEXA COMPUTRONICS Today</p>
-<a href="contact.html" class="buy-btn">Contact Now</a>
-</section>
-
+<!-- ===== FOOTER ===== -->
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_AUTH",
-  projectId: "YOUR_ID",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-async function loadProducts() {
-
-  const container = document.querySelector(".product-grid");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  const pageName = window.location.pathname
-    .split("/")
-    .pop()
-    .replace(".html", "");
-
-  const querySnapshot = await getDocs(collection(db, "products"));
-
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-
-    if (data.category === pageName) {
-
-      container.innerHTML += `
-        <div class="product-card">
-          <img src="${data.image}">
-          <h3>${data.name}</h3>
-          <p>${data.description}</p>
-          <p class="price">₹ ${data.price}</p>
-        </div>
-      `;
-    }
-
-  });
-
-}
-
-loadProducts();
-
-</script>
 
 </body>
 </html>
