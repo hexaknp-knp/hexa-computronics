@@ -7,40 +7,12 @@
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-.sec-header {
-text-align:center;
-padding:120px 20px 60px;
-background: linear-gradient(135deg,#0f0c29,#1a0b2e);
-}
-
-.sec-header h1 {
-font-size:2.5rem;
-color:#00f3ff;
-}
-
-.product-grid {
-display:grid;
-grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-padding:50px 20px;
-max-width:1200px;
-margin:auto;
-}
-
-.product-card img {
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-margin-bottom:15px;
-}
-</style>
 </head>
 
 <body>
- <nav>
-<div class="logo">HEXA COMPUTRONICS</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="hardware.html">Hardware</a></li>
@@ -51,50 +23,64 @@ margin-bottom:15px;
 </ul>
 </nav>
 
-<div class="sec-header">
-<h1>Advanced CCTV & Security Solutions</h1>
+<!-- ===== HEADER ===== -->
+<section style="text-align:center; padding:120px 20px 60px; background:linear-gradient(135deg,#0f0c29,#1a0b2e);">
+<h1 style="font-size:2.5rem; color:#00f3ff;">Advanced CCTV & Security Solutions</h1>
 <p>Protect Your Home & Business with Smart Surveillance</p>
-</div>
+</section>
 
-<div class="product-grid">
+<!-- ===== PRODUCT GRID (4 IN ONE ROW) ===== -->
+<section style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+padding:50px 20px;
+max-width:1300px;
+margin:auto;
+">
 
+<!-- PRODUCT 1 -->
 <div class="product-card">
 <img src="images/cctv.jpg" alt="CCTV Camera">
 <h3>2MP HD CCTV Camera</h3>
 <p>High-definition indoor & outdoor security camera.</p>
 <p class="price">₹9,499</p>
 <a href="cctv.html" class="buy-btn">View Products</a>
-</a>
 </div>
 
+<!-- PRODUCT 2 -->
 <div class="product-card">
 <img src="images/cctv2.jpg" alt="DVR System">
 <h3>4 Channel DVR System</h3>
 <p>Full HD recording with remote mobile access.</p>
 <p class="price">₹4,999</p>
 <a href="dvr.html" class="buy-btn">View Products</a>
-</a>
 </div>
 
+<!-- PRODUCT 3 -->
 <div class="product-card">
 <img src="images/biometric.jpg" alt="Biometric Machine">
 <h3>Biometric Attendance System</h3>
 <p>Fingerprint based smart attendance solution.</p>
 <p class="price">₹3,299</p>
-<a href="Biometric.html" class="buy-btn">View Products</a>
-</a>
+<a href="biometric.html" class="buy-btn">View Products</a>
 </div>
 
+<!-- PRODUCT 4 -->
 <div class="product-card">
 <img src="images/nvr.jpg" alt="NVR System">
 <h3>8 Channel NVR Kit</h3>
 <p>Advanced IP camera system for offices.</p>
 <p class="price">₹7,999</p>
 <a href="nvr.html" class="buy-btn">View Products</a>
-</a>
 </div>
 
-</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="text-align:center; padding:20px; background:#000; margin-top:40px;">
+<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
+</footer>
 
 </body>
 </html>
