@@ -3,88 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Networking | HEXA COMPUTRONICS</title>
+<title>Networking Solutions | HEXA COMPUTRONICS</title>
 <link rel="stylesheet" href="style.css">
-
-<style>
-.page-hero {
-height: 60vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background: linear-gradient(135deg,#0F172A,#4C1D95);
-color:white;
-}
-
-.hardware-grid {
-display:grid;
-grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-gap:30px;
-padding:80px 50px;
-background:#111;
-}
-
-.hardware-card {
-background:rgba(255,255,255,0.05);
-border-radius:15px;
-padding:20px;
-text-align:center;
-transition:0.3s;
-color:white;
-}
-
-.hardware-card img {
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.hardware-card h3 {
-margin:15px 0 10px;
-}
-
-.hardware-card p {
-font-size:14px;
-color:#ccc;
-}
-
-.buy-btn {
-display:inline-block;
-margin-top:15px;
-padding:10px 20px;
-background:#FF6B00;
-color:white;
-text-decoration:none;
-border-radius:5px;
-transition:0.3s;
-}
-
-.buy-btn:hover {
-background:#ff8c00;
-}
-
-.hardware-card:hover {
-transform: translateY(-10px);
-background:rgba(0,245,255,0.1);
-}
-
-.cta-section {
-padding:60px;
-text-align:center;
-background: linear-gradient(135deg,#4C1D95,#0F172A);
-color:white;
-}
-</style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">HEXA COMPUTRONICS</div>
-<ul>
+<!-- NAVBAR RIGHT -->
+<nav class="navbar" style="display:flex; align-items:center; padding:15px 40px; box-sizing:border-box;">
+<div style="flex:1;"></div>
+<ul style="display:flex; list-style:none; margin:0; padding:0; gap:25px; white-space:nowrap;">
 <li><a href="index.html">Home</a></li>
 <li><a href="hardware.html">Hardware</a></li>
 <li><a href="security.html">Security</a></li>
@@ -94,110 +22,59 @@ color:white;
 </ul>
 </nav>
 
-<section class="page-hero">
-<h1>Networking Products</h1>
-<p>High Performance Networking Products</p>
+<!-- HEADER -->
+<section style="text-align:center; padding:120px 20px 60px; background:linear-gradient(135deg,#0f0c29,#1a0b2e);">
+<h1 style="color:#00f3ff;">Networking Solutions</h1>
+<p>Switches, Routers & Enterprise Networking</p>
 </section>
 
-<section class="hardware-grid">
+<!-- 4 PRODUCT GRID -->
+<section style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+padding:50px 20px;
+max-width:1300px;
+margin:auto;
+">
 
-<div class="hardware-card">
-<img src="images/laptop2.jpg" alt="Laptop">
-<h3>Laptops</h3>
-<p>Business & Gaming Laptops Available</p>
-<a href="payment.html?product=Laptop" class="buy-btn">Buy Now →</a>
+<div class="product-card">
+<img src="images/switch.jpg">
+<h3>24 Port Network Switch</h3>
+<p>High speed gigabit managed switch.</p>
+<p class="price">₹8,499</p>
+<a href="switch.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
 </div>
 
-<div class="hardware-card">
-<img src="images/5 portswitchgiga.jpg" alt="Switch">
-<h3>Desktop switch</h3>
-<p>Desktop Switch</p>
-<a href="payment.html?product=Desktop Switch" class="buy-btn">Buy Now →</a>
+<div class="product-card">
+<img src="images/router.jpg">
+<h3>Dual Band Router</h3>
+<p>High performance WiFi 6 router.</p>
+<p class="price">₹4,999</p>
+<a href="router.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
 </div>
 
-
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Router">
-<h3>Printers</h3>
-<p>Laser & Inkjet Printers for Office</p>
-<a href="payment.html?product=Printer" class="buy-btn">Buy Now →</a>
+<div class="product-card">
+<img src="images/lan.jpg">
+<h3>LAN Cable Cat6</h3>
+<p>High speed ethernet cable.</p>
+<p class="price">₹1,299</p>
+<a href="lan.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
 </div>
 
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Lan Cable">
-<h3>UPS & Power Backup</h3>
-<p>Reliable Power Solutions</p>
-<a href="payment.html?product=UPS Power Backup" class="buy-btn">Buy Now →</a>
-</div>
-
-<div class="hardware-card">
-<img src="images/placeholder.jpg" alt="Accessories">
-<h3>Computer Accessories</h3>
-<p>Keyboard, Mouse, Cables & More</p>
-<a href="payment.html?product=Computer Accessories" class="buy-btn">Buy Now →</a>
+<div class="product-card">
+<img src="images/firewall.jpg">
+<h3>Enterprise Firewall</h3>
+<p>Advanced security firewall system.</p>
+<p class="price">₹22,999</p>
+<a href="firewall.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
 </div>
 
 </section>
 
-<section class="cta-section">
-<h2>Need Complete Office IT Setup?</h2>
-<p>Contact HEXA COMPUTRONICS Today</p>
-<a href="contact.html" class="buy-btn">Contact Now</a>
-</section>
-
-<footer>
-<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
+<footer style="text-align:center; padding:20px; background:#000; margin-top:40px;">
+<p>© 2026 HEXA COMPUTRONICS</p>
 </footer>
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_AUTH",
-  projectId: "YOUR_ID",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-async function loadProducts() {
-
-  const container = document.querySelector(".product-grid");
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  const pageName = window.location.pathname
-    .split("/")
-    .pop()
-    .replace(".html", "");
-
-  const querySnapshot = await getDocs(collection(db, "products"));
-
-  querySnapshot.forEach((doc) => {
-    const data = doc.data();
-
-    if (data.category === pageName) {
-
-      container.innerHTML += `
-        <div class="product-card">
-          <img src="${data.image}">
-          <h3>${data.name}</h3>
-          <p>${data.description}</p>
-          <p class="price">₹ ${data.price}</p>
-        </div>
-      `;
-    }
-
-  });
-
-}
-
-loadProducts();
-
-</script>
 
 </body>
 </html>
