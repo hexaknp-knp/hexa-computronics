@@ -1,3 +1,6 @@
+<title>Desktops | HEXA COMPUTRONICS</title>
+<h1>Hexa Computronics</h1>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +13,33 @@
 <body>
 
 <!-- ===== NAVBAR RIGHT SIDE ===== -->
-<nav class="navbar">
+<nav class="navbar" style="padding:15px 30px; box-sizing:border-box;">
+
     <div style="flex:1;"></div>
 
-    <ul style="display:flex; list-style:none; margin:0; padding:0;">
-        <li style="margin:0 15px;"><a href="index.html">Home</a></li>
-        <li style="margin:0 15px;"><a href="hardware.html">Hardware</a></li>
-        <li style="margin:0 15px;"><a href="security.html">Security</a></li>
-        <li style="margin:0 15px;"><a href="digital-products.html">Digital</a></li>
-        <li style="margin:0 15px;"><a href="refurbished.html">Refurbished</a></li>
-        <li style="margin:0 15px;"><a href="contact.html">Contact</a></li>
+    <ul style="
+        display:flex;
+        list-style:none;
+        margin:0;
+        padding:0;
+        justify-content:flex-end;
+        flex-wrap:wrap;
+    ">
+        <li style="margin:0 12px;"><a href="index.html">Home</a></li>
+        <li style="margin:0 12px;"><a href="hardware.html">Hardware</a></li>
+        <li style="margin:0 12px;"><a href="security.html">Security</a></li>
+        <li style="margin:0 12px;"><a href="digital-products.html">Digital</a></li>
+        <li style="margin:0 12px;"><a href="refurbished.html">Refurbished</a></li>
+        <li style="margin:0 12px;"><a href="contact.html">Contact</a></li>
     </ul>
+
 </nav>
+
 
 <!-- ===== HERO SECTION ===== -->
 <section class="page-hero" style="margin-top:100px; text-align:center;">
-<h1>Laptops</h1>
-<p>High Performance Business & Gaming Laptops</p>
+<h1>Desktops</h1>
+<p>High Performance Business & Gaming Desktops</p>
 </section>
 
 <!-- ===== PRODUCT GRID (4 IN ONE LINE) ===== -->
@@ -41,7 +54,7 @@ margin:auto;
 
 <!-- PRODUCT 1 -->
 <div class="product-card">
-<img src="images/laptop1.jpg" alt="Laptop">
+<img src="images/laptop1.jpg" alt="Desktop">
 <h3>HP i5 8GB RAM</h3>
 <p>8GB RAM | 256GB SSD | 14 inch</p>
 <p class="price">₹ 25,999</p>
@@ -50,7 +63,7 @@ margin:auto;
 
 <!-- PRODUCT 2 -->
 <div class="product-card">
-<img src="images/laptop2.jpg" alt="Laptop">
+<img src="images/laptop2.jpg" alt="Desktop">
 <h3>Dell i7 16GB RAM</h3>
 <p>16GB RAM | 512GB SSD | 15.6 inch</p>
 <p class="price">₹ 45,999</p>
@@ -68,7 +81,7 @@ margin:auto;
 
 <!-- PRODUCT 4 -->
 <div class="product-card">
-<img src="images/laptop4.jpg" alt="Laptop">
+<img src="images/laptop4.jpg" alt="Desktop">
 <h3>ASUS Gaming</h3>
 <p>16GB RAM | 1TB SSD | RTX Graphics</p>
 <p class="price">₹ 69,999</p>
