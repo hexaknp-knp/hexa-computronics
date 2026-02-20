@@ -81,39 +81,31 @@ color:#00f3ff;
 /* ================= HERO ================= */
 
 .page-hero{
-min-height:70vh;
+min-height:45vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+background: url('images/your-hero-image.jpg') center/cover no-repeat;
+position:relative;
+}
+
+.page-hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+backdrop-filter:blur(4px);
 }
 
 .page-hero .glass{
+position:relative;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(25px);
-border-radius:30px;
-padding:50px 60px;
+backdrop-filter:blur(20px);
+border-radius:25px;
+padding:30px 40px;
 border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 8px 32px rgba(0,0,0,0.4);
-transition:0.4s;
-}
-
-.page-hero .glass:hover{
-transform:translateY(-8px);
-}
-
-.page-hero h1{
-font-size:2.6rem;
-background:linear-gradient(to right,#00f3ff,#ff6b00);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:10px;
-}
-
-.page-hero p{
-color:#ccc;
 }
 
 /* ================= GRID ================= */
