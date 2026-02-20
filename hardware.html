@@ -82,58 +82,81 @@ color:#00f3ff;
 }
 
 /* ================= HERO ================= */
-/* ===== FINAL HERO GLASS WITH IMAGE ===== */
+
+/* ===== HERO WITH FULL IMAGE INSIDE GLASS ===== */
 
 .page-hero{
-min-height:40vh;
+min-height:45vh;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
-padding:25px 15px;
+padding:20px;
 }
 
-.glass{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
+.hero-box{
+position:relative;
+max-width:900px;
+width:100%;
+height:300px;
+overflow:hidden;
 border-radius:25px;
-padding:35px 45px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,0.2);
 box-shadow:0 8px 30px rgba(0,0,0,0.4);
-max-width:650px;
+}
+
+/* Full Size Image */
+.hero-bg-img{
+position:absolute;
 width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+z-index:1;
 }
 
-.title-img{
-width:150px;
-margin-bottom:18px;
-filter:drop-shadow(0 0 18px #00f3ff);
+/* Dark Overlay for text visibility */
+.hero-box::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+z-index:2;
 }
 
-.page-hero h1{
+/* Text Content */
+.hero-content{
+position:relative;
+z-index:3;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content h1{
 font-size:2rem;
-margin-bottom:8px;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin-bottom:10px;
 }
 
-.page-hero p{
-color:#ccc;
+.hero-content p{
+color:#ddd;
 font-size:14px;
 }
 
-/* Mobile Adjust */
+/* Mobile */
 @media(max-width:768px){
-.page-hero{min-height:35vh;}
-.title-img{width:120px;}
-.page-hero h1{font-size:1.6rem;}
+.hero-box{height:220px;}
+.hero-content h1{font-size:1.5rem;}
 }
-
-
-
-
 /* ================= GRID ================= */
 
 .hardware-grid{
@@ -272,16 +295,16 @@ filter:drop-shadow(0 0 15px #00f3ff);
 </nav>
 
 <section class="page-hero">
-  <div class="glass">
+  <div class="glass hero-box">
 
-    <img src="images/title-image.png" class="title-img">
+    <img src="images/it-hardware.jpg" class="hero-bg-img">
 
-    <h1>IT Hardware & Accessories</h1>
-    <p>High Performance Business & Home IT Solutions</p>
+    <div class="hero-content">
+      <h1>IT Hardware & Accessories</h1>
+      <p>High Performance Business & Home IT Solutions</p>
+    </div>
 
-  </div>
-</section>
-
+    </section>
 <section class="hardware-grid">
 
 <div class="hardware-card">
