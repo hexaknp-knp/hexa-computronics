@@ -82,6 +82,7 @@ color:#00f3ff;
 }
 
 /* ================= HERO ================= */
+/* ===== FINAL HERO GLASS WITH IMAGE ===== */
 
 .page-hero{
 min-height:40vh;
@@ -89,40 +90,49 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:15px;
-
-position:relative;
+padding:25px 15px;
 }
 
-.page-hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-backdrop-filter:blur(4px);
-}
-
-.page-hero .glass{
-position:relative;
+.glass{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
 border-radius:25px;
-padding:25px 35px;
+padding:35px 45px;
 border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+max-width:650px;
+width:100%;
+}
+
+.title-img{
+width:150px;
+margin-bottom:18px;
+filter:drop-shadow(0 0 18px #00f3ff);
 }
 
 .page-hero h1{
 font-size:2rem;
+margin-bottom:8px;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-margin-bottom:8px;
 }
 
 .page-hero p{
-color:#ddd;
+color:#ccc;
 font-size:14px;
 }
+
+/* Mobile Adjust */
+@media(max-width:768px){
+.page-hero{min-height:35vh;}
+.title-img{width:120px;}
+.page-hero h1{font-size:1.6rem;}
+}
+
+
+
 
 /* ================= GRID ================= */
 
