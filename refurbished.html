@@ -5,49 +5,180 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refurbished Computers | Hexa Computronics</title>
 <meta name="description" content="Buy refurbished desktops and laptops at affordable prices with warranty from Hexa Computronics.">
-<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-.page-title{
-text-align:center;
-margin-top:120px;
-font-size:32px;
-color:#00F5FF;
+
+/* ===== GLOBAL ===== */
+
+body{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
 }
+
+/* Neon Glow Background */
+body::before{
+content:"";
+position:fixed;
+top:-150px;
+left:-150px;
+width:700px;
+height:350px;
+background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
+z-index:-1;
+filter:blur(120px);
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-150px;
+right:-150px;
+width:700px;
+height:350px;
+background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
+z-index:-1;
+filter:blur(120px);
+}
+
+/* ===== NAV ===== */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav .logo{
+font-family:'Orbitron',sans-serif;
+font-size:18px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#00f3ff;
+}
+
+/* ===== HERO ===== */
+
+.page-hero{
+min-height:45vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.hero-box{
+position:relative;
+max-width:1000px;
+width:100%;
+height:280px;
+overflow:hidden;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+.hero-bg-img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+.hero-box::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+z-index:2;
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:2rem;
+background:linear-gradient(to right,#00f3ff,#ff6b00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:10px;
+}
+
+.hero-content p{
+color:#ddd;
+}
+
+/* ===== PRODUCT GRID ===== */
 
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 padding:60px 40px;
+max-width:1200px;
+margin:auto;
 }
 
 .product-card{
 background:rgba(255,255,255,0.05);
 padding:20px;
-border-radius:15px;
+border-radius:18px;
 text-align:center;
-color:white;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
 transition:0.3s;
 }
 
 .product-card:hover{
-transform:translateY(-10px);
-background:rgba(0,245,255,0.1);
+transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
 
 .product-card img{
 width:100%;
 height:200px;
 object-fit:cover;
-border-radius:10px;
+border-radius:12px;
 }
 
-.price{
-font-size:18px;
-color:#00F5FF;
-margin:10px 0;
-font-weight:bold;
+.product-card h3{
+margin:15px 0 8px;
 }
 
 .warranty{
@@ -58,18 +189,38 @@ color:#ccc;
 .view-btn{
 display:inline-block;
 margin-top:15px;
-padding:12px 25px;
-background:#FF6B00;
+padding:10px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
 color:white;
 text-decoration:none;
-border-radius:6px;
-transition:0.3s;
+border-radius:20px;
 font-weight:bold;
+transition:0.3s;
 }
 
 .view-btn:hover{
-background:#ff8c00;
+transform:scale(1.05);
+box-shadow:0 0 15px rgba(0,243,255,0.6);
 }
+
+/* ===== FOOTER ===== */
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+margin-top:40px;
+font-size:13px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+.hero-box{height:220px;}
+.hero-content h1{font-size:1.5rem;}
+.product-grid{padding:30px 20px;}
+}
+
 </style>
 </head>
 
@@ -87,30 +238,32 @@ background:#ff8c00;
 </ul>
 </nav>
 
-<h2 class="page-title">Refurbished Deals</h2>
+<section class="page-hero">
+<div class="hero-box">
+<img src="images/refurbished-hero.jpg" class="hero-bg-img">
+<div class="hero-content">
+<h1>Refurbished Deals</h1>
+<p>Certified & Tested Products with Warranty</p>
+</div>
+</div>
+</section>
 
 <div class="product-grid">
 
-<!-- REFURBISHED DESKTOP CATEGORY -->
 <div class="product-card">
 <img src="images/placeholder.jpg" alt="Refurbished Desktop">
 <h3>Refurbished Desktops</h3>
 <p>Certified & Tested Business Desktops</p>
 <p class="warranty">Warranty: 3 Months</p>
-<a href="ref-desktop.html" class="view-btn">
-View Products →
-</a>
+<a href="ref-desktop.html" class="view-btn">View Products →</a>
 </div>
 
-<!-- REFURBISHED LAPTOP CATEGORY -->
 <div class="product-card">
 <img src="images/placeholder.jpg" alt="Refurbished Laptop">
 <h3>Refurbished Laptops</h3>
 <p>High Performance Refurbished Laptops</p>
 <p class="warranty">Warranty: 3 Months</p>
-<a href="ref-laptop.html" class="view-btn">
-View Products →
-</a>
+<a href="ref-laptop.html" class="view-btn">View Products →</a>
 </div>
 
 </div>
