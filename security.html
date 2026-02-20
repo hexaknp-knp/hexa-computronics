@@ -3,48 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security Solutions | HEXA COMPUTRONICS</title>
+<title>Security Systems | HEXA COMPUTRONICS</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
+<style>
+
+/* SAME GLOBAL STYLE */
+
+body{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:-150px;
+left:-150px;
+width:700px;
+height:350px;
+background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
+z-index:-1;
+filter:blur(120px);
+}
+
+body::after{
+content:"";
+position:fixed;
+bottom:-150px;
+right:-150px;
+width:700px;
+height:350px;
+background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
+z-index:-1;
+filter:blur(120px);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 35px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+nav .logo{
+font-family:'Orbitron',sans-serif;
+font-size:18px;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+/* HERO */
+
+.page-hero{
+min-height:45vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.hero-box{
+position:relative;
+max-width:1000px;
+width:100%;
+height:300px;
+overflow:hidden;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.hero-bg-img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+.hero-box::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+z-index:2;
+}
+
+.hero-content{
+position:relative;
+z-index:3;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:2rem;
+background:linear-gradient(to right,#00f3ff,#ff6b00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-content p{
+color:#ddd;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:15px;
+border-top:1px solid rgba(255,255,255,0.1);
+margin-top:20px;
+}
+
+@media(max-width:768px){
+.hero-box{height:220px;}
+.hero-content h1{font-size:1.5rem;}
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar" style="display:flex; align-items:center; padding:15px 40px; box-sizing:border-box;">
-
-    <div style="flex:1;"></div>
-
-    <ul style="
-        display:flex;
-        list-style:none;
-        margin:0;
-        padding:0;
-        gap:25px;
-        white-space:nowrap;
-    ">
-
-        <li><a href="index.html">Home</a></li>
-        <li><a href="hardware.html">Hardware</a></li>
-        <li><a href="security.html">Security</a></li>
-        <li><a href="digital-products.html">Digital</a></li>
-        <li><a href="refurbished.html">Refurbished</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-    </ul>
-
+<nav>
+<div class="logo">HEXA COMPUTRONICS</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="hardware.html">Hardware</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="digital-products.html">Digital</a></li>
+<li><a href="refurbished.html">Refurbished</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
 </nav>
 
+<section class="page-hero">
+<div class="hero-box">
 
+<img src="images/security-hero.jpg" class="hero-bg-img">
 
-<!-- ===== HEADER ===== -->
-<section style="text-align:center; padding:120px 20px 60px; background:linear-gradient(135deg,#0f0c29,#1a0b2e);">
-<h1 style="font-size:2.5rem; color:#00f3ff;">Advanced CCTV & Security Solutions</h1>
-<p>Protect Your Home & Business with Smart Surveillance</p>
+<div class="hero-content">
+<h1>Security & CCTV Solutions</h1>
+<p>Advanced Surveillance Systems for Home & Business</p>
+</div>
+
+</div>
 </section>
 
-<!-- ===== PRODUCT GRID (4 IN ONE ROW) ===== -->
+<!-- YAHAN APNA EXISTING GRID CONTENT SAME PASTE KARO -->
+    <!-- ===== PRODUCT GRID (4 IN ONE ROW) ===== -->
 <section style="
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -144,8 +274,8 @@ View Products
 
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer style="text-align:center; padding:20px; background:#000; margin-top:40px;">
+
+<footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
 
