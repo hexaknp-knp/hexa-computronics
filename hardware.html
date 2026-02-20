@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT Hardware | HEXA COMPUTRONICS</title>
-background: url('images/hardware-bg.jpg') center/cover no-repeat;
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -90,7 +90,7 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:15px;
-background: url('images/hardware-bg.jpg') center/cover no-repeat;
+
 position:relative;
 }
 
@@ -218,7 +218,32 @@ font-size:13px;
 .page-hero h1{font-size:1.5rem;}
 .hardware-grid{padding:20px;}
 }
+/* ===== HERO GLASS IMAGE STYLE ===== */
 
+.page-hero{
+min-height:40vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-radius:25px;
+padding:30px 40px;
+border:1px solid rgba(255,255,255,0.2);
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
+}
+
+.title-img{
+width:140px;
+margin-bottom:15px;
+filter:drop-shadow(0 0 15px #00f3ff);
+}
 </style>
 </head>
 
@@ -237,10 +262,14 @@ font-size:13px;
 </nav>
 
 <section class="page-hero">
-<div class="glass">
-<h1>IT Hardware & Accessories</h1>
-<p>High Performance Business & Home IT Solutions</p>
-</div>
+  <div class="glass">
+
+    <img src="images/title-image.png" class="title-img">
+
+    <h1>IT Hardware & Accessories</h1>
+    <p>High Performance Business & Home IT Solutions</p>
+
+  </div>
 </section>
 
 <section class="hardware-grid">
