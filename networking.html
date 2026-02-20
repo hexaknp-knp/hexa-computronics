@@ -9,8 +9,6 @@
 
 <style>
 
-/* ================= GLOBAL ================= */
-
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
@@ -19,6 +17,7 @@ color:white;
 overflow-x:hidden;
 }
 
+/* Neon Glow */
 body::before{
 content:"";
 position:fixed;
@@ -43,8 +42,7 @@ z-index:-1;
 filter:blur(120px);
 }
 
-/* ================= NAV ================= */
-
+/* NAV */
 nav{
 display:flex;
 justify-content:space-between;
@@ -72,15 +70,9 @@ nav ul li a{
 color:white;
 text-decoration:none;
 font-size:14px;
-transition:0.3s;
 }
 
-nav ul li a:hover{
-color:#00f3ff;
-}
-
-/* ================= HERO ================= */
-
+/* HERO */
 .page-hero{
 min-height:45vh;
 display:flex;
@@ -99,7 +91,6 @@ border-radius:25px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(15px);
 border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 8px 30px rgba(0,0,0,0.4);
 }
 
 .hero-bg-img{
@@ -107,8 +98,6 @@ position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-top:0;
-left:0;
 z-index:1;
 }
 
@@ -129,7 +118,6 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
 }
 
 .hero-content h1{
@@ -137,48 +125,42 @@ font-size:2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-margin-bottom:10px;
 }
 
-.hero-content p{
-color:#ddd;
-font-size:14px;
-}
+/* ================= GRID FIX ================= */
 
-/* ================= GRID ================= */
-
-.hardware-grid{
+.products-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px 25px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px 30px;
 max-width:1200px;
 margin:auto;
 }
 
-.hardware-card{
+.product-card{
 background:rgba(255,255,255,0.05);
 border-radius:18px;
 padding:15px;
 text-align:center;
-transition:0.3s;
 border:1px solid rgba(255,255,255,0.1);
 backdrop-filter:blur(12px);
+transition:0.3s;
 }
 
-.hardware-card img{
+.product-card img{
 width:100%;
-height:150px;
+height:160px;
 object-fit:cover;
 border-radius:12px;
 }
 
-.hardware-card h3{
+.product-card h3{
 margin:12px 0 8px;
 font-size:16px;
 }
 
-.hardware-card p{
+.product-card p{
 font-size:13px;
 color:#ccc;
 }
@@ -192,21 +174,14 @@ color:white;
 text-decoration:none;
 border-radius:20px;
 font-size:13px;
-transition:0.3s;
 }
 
-.buy-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px rgba(0,243,255,0.6);
-}
-
-.hardware-card:hover{
+.product-card:hover{
 transform:translateY(-6px);
 box-shadow:0 8px 25px rgba(0,0,0,0.5);
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
 text-align:center;
 padding:15px;
@@ -215,12 +190,10 @@ margin-top:20px;
 font-size:13px;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:768px){
 .hero-box{height:220px;}
 .hero-content h1{font-size:1.5rem;}
-.hardware-grid{padding:20px;}
 }
 
 </style>
@@ -241,50 +214,41 @@ font-size:13px;
 </nav>
 
 <section class="page-hero">
-  <div class="hero-box">
-
-    <img src="images/networking-hero.jpg" class="hero-bg-img">
-
-    <div class="hero-content">
-      <h1>Networking Solutions</h1>
-      <p>Reliable Routers, Switches & Structured Cabling</p>
-    </div>
-
-  </div>
+<div class="hero-box">
+<img src="images/networking-hero.jpg" class="hero-bg-img">
+<div class="hero-content">
+<h1>Networking Solutions</h1>
+<p>Reliable Routers, Switches & Structured Cabling</p>
+</div>
+</div>
 </section>
 
-<!-- YAHAN APNA EXISTING NETWORKING GRID CONTENT SAME PASTE KARO (CHANGE NAHI KARNA) -->
-<div class="product-card">
-<img src="images/switch.jpg">
-<h3>24 Port Network Switch</h3>
-<p>High speed gigabit managed switch.</p>
-<p class="price">₹8,499</p>
-<a href="switch.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
-</div>
+<!-- PRODUCTS GRID -->
+
+<section class="products-grid">
 
 <div class="product-card">
 <img src="images/router.jpg">
-<h3>Dual Band Router</h3>
-<p>High performance WiFi 6 router.</p>
-<p class="price">₹4,999</p>
-<a href="router.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<h3>Routers</h3>
+<p>High Speed Business & Home Routers</p>
+<a href="#" class="buy-btn">View Products</a>
 </div>
 
 <div class="product-card">
-<img src="images/lan.jpg">
-<h3>LAN Cable Cat6</h3>
-<p>High speed ethernet cable.</p>
-<p class="price">₹1,299</p>
-<a href="lan.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<img src="images/switch.jpg">
+<h3>Network Switches</h3>
+<p>Managed & Unmanaged Switches</p>
+<a href="#" class="buy-btn">View Products</a>
 </div>
 
 <div class="product-card">
-<img src="images/firewall.jpg">
-<h3>Enterprise Firewall</h3>
-<p>Advanced security firewall system.</p>
-<p class="price">₹22,999</p>
-<a href="firewall.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<img src="images/cabling.jpg">
+<h3>Structured Cabling</h3>
+<p>Reliable LAN & Fiber Solutions</p>
+<a href="#" class="buy-btn">View Products</a>
 </div>
+
+</section>
 
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
