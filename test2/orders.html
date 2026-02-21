@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order History</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body onload="checkAdmin();renderOrders();">
 
+<header>
+<h3>Order History</h3>
+<a href="admin.html">Back</a>
+</header>
+
+<div style="padding:30px;">
+<div id="order-list"></div>
+<br>
+<button onclick="exportCSV()">Export CSV</button>
+</div>
+
+</body>
+</html>
