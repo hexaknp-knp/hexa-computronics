@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body onload="renderAdmin()">
+
+<header>
+<div class="logo">Admin Panel</div>
+<a href="index.html" style="color:white;">Back</a>
+</header>
+
+<div style="padding:30px;">
+<h3>Add Product</h3>
+
+<input id="pname" placeholder="Name"><br><br>
+<input id="pprice" placeholder="Price"><br><br>
+<input id="pcat" placeholder="Category"><br><br>
+<input id="pimg" placeholder="Image Path (../images/img.jpg)"><br><br>
+<input id="pstock" placeholder="Stock"><br><br>
+
+<button onclick="addProduct()">Add Product</button>
+
+<h3>Product List</h3>
+<div id="admin-list"></div>
+
+</div>
+
+</body>
+</html>
