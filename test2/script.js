@@ -186,3 +186,20 @@ link.href=URL.createObjectURL(blob);
 link.download="orders.csv";
 link.click();
 }
+/* ================= PRODUCT DETAIL PAGE ================= */
+
+function openProduct(id){
+localStorage.setItem("viewProduct", id);
+window.location.href="product.html";
+}
+
+function renderProductDetail(){
+let id = localStorage.getItem("viewProduct");
+let product = products.find(p=>p.id == id);
+if(!product) return;
+
+document.getElementById("detail-img").src = product.image;
+document.getElementById("detail-name").innerText = product.name;
+document.getElementById("detail-desc").innerText = product.description;
+document.getElementById("detail-price").innerText = "₹"+product.price;
+}
