@@ -10,62 +10,70 @@
 
 <header>
 <div class="logo">HEXA STORE</div>
+
+<div class="search-box">
+<input type="text" id="search" onkeyup="searchProduct()" placeholder="Search products...">
+</div>
+
 <div class="cart-btn" onclick="openCart()">🛒 Cart</div>
 </header>
 
+<div class="filter-bar">
+<button onclick="filterCategory('all')">All</button>
+<button onclick="filterCategory('hardware')">Hardware</button>
+<button onclick="filterCategory('network')">Networking</button>
+<button onclick="filterCategory('security')">Security</button>
+</div>
+
 <section class="products">
 
-<!-- PRODUCT TEMPLATE START -->
-<div class="product">
+<div class="product" data-category="hardware">
 <img src="../images/laptop2.jpg">
 <h3>Laptop Model X</h3>
-<p>High performance business laptop</p>
+<p>High performance laptop</p>
 <div class="price">₹50000</div>
 <button onclick="addToCart('Laptop Model X',50000)">Add to Cart</button>
 </div>
-<!-- PRODUCT TEMPLATE END -->
 
-<div class="product">
+<div class="product" data-category="network">
 <img src="../images/router.jpg">
 <h3>WiFi 6 Router</h3>
-<p>Dual Band High Speed Router</p>
 <div class="price">₹5000</div>
 <button onclick="addToCart('WiFi 6 Router',5000)">Add to Cart</button>
 </div>
 
-<div class="product">
+<div class="product" data-category="network">
 <img src="../images/switch.jpg">
 <h3>24 Port Switch</h3>
-<p>Gigabit Managed Switch</p>
 <div class="price">₹8000</div>
 <button onclick="addToCart('24 Port Switch',8000)">Add to Cart</button>
 </div>
 
-<div class="product">
+<div class="product" data-category="security">
 <img src="../images/placeholder.jpg">
 <h3>Enterprise Firewall</h3>
-<p>Advanced Security Device</p>
 <div class="price">₹20000</div>
 <button onclick="addToCart('Enterprise Firewall',20000)">Add to Cart</button>
 </div>
-  
-<div class="product">
-<img src="../images/yourimage.jpg">
-<h3>Product Name</h3>
-<p>Description</p>
-<div class="price">₹Price</div>
-<button onclick="addToCart('Product Name',Price)">Add to Cart</button>
-</div>
+
 </section>
 
 <!-- CART -->
 <div id="cart" class="cart-sidebar">
 <h2>Your Cart</h2>
 <div id="cart-items"></div>
+
+<input type="text" id="coupon" placeholder="Coupon Code">
+<button onclick="applyCoupon()">Apply</button>
+
 <h3 id="total"></h3>
+
+<button class="checkout-btn" onclick="sendWhatsApp()">Order on WhatsApp</button>
+
 <a href="checkout.html">
-<button class="checkout-btn">Proceed to Checkout</button>
+<button class="checkout-btn">Pay via GPay</button>
 </a>
+
 <button onclick="closeCart()">Close</button>
 </div>
 
