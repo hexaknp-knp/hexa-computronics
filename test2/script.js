@@ -217,3 +217,13 @@ container.innerHTML+=`
 </div>`;
 });
 }
+let description=document.getElementById("pdesc").value;
+
+products.push({
+id: Date.now(),
+name,
+price,
+image,
+stock,
+description
+});
