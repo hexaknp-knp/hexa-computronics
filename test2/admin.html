@@ -5,12 +5,12 @@
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
-
-<body onload="renderAdmin()">
+<body onload="checkAdmin();renderAdmin();">
 
 <header>
-<div class="logo">Admin Panel</div>
-<a href="index.html" style="color:white;">Back</a>
+<h3>Admin Panel</h3>
+<a href="orders.html">Orders</a>
+<button onclick="logout()">Logout</button>
 </header>
 
 <div style="padding:30px;">
@@ -18,11 +18,9 @@
 
 <input id="pname" placeholder="Name"><br><br>
 <input id="pprice" placeholder="Price"><br><br>
-<input id="pcat" placeholder="Category"><br><br>
-<input id="pimg" placeholder="Image Path (../images/img.jpg)"><br><br>
+<input id="pimg" placeholder="Image Path"><br><br>
 <input id="pstock" placeholder="Stock"><br><br>
-
-<button onclick="addProduct()">Add Product</button>
+<button onclick="addProduct()">Add</button>
 
 <h3>Product List</h3>
 <div id="admin-list"></div>
