@@ -135,8 +135,9 @@ let name=document.getElementById("pname").value;
 let price=parseInt(document.getElementById("pprice").value);
 let image=document.getElementById("pimg").value;
 let stock=parseInt(document.getElementById("pstock").value);
-
-products.push({name,price,image,stock});
+let description=document.getElementById("pdesc").value;
+  
+products.push({name,price,image,stock,description});
 saveProducts();
 renderAdmin();
 }
@@ -206,14 +207,21 @@ document.getElementById("detail-price").innerText = "₹"+product.price;
 function renderProducts(){
 let container=document.getElementById("product-list");
 if(!container) return;
+
 container.innerHTML="";
+
 products.forEach(p=>{
 container.innerHTML+=`
 <div class="product" onclick="openProduct(${p.id})">
 <img src="${p.image}">
 <h3>${p.name}</h3>
+<p style="font-size:13px;color:#ccc;">
+${p.description || ""}
+</p>
 <div class="price">₹${p.price}</div>
-<button onclick="event.stopPropagation();addToCart(${p.id})">Add to Cart</button>
+<button onclick="event.stopPropagation();addToCart(${p.id})">
+Add to Cart
+</button>
 </div>`;
 });
 }
