@@ -203,3 +203,17 @@ document.getElementById("detail-name").innerText = product.name;
 document.getElementById("detail-desc").innerText = product.description;
 document.getElementById("detail-price").innerText = "₹"+product.price;
 }
+function renderProducts(){
+let container=document.getElementById("product-list");
+if(!container) return;
+container.innerHTML="";
+products.forEach(p=>{
+container.innerHTML+=`
+<div class="product" onclick="openProduct(${p.id})">
+<img src="${p.image}">
+<h3>${p.name}</h3>
+<div class="price">₹${p.price}</div>
+<button onclick="event.stopPropagation();addToCart(${p.id})">Add to Cart</button>
+</div>`;
+});
+}
