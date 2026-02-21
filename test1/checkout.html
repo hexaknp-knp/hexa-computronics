@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
 
+<body>
+
+<nav>
+<h3>Secure Checkout</h3>
+</nav>
+
+<div style="padding:40px; text-align:center;">
+
+<h2>Total Amount:</h2>
+<h1 id="checkout-total"></h1>
+
+<button id="payBtn">Pay Now</button>
+
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+
+cart.forEach(item => {
+total += item.price;
+});
+
+document.getElementById("checkout-total").innerText = "₹" + total;
+
+var options = {
+"key": "YOUR_RAZORPAY_KEY",
+"amount": total * 100,
+"currency": "INR",
+"name": "HEXA COMPUTRONICS",
+"description": "Order Payment",
+"handler": function (response){
+alert("Payment Successful!");
+localStorage.removeItem("cart");
+window.location.href = "index.html";
+}
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById('payBtn').onclick = function(e){
+if(total === 0){
+alert("Your cart is empty");
+return;
+}
+rzp.open();
+e.preventDefault();
+}
+</script>
+
+</body>
+</html>
