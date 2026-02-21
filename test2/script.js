@@ -19,6 +19,29 @@ stock:10
 let orders = JSON.parse(localStorage.getItem("orders")) || [];
 let discount = 0;
 
+/* ================= LOGIN ================= */
+
+function login(){
+let pass = document.getElementById("admin-pass").value;
+if(pass==="1234"){
+localStorage.setItem("admin","true");
+window.location.href="admin.html";
+}else{
+alert("Wrong Password");
+}
+}
+
+function checkAdmin(){
+if(localStorage.getItem("admin")!=="true"){
+window.location.href="login.html";
+}
+}
+
+function logout(){
+localStorage.removeItem("admin");
+window.location.href="index.html";
+}
+
 /* ================= STORE ================= */
 
 function saveProducts(){
@@ -29,14 +52,13 @@ renderProducts();
 function renderProducts(){
 let container = document.getElementById("product-list");
 if(!container) return;
-
 container.innerHTML="";
 products.forEach((p,index)=>{
-container.innerHTML += `
-<div class="product" data-category="${p.category}">
+container.innerHTML+=`
+<div class="product">
 <img src="${p.image}">
 <h3>${p.name}</h3>
-<div class="stock">Stock: ${p.stock}</div>
+<div>Stock: ${p.stock}</div>
 <div class="price">₹${p.price}</div>
 <button onclick="addToCart(${index})">Add to Cart</button>
 </div>`;
@@ -44,7 +66,7 @@ container.innerHTML += `
 }
 
 function addToCart(index){
-if(products[index].stock <= 0){
+if(products[index].stock<=0){
 alert("Out of Stock");
 return;
 }
@@ -67,24 +89,24 @@ document.getElementById("cart").style.display="none";
 }
 
 function displayCart(){
-let cartItems = document.getElementById("cart-items");
-let total = 0;
-cartItems.innerHTML="";
+let total=0;
+let list=document.getElementById("cart-items");
+list.innerHTML="";
 cart.forEach((item,i)=>{
-total += item.price;
-cartItems.innerHTML += `
-<div class="cart-item">
+total+=item.price;
+list.innerHTML+=`
+<div>
 ${item.name} - ₹${item.price}
 <button onclick="removeItem(${i})">X</button>
 </div>`;
 });
-total -= discount;
+total-=discount;
 document.getElementById("total").innerText="Total: ₹"+total;
 }
 
 function removeItem(i){
-let item = cart[i];
-let product = products.find(p=>p.name===item.name);
+let item=cart[i];
+let product=products.find(p=>p.name===item.name);
 if(product) product.stock++;
 cart.splice(i,1);
 localStorage.setItem("cart", JSON.stringify(cart));
@@ -92,34 +114,10 @@ saveProducts();
 displayCart();
 }
 
-/* ================= COUPON ================= */
-
-function applyCoupon(){
-let code = document.getElementById("coupon").value;
-if(code==="HEXA10"){
-discount=1000;
-alert("Coupon Applied!");
-}else{
-alert("Invalid Coupon");
-}
-displayCart();
-}
-
-/* ================= WHATSAPP ORDER ================= */
-
-function sendWhatsApp(){
-let total = document.getElementById("total").innerText;
-let message="New Order:\n";
-cart.forEach(item=>{
-message += item.name+" - ₹"+item.price+"\n";
-});
-message+="\n"+total;
-window.open("https://wa.me/919935529306?text="+encodeURIComponent(message));
-}
-
-/* ================= SAVE ORDER ================= */
+/* ================= ORDER SAVE ================= */
 
 function saveOrder(){
+if(cart.length===0){alert("Cart empty");return;}
 orders.push({
 items:cart,
 date:new Date().toLocaleString()
@@ -135,22 +133,23 @@ alert("Order Saved!");
 function addProduct(){
 let name=document.getElementById("pname").value;
 let price=parseInt(document.getElementById("pprice").value);
-let category=document.getElementById("pcat").value;
 let image=document.getElementById("pimg").value;
 let stock=parseInt(document.getElementById("pstock").value);
 
-products.push({name,price,category,image,stock});
+products.push({name,price,image,stock});
 saveProducts();
-alert("Product Added!");
+renderAdmin();
 }
 
-function deleteProduct(index){
-products.splice(index,1);
+function deleteProduct(i){
+products.splice(i,1);
 saveProducts();
+renderAdmin();
 }
 
 function renderAdmin(){
 let list=document.getElementById("admin-list");
+if(!list) return;
 list.innerHTML="";
 products.forEach((p,i)=>{
 list.innerHTML+=`
@@ -159,4 +158,31 @@ ${p.name} - ₹${p.price}
 <button onclick="deleteProduct(${i})">Delete</button>
 </div>`;
 });
+}
+
+/* ================= ORDER HISTORY ================= */
+
+function renderOrders(){
+let list=document.getElementById("order-list");
+list.innerHTML="";
+orders.forEach(o=>{
+list.innerHTML+=`
+<div>
+Date: ${o.date}<br>
+Items: ${o.items.map(i=>i.name).join(", ")}
+<hr>
+</div>`;
+});
+}
+
+function exportCSV(){
+let csv="Date,Items\n";
+orders.forEach(o=>{
+csv+=`${o.date},"${o.items.map(i=>i.name).join(" | ")}"\n`;
+});
+let blob=new Blob([csv],{type:"text/csv"});
+let link=document.createElement("a");
+link.href=URL.createObjectURL(blob);
+link.download="orders.csv";
+link.click();
 }
