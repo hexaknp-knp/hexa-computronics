@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HEXA STORE</title>
+<title>HEXA STORE PRO</title>
 <link rel="stylesheet" href="style.css">
 <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="updateStock()">
 
 <header>
 <div class="logo">HEXA STORE</div>
-
 <div class="search-box">
 <input type="text" id="search" onkeyup="searchProduct()" placeholder="Search products...">
 </div>
-
 <div class="cart-btn" onclick="openCart()">🛒 Cart</div>
 </header>
 
@@ -27,38 +25,40 @@
 
 <section class="products">
 
-<div class="product" data-category="hardware">
+<div class="product" data-category="hardware" data-name="Laptop Model X">
 <img src="../images/laptop2.jpg">
 <h3>Laptop Model X</h3>
-<p>High performance laptop</p>
+<div class="stock"></div>
 <div class="price">₹50000</div>
 <button onclick="addToCart('Laptop Model X',50000)">Add to Cart</button>
 </div>
 
-<div class="product" data-category="network">
+<div class="product" data-category="network" data-name="WiFi 6 Router">
 <img src="../images/router.jpg">
 <h3>WiFi 6 Router</h3>
+<div class="stock"></div>
 <div class="price">₹5000</div>
 <button onclick="addToCart('WiFi 6 Router',5000)">Add to Cart</button>
 </div>
 
-<div class="product" data-category="network">
+<div class="product" data-category="network" data-name="24 Port Switch">
 <img src="../images/switch.jpg">
 <h3>24 Port Switch</h3>
+<div class="stock"></div>
 <div class="price">₹8000</div>
 <button onclick="addToCart('24 Port Switch',8000)">Add to Cart</button>
 </div>
 
-<div class="product" data-category="security">
+<div class="product" data-category="security" data-name="Enterprise Firewall">
 <img src="../images/placeholder.jpg">
 <h3>Enterprise Firewall</h3>
+<div class="stock"></div>
 <div class="price">₹20000</div>
 <button onclick="addToCart('Enterprise Firewall',20000)">Add to Cart</button>
 </div>
 
 </section>
 
-<!-- CART -->
 <div id="cart" class="cart-sidebar">
 <h2>Your Cart</h2>
 <div id="cart-items"></div>
@@ -69,11 +69,10 @@
 <h3 id="total"></h3>
 
 <button class="checkout-btn" onclick="sendWhatsApp()">Order on WhatsApp</button>
-
+<button class="checkout-btn" onclick="downloadInvoice()">Download Invoice</button>
 <a href="checkout.html">
 <button class="checkout-btn">Pay via GPay</button>
 </a>
-
 <button onclick="closeCart()">Close</button>
 </div>
 
