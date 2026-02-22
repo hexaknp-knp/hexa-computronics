@@ -71,10 +71,9 @@ color:#00f3ff;
 /* ================= HERO ================= */
 
 .page-hero{
-padding:25px 15px;
-display:flex;
-justify-content:center;
-align-items:center;
+padding:25px 15px;   /* 45vh हटाया */
+display:block;       /* flex हटाया */
+min-height:auto;     /* height हटाया */
 }
 
 .hero-box{
@@ -110,6 +109,7 @@ z-index:2;
 position:relative;
 z-index:3;
 text-align:center;
+padding:20px;
 }
 
 .hero-content h1{
@@ -117,7 +117,7 @@ font-size:2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 /* ================= GRID ================= */
@@ -197,10 +197,6 @@ font-size:13px;
 
   .page-hero{
     padding:15px 10px;
-  }
-
-  .hero-box{
-    padding:20px 15px;
   }
 
   .hero-content h1{
