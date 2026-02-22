@@ -1,233 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 <title>Best Computer Store in India | Laptops, Gaming PC & IT Solutions – HEXA COMPUTRONICS</title>
+
 <meta name="description" content="HEXA COMPUTRONICS is a leading computer store in India offering laptops, gaming PCs, CCTV cameras, printers and IT accessories at best prices with nationwide delivery.">
 
-<meta name="keywords" content="best computer store in India, gaming PC India, laptop shop India, buy computer parts online India, CCTV installation India">
+<meta name="keywords" content="best computer store in India, gaming PC India, laptop shop India, buy computer parts online India">
 
 <meta name="robots" content="index, follow">
 <meta name="author" content="HEXA COMPUTRONICS">
 <link rel="canonical" href="https://hexacomputer.in/">
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "ComputerStore",
- "name": "HEXA COMPUTRONICS",
- "url": "https://hexacomputer.in",
- "areaServed": ["India", "Worldwide"]
-}
-</script>
-</head>
+
 <meta property="og:title" content="Best Computer Store in India – HEXA COMPUTRONICS">
 <meta property="og:description" content="Buy laptops, gaming PCs, computer parts & IT accessories at best price in India.">
 <meta property="og:url" content="https://hexacomputer.in">
-<meta property="og:type" content="website">    
+<meta property="og:type" content="website">
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-/* ================= PREMIUM BACKGROUND ================= */
-
-
-
-/* Logo Color Glow Overlay */
-/* ===== SAFE INDEX ONLY TRICOLOR BACKGROUND ===== */
-
-body.home-page{
-    margin:0;
-    font-family:'Rajdhani',sans-serif;
-    color:#111;
-    overflow-x:hidden;
-    background:#ffffff;
-    position:relative;
-}
-
-/* ===== SAFFRON BRUSH (TOP LEFT) ===== */
-body.home-page::before{
-    content:"";
-    position:fixed;
-    top:-150px;
-    left:-200px;
-    width:1000px;
-    height:420px;
-    background:
-        radial-gradient(circle at 30% 40%, rgba(255,153,51,0.95) 0%, rgba(255,120,0,0.9) 60%, transparent 70%),
-        linear-gradient(100deg,#ff9933,#ff7a00);
-    border-radius:400px;
-    transform:rotate(-10deg);
-    z-index:-1;
-    filter:blur(2px);
-    animation:floatBrush 8s ease-in-out infinite alternate;
-}
-
-/* ===== GREEN BRUSH (BOTTOM RIGHT) ===== */
-body.home-page::after{
-    content:"";
-    position:fixed;
-    bottom:-180px;
-    right:-200px;
-    width:1100px;
-    height:450px;
-    background:
-        radial-gradient(circle at 70% 60%, rgba(19,136,8,0.95) 0%, rgba(11,109,6,0.9) 60%, transparent 70%),
-        linear-gradient(100deg,#138808,#0b6d06);
-    border-radius:400px;
-    transform:rotate(-8deg);
-    z-index:-1;
-    filter:blur(2px);
-    animation:floatBrush 10s ease-in-out infinite alternate;
-}
-
-/* ===== SUBTLE FLOAT ANIMATION ===== */
-@keyframes floatBrush{
-    from{
-        transform:rotate(-10deg) translateY(0px);
-    }
-    to{
-        transform:rotate(-10deg) translateY(20px);
-    }
-}
-
-
-
-/* ================= LEFT SOCIAL BAR ================= */
-
-.social-left{
-position:fixed;
-top:50%;
-left:15px;
-transform:translateY(-50%);
-display:flex;
-flex-direction:column;
-gap:18px;
-z-index:1000;
-}
-
-.social-left a{
-width:48px;
-height:48px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-color:white;
-font-size:20px;
-transition:0.3s;
-}
-
-/* Brand Colors */
-.youtube{background:#FF0000;}
-.facebook{background:#1877F2;}
-.instagram{
-background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf);
-}
-.linkedin{background:#0A66C2;}
-
-.social-left a:hover{
-transform:scale(1.15);
-box-shadow:0 0 20px rgba(255,255,255,0.4);
-}
-
-/* ================= HERO ================= */
+/* ================= HERO FIXED ================= */
 
 .hero{
-min-height:60vh;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:40px 20px;   /* height हटाया */
+}
+
+.glass{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(25px);
+border-radius:25px;
+padding:40px 30px;
+max-width:850px;
+width:100%;
 }
 
 .logo{
-width:140px;
-filter:drop-shadow(0 0 25px #ffaa33);
+width:120px;
+margin-bottom:15px;
 }
 
 .hero h1{
 font-family:'Orbitron',sans-serif;
-font-size:2.6rem;
-margin-top:15px;
-background:linear-gradient(to right,#ffaa33,#00f3ff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:2rem;
+margin-bottom:10px;
 }
 
 .hero p{
-color:#ccc;
-margin-top:10px;
-font-size:1.1rem;
+font-size:1rem;
 }
-
-/* ===== PREMIUM GLASS HERO ===== */
-
-.hero{
-min-height:70vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.glass{
-position:relative;
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
-border-radius:30px;
-padding:50px 60px;
-max-width:900px;
-border:1px solid rgba(255,255,255,0.3);
-box-shadow:
-0 8px 32px rgba(0,0,0,0.25),
-inset 0 0 25px rgba(255,255,255,0.2);
-transition:0.4s ease;
-}
-
-/* Light gradient border glow */
-.glass::before{
-content:"";
-position:absolute;
-inset:0;
-border-radius:30px;
-padding:2px;
-background:linear-gradient(45deg,#ff9933,#ffffff,#138808);
--webkit-mask:
-linear-gradient(#fff 0 0) content-box,
-linear-gradient(#fff 0 0);
--webkit-mask-composite:xor;
-mask-composite:exclude;
-pointer-events:none;
-}
-
-/* Hover lift effect */
-.glass:hover{
-transform:translateY(-8px);
-box-shadow:
-0 15px 40px rgba(0,0,0,0.35),
-inset 0 0 30px rgba(255,255,255,0.3);
-}
-
-/* Improve text visibility */
-.hero h1{
-color:#111;
-background:none;
--webkit-text-fill-color:initial;
-}
-
-.hero p{
-color:#333;
-}
-
-
 
 /* ================= CATEGORY GRID ================= */
 
@@ -235,7 +65,7 @@ color:#333;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-padding:20px 40px 60px 40px;
+padding:30px 20px 60px;
 max-width:1200px;
 margin:auto;
 }
@@ -267,119 +97,22 @@ background:linear-gradient(45deg,#ffaa33,#00f3ff);
 color:white;
 text-decoration:none;
 border-radius:25px;
-transition:0.3s;
 }
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* ================= AI CHATBOT ================= */
-
-.chat-btn{
-position:fixed;
-bottom:90px;
-right:20px;
-width:55px;
-height:55px;
-background:#00f3ff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:22px;
-cursor:pointer;
-z-index:1000;
-}
-
-.chat-box{
-position:fixed;
-bottom:160px;
-right:20px;
-width:280px;
-background:#111;
-border-radius:15px;
-padding:15px;
-display:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.7);
-}
-
-.chat-box h4{margin:0 0 8px;}
-.chat-box input{
-width:100%;
-padding:6px;
-border:none;
-border-radius:5px;
-margin-top:5px;
-}
-
-/* ================= WHATSAPP ================= */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:55px;
-height:55px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:22px;
-color:white;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-text-align:center;
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.1);
-background:rgba(0,0,0,0.3);
-}
-
-footer a{
-color:#00f3ff;
-text-decoration:none;
-margin:0 8px;
-font-size:14px;
-}
-
-footer p{
-color:#aaa;
-margin-top:10px;
-font-size:13px;
-}
-
-/* Responsive */
 
 @media(max-width:768px){
-.hero h1{font-size:1.8rem;}
-.categories{padding:20px;}
-.social-left{display:none;}
+.hero{
+padding:25px 15px;
+}
+.hero h1{
+font-size:1.4rem;
+}
 }
 
 </style>
+
 </head>
+
 <body class="home-page">
-
-
-<!-- LEFT SOCIAL BAR -->
-<div class="social-left">
-<a href="https://youtube.com/@hexacomptech" target="_blank" class="youtube">
-<i class="fab fa-youtube"></i></a>
-
-<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook">
-<i class="fab fa-facebook-f"></i></a>
-
-<a href="https://instagram.com/hcomputronics" target="_blank" class="instagram">
-<i class="fab fa-instagram"></i></a>
-
-<a href="#" target="_blank" class="linkedin">
-<i class="fab fa-linkedin-in"></i></a>
-</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -396,82 +129,40 @@ HEXA COMPUTRONICS provides high-performance gaming PCs, branded laptops, CCTV se
 <section class="categories">
 
 <div class="card">
-<img src="images/laptop.jpg">
+<img src="images/laptop.jpg" alt="IT Hardware">
 <h3>IT Hardware</h3>
 <a href="hardware.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/cctv.jpg">
+<img src="images/cctv.jpg" alt="Security Systems">
 <h3>Security Systems</h3>
 <a href="security.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/switch.jpg">
+<img src="images/switch.jpg" alt="Networking Products">
 <h3>Networking</h3>
 <a href="networking.html">Explore</a>
 </div>
 
 <div class="card">
-<img src="images/digitalproduct.jpg">
+<img src="images/digitalproduct.jpg" alt="Digital Products">
 <h3>Digital Products</h3>
 <a href="digital-products.html">Explore</a>
 </div>
-  
+
 <div class="card">
-<img src="images/refurbished.jpg">
+<img src="images/refurbished.jpg" alt="Refurbished Products">
 <h3>Refurbished Products</h3>
 <a href="refurbished.html">Explore</a>
 </div>
 
 </section>
 
-<!-- AI CHATBOT -->
-<div class="chat-btn" onclick="toggleChat()">
-<i class="fas fa-robot"></i>
-</div>
-
-<div class="chat-box" id="chatBox">
-<h4>AI Assistant</h4>
-<p>Hello! How can we help you?</p>
-<input type="text" placeholder="Type message...">
-</div>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919935529306" class="whatsapp" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- FOOTER -->
 <footer>
-<a href="privacy-policy.html">Privacy</a> |
-<a href="terms.html">Terms</a> |
-<a href="refund-policy.html">Refund</a> |
-<a href="contact.html">Contact</a>
-
-<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
+<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
 
-<script>
-function toggleChat(){
-const chat=document.getElementById("chatBox");
-chat.style.display = chat.style.display==="block" ? "none" : "block";
-}
-</script>
-<script>
-function toggleChat(){
-const chat=document.getElementById("chatBox");
-chat.style.display = chat.style.display==="block" ? "none" : "block";
-}
-</script>
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
