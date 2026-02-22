@@ -140,6 +140,7 @@ max-width:1300px;
 margin:auto;
 }
 
+
 .product-card,
 .hardware-card{
 background:rgba(255,255,255,0.05);
@@ -208,7 +209,6 @@ font-size:13px;
 
 @media (max-width: 768px) {
 
-  /* Hero full height हटाएँ */
   .hero {
       height: auto !important;
       min-height: auto !important;
@@ -216,12 +216,10 @@ font-size:13px;
       display: block !important;
   }
 
-  /* Glass box compact */
   .hero .glass {
       padding: 15px !important;
   }
 
-  /* Heading size mobile friendly */
   .hero h1 {
       font-size: 20px !important;
       line-height: 1.4 !important;
@@ -231,13 +229,11 @@ font-size:13px;
       font-size: 14px !important;
   }
 
-  /* Categories section ऊपर लाएँ */
   .categories {
       margin-top: 10px !important;
       padding: 10px !important;
   }
 
-  /* Cards mobile full width */
   .categories .card {
       width: 100% !important;
       margin-bottom: 15px !important;
