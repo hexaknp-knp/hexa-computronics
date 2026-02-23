@@ -1,88 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Secure Payment | HEXA COMPUTRONICS</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment | HEXA COMPUTRONICS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
-background:#05070a;
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:#0f172a;
 color:white;
-font-family:Arial;
 text-align:center;
-padding:40px;
 }
 
-.container{
-max-width:600px;
-margin:auto;
+/* HEADER */
+.header{
+padding:40px 20px 20px;
+}
+
+.header h1{
+font-family:'Orbitron',sans-serif;
+background:linear-gradient(to right,#00f3ff,#ff6b00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* PAYMENT BOX */
+.payment-box{
+max-width:500px;
+margin:30px auto;
 background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:15px;
+padding:25px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:15px 30px;
-background:#ff8c00;
+/* BUTTONS */
+.pay-btn{
+display:block;
+margin:15px auto;
+padding:10px 20px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
 color:white;
+border-radius:25px;
 text-decoration:none;
-border-radius:30px;
-font-weight:bold;
+width:80%;
 }
 
-.btn:hover{
-background:#ffaa33;
+.qr-img{
+width:220px;
+margin:15px auto;
+border-radius:10px;
 }
 
-.qr{
-margin:20px 0;
+/* COD FORM */
+.cod-form{
+display:none;
+margin-top:20px;
 }
+
+.cod-form input{
+width:90%;
+padding:8px;
+margin:6px 0;
+border-radius:8px;
+border:none;
+}
+
+footer{
+margin-top:40px;
+padding:20px;
+font-size:13px;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="header">
+<h1>Secure Payment</h1>
+<p>Complete your purchase securely</p>
+</div>
 
-<h2>HEXA COMPUTRONICS - Secure Payment</h2>
+<div class="payment-box">
 
-<p>Step 1: Scan QR Code</p>
+<h2>Pay via UPI (Google Pay)</h2>
+<p>Scan the QR code below to complete payment</p>
 
-<img src="images/qr.png" width="200" class="qr">
+<img src="images/gpay-qr.jpg" class="qr-img" alt="GPay QR Code">
 
-<p>Step 2: Take Payment Screenshot</p>
-<p>Step 3: Click Submit & Fill Form</p>
+<p>After payment, send screenshot on WhatsApp: <b>9935529306</b></p>
 
-<a id="formLink" target="_blank" class="btn">
-Submit Payment Details →
+<hr style="margin:25px 0;opacity:0.2;">
+
+<h2>Other Payment Options</h2>
+
+<a href="#" class="pay-btn" onclick="alert('Razorpay coming soon')">
+Pay Online (Razorpay – Coming Soon)
 </a>
+
+<a href="#" class="pay-btn" onclick="toggleCOD()">
+Cash on Delivery
+</a>
+
+<div class="cod-form" id="codForm">
+<h3>COD Order Details</h3>
+<input type="text" placeholder="Full Name">
+<input type="text" placeholder="Mobile Number">
+<input type="text" placeholder="Delivery Address">
+<a href="https://wa.me/919935529306" class="pay-btn">Confirm COD via WhatsApp</a>
+</div>
 
 </div>
 
+<footer>
+<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
+</footer>
+
 <script>
-
-// Get product from URL
-const params = new URLSearchParams(window.location.search);
-const product = params.get("product") || "HEXA Product";
-
-// Generate random Order ID
-const orderId = "HEX" + Math.floor(100000 + Math.random() * 900000);
-
-// ======= REPLACE FORM ID BELOW =======
-const formBase = "https://docs.google.com/forms/d/e/1FAIpQLScInp8l5kRhPWYeXfz8C7fkzKM1FevalREWaDDKc9XKVBGY2Q/viewform?usp=pp_url";
-
-// Prefilled link
-const finalLink =
-formBase +
-"&entry.1505298207=" + encodeURIComponent(product) +
-"&entry.1806519742=" + encodeURIComponent(orderId);
-
-// Set button link
-document.getElementById("formLink").href = finalLink;
-
+function toggleCOD(){
+let form=document.getElementById("codForm");
+form.style.display=form.style.display==="block"?"none":"block";
+}
 </script>
 
 </body>
