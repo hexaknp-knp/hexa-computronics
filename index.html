@@ -11,7 +11,16 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ComputerStore",
+ "name": "HEXA COMPUTRONICS",
+ "url": "https://hexacomputer.in",
+ "areaServed": ["India", "Worldwide"],
+ "telephone": "+919935529306"
+}
+</script>
 <style>
 
 /* ================= TRICOLOR BACKGROUND ================= */
@@ -259,6 +268,21 @@ border:none;
 border-radius:5px;
 margin-top:10px;
 }
+  /*============sticky NVBAR==============*/
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+}
+/*=========Hero Subtle Animation============*/
+ .glass{
+animation:float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-5px);}
+} 
 </style>
 
 </head>
@@ -293,19 +317,19 @@ Laptops Gaming PCs and IT Solutions
 <!-- CATEGORIES -->
 <section class="categories">
   <div class="card">
-    <img src="images/laptop.jpg" alt="IT Hardware">
+    <img src="images/laptop.jpg" alt="IT Hardware" loading="lazy">
     <h3>IT Hardware</h3>
     <a href="hardware.html">Explore</a>
   </div>
 
   <div class="card">
-    <img src="images/cctv.jpg" alt="Security Systems">
+    <img src="images/cctv.jpg" alt="Security Systems" loading="lazy">
     <h3>Security Systems</h3>
     <a href="security.html">Explore</a>
   </div>
 
   <div class="card">
-    <img src="images/switch.jpg" alt="Networking">
+    <img src="images/switch.jpg" alt="Networking" loading="lazy">
     <h3>Networking</h3>
     <a href="networking.html">Explore</a>
   </div>
@@ -317,7 +341,7 @@ Laptops Gaming PCs and IT Solutions
   </div>
 
   <div class="card">
-    <img src="images/refurbished.jpg" alt="Refurbished Products">
+    <img src="images/refurbished.jpg" alt="Refurbished Products" loading="lazy">
     <h3>Refurbished Products</h3>
     <a href="refurbished.html">Explore</a>
   </div>
@@ -370,6 +394,7 @@ input.value="";
 </script> 
 </body>
 </html>
+
 
 
 
