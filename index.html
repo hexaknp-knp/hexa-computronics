@@ -222,6 +222,43 @@ transition:0.3s;
 .whatsapp:hover{
 transform:scale(1.1);
 }
+.chat-btn{
+position:fixed;
+bottom:90px;
+right:20px;
+width:55px;
+height:55px;
+background:#00f3ff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+cursor:pointer;
+z-index:1000;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+.chat-box{
+position:fixed;
+bottom:160px;
+right:20px;
+width:280px;
+background:#111;
+color:white;
+border-radius:15px;
+padding:15px;
+display:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.chat-box input{
+width:100%;
+padding:8px;
+border:none;
+border-radius:5px;
+margin-top:10px;
+}
 </style>
 
 </head>
@@ -294,12 +331,46 @@ Laptops Gaming PCs and IT Solutions
 
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
+<!-- CHAT BUTTON -->
+<div class="chat-btn" onclick="toggleChat()">
+  <i class="fas fa-robot"></i>
+</div>
+
+<div class="chat-box" id="chatBox">
+  <h4>AI Assistant</h4>
+  <div id="chatContent">Hello! How can we help you?</div>
+  <input type="text" id="userInput" placeholder="Type message..." onkeypress="handleKey(event)">
+</div>
 <!-- WHATSAPP BUTTON -->
 <a href="https://wa.me/919935529306" class="whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
+ <script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+
+function handleKey(event){
+if(event.key==="Enter"){
+let input=document.getElementById("userInput");
+let content=document.getElementById("chatContent");
+
+let userText=input.value.toLowerCase();
+let reply="Please contact us on WhatsApp for detailed support.";
+
+if(userText.includes("price")) reply="Please tell us which product price you need.";
+if(userText.includes("laptop")) reply="We provide gaming and business laptops.";
+if(userText.includes("cctv")) reply="We provide complete CCTV installation solutions.";
+
+content.innerHTML="<br><b>You:</b> "+input.value+"<br><b>AI:</b> "+reply;
+input.value="";
+}
+}
+</script> 
 </body>
 </html>
+
 
 
 
