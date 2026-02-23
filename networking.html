@@ -10,54 +10,35 @@
 <style>
 
 /* ===== GLOBAL ===== */
-
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
 background:#0f172a;
 color:white;
-overflow-x:hidden;
 }
 
-/* Neon Glow Background */
-body::before{
-content:"";
-position:fixed;
-top:-150px;
-left:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-body::after{
-content:"";
-position:fixed;
-bottom:-150px;
-right:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-/* ===== NAV ===== */
-
+/* ===== NAVBAR ===== */
 nav{
 display:flex;
-justify-content:flex-end;
+justify-content:space-between;
 align-items:center;
-padding:15px 40px;
+padding:14px 35px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,0.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav .logo{
+font-family:'Orbitron',sans-serif;
+font-size:18px;
 }
 
 nav ul{
 display:flex;
-gap:25px;
+gap:20px;
 list-style:none;
 margin:0;
 padding:0;
@@ -67,7 +48,6 @@ nav ul li a{
 color:white;
 text-decoration:none;
 font-size:14px;
-transition:0.3s;
 }
 
 nav ul li a:hover{
@@ -75,57 +55,13 @@ color:#00f3ff;
 }
 
 /* ===== HERO ===== */
-
-.page-hero{
-min-height:45vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.hero-box{
-position:relative;
-max-width:1000px;
-width:100%;
-height:300px;
-overflow:hidden;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 8px 30px rgba(0,0,0,0.4);
-}
-
-.hero-bg-img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:1;
-}
-
-.hero-box::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
-z-index:2;
-}
-
-.hero-content{
-position:relative;
-z-index:3;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.category-hero{
 text-align:center;
-padding:20px;
+padding:70px 20px 40px;
 }
 
-.hero-content h1{
+.category-hero h1{
+font-family:'Orbitron',sans-serif;
 font-size:2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
@@ -133,90 +69,93 @@ background:linear-gradient(to right,#00f3ff,#ff6b00);
 margin-bottom:10px;
 }
 
-.hero-content p{
-color:#ddd;
+.category-hero p{
+color:#ccc;
+font-size:14px;
 }
 
 /* ===== GRID ===== */
-
-.products-grid{
+.subcategory-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-padding:50px 20px;
-max-width:1300px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px 25px;
+max-width:1200px;
 margin:auto;
 }
 
-.product-card{
+.subcategory-card{
 background:rgba(255,255,255,0.05);
-border-radius:18px;
-padding:20px;
+border-radius:20px;
+overflow:hidden;
 text-align:center;
+padding-bottom:15px;
 border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(12px);
 transition:0.3s;
 }
 
-.product-card img{
+.subcategory-card img{
 width:100%;
-height:170px;
+height:180px;
 object-fit:cover;
-border-radius:12px;
 }
 
-.product-card h3{
+.subcategory-card h3{
 margin:15px 0 8px;
 }
 
-.product-card p{
+.subcategory-card p{
 font-size:14px;
 color:#ccc;
-margin:5px 0;
+padding:0 15px;
 }
 
-.price{
-color:#00f3ff;
-font-weight:bold;
-}
-
-.product-card a{
+.subcategory-card a{
 display:inline-block;
 margin-top:10px;
-padding:8px 18px;
+padding:8px 22px;
 background:linear-gradient(45deg,#00f3ff,#ff6b00);
 color:white;
-border-radius:20px;
+border-radius:25px;
 text-decoration:none;
-font-weight:bold;
-transition:0.3s;
 }
 
-.product-card a:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px rgba(0,243,255,0.6);
+.subcategory-card:hover{
+transform:translateY(-6px);
+box-shadow:0 8px 25px rgba(0,0,0,0.5);
 }
 
-.product-card:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
+/* ===== CTA ===== */
+.cta-section{
+padding:40px 20px;
+text-align:center;
+background:rgba(255,255,255,0.05);
+margin:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.cta-section a{
+display:inline-block;
+padding:8px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
 }
 
 /* ===== FOOTER ===== */
-
 footer{
 text-align:center;
 padding:20px;
-background:#000;
-margin-top:40px;
+border-top:1px solid rgba(255,255,255,0.1);
 font-size:13px;
 }
 
 /* ===== MOBILE ===== */
-
 @media(max-width:768px){
-.hero-box{height:220px;}
-.hero-content h1{font-size:1.5rem;}
+nav ul{display:none;}
+.category-hero h1{font-size:1.6rem;}
 }
 
 </style>
@@ -225,65 +164,76 @@ font-size:13px;
 <body>
 
 <nav>
+<div class="logo">HEXA COMPUTRONICS</div>
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="hardware.html">Hardware</a></li>
 <li><a href="security.html">Security</a></li>
+<li><a href="networking.html">Networking</a></li>
 <li><a href="digital-products.html">Digital</a></li>
 <li><a href="refurbished.html">Refurbished</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 
-<section class="page-hero">
-<div class="hero-box">
-<img src="images/networking-hero.jpg" class="hero-bg-img">
-<div class="hero-content">
+<section class="category-hero">
 <h1>Networking Solutions</h1>
-<p>Switches, Routers & Enterprise Networking</p>
-</div>
-</div>
+<p>Reliable Network Infrastructure & Connectivity Devices</p>
 </section>
 
-<section class="products-grid">
+<section class="subcategory-grid">
 
-<div class="product-card">
-<img src="images/switch.jpg">
-<h3>24 Port Network Switch</h3>
-<p>High speed gigabit managed switch.</p>
-<p class="price">₹8,499</p>
-<a href="switch.html">View Products</a>
+<div class="subcategory-card">
+<img src="images/router.jpg" alt="Routers">
+<h3>Routers</h3>
+<p>High-Speed Wireless & Enterprise Routers</p>
+<a href="routers.html">View Products</a>
 </div>
 
-<div class="product-card">
-<img src="images/router.jpg">
-<h3>Dual Band Router</h3>
-<p>High performance WiFi 6 router.</p>
-<p class="price">₹4,999</p>
-<a href="router.html">View Products</a>
+<div class="subcategory-card">
+<img src="images/switch.jpg" alt="Network Switches">
+<h3>Network Switches</h3>
+<p>Managed & Unmanaged Switches</p>
+<a href="switches.html">View Products</a>
 </div>
 
-<div class="product-card">
-<img src="images/lan.jpg">
-<h3>LAN Cable Cat6</h3>
-<p>High speed ethernet cable.</p>
-<p class="price">₹1,299</p>
-<a href="lan.html">View Products</a>
-</div>
-
-<div class="product-card">
-<img src="images/firewall.jpg">
-<h3>Enterprise Firewall</h3>
-<p>Advanced security firewall system.</p>
-<p class="price">₹22,999</p>
+<div class="subcategory-card">
+<img src="images/firewall.jpg" alt="Firewall">
+<h3>Firewalls</h3>
+<p>Advanced Network Security Devices</p>
 <a href="firewall.html">View Products</a>
 </div>
 
+<div class="subcategory-card">
+<img src="images/access-point.jpg" alt="Access Point">
+<h3>Access Points</h3>
+<p>WiFi Coverage & Enterprise Connectivity</p>
+<a href="access-points.html">View Products</a>
+</div>
+
+</section>
+
+<section class="cta-section">
+<h2>Need Complete Networking Setup?</h2>
+<a href="contact.html">Contact Now</a>
 </section>
 
 <footer>
-<p>© 2026 HEXA COMPUTRONICS</p>
+<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
+
+<!-- TAWK CHATBOT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/699c0b6bd737701c38a63a28/1ji4op7ip';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 </body>
 </html>
