@@ -7,9 +7,10 @@
 
 <title>Best Computer Store in India | Laptops, Gaming PC & IT Solutions – HEXA COMPUTRONICS</title>
 
-<meta name="description" content="HEXA COMPUTRONICS is a leading computer store in India offering laptops, gaming PCs, CCTV cameras, printers and IT accessories at best prices with nationwide delivery.">
+<meta name="description" content="HEXA COMPUTRONICS is a leading computer store in India offering laptops, gaming PCs, CCTV cameras and IT accessories.">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
@@ -22,13 +23,47 @@ background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
 
+/* ================= SOCIAL LEFT ================= */
+
+.social-left{
+position:fixed;
+top:50%;
+left:15px;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:15px;
+z-index:1000;
+}
+
+.social-left a{
+width:42px;
+height:42px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+color:#fff;
+font-size:18px;
+transition:0.3s;
+}
+
+.youtube{background:#FF0000;}
+.facebook{background:#1877F2;}
+.instagram{background:linear-gradient(45deg,#feda75,#d62976,#962fbf);}
+.linkedin{background:#0A66C2;}
+
+.social-left a:hover{
+transform:scale(1.1);
+}
+
 /* ================= HERO ================= */
 
 .hero{
 display:flex;
 justify-content:center;
 align-items:flex-start;
-padding:30px 20px 10px 20px;
+padding:30px 20px 10px;
 }
 
 .glass{
@@ -38,28 +73,26 @@ gap:25px;
 background:rgba(255,255,255,0.75);
 border-radius:20px;
 padding:30px 35px;
-max-width:900px;
+max-width:950px;
 width:100%;
 box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* Small Left Logo */
 .logo{
 width:65px;
-height:auto;
 flex-shrink:0;
 }
 
-/* Text Wrapper */
 .hero-text{
 text-align:left;
 }
 
 .hero h1{
 font-family:'Orbitron',sans-serif;
-font-size:1.8rem;
-margin:0 0 6px 0;
+font-size:1.55rem;   /* smaller so one line */
+margin:0 0 6px;
 color:#000;
+white-space:nowrap;   /* force single line */
 }
 
 .hero p{
@@ -84,7 +117,6 @@ background:rgba(255,255,255,0.15);
 border-radius:15px;
 overflow:hidden;
 text-align:center;
-transition:0.4s;
 border:1px solid rgba(0,0,0,0.1);
 }
 
@@ -108,9 +140,32 @@ text-decoration:none;
 border-radius:25px;
 }
 
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:20px;
+background:#000;
+color:#fff;
+}
+
+footer a{
+color:#00f3ff;
+text-decoration:none;
+margin:0 8px;
+font-size:14px;
+}
+
+footer p{
+margin-top:10px;
+font-size:13px;
+}
+
 /* ================= MOBILE ================= */
 
 @media(max-width:768px){
+
+.social-left{display:none;}
 
 .glass{
 flex-direction:column;
@@ -127,7 +182,8 @@ width:55px;
 }
 
 .hero h1{
-font-size:1.3rem;
+font-size:1.2rem;
+white-space:normal; /* allow wrap on mobile */
 }
 
 .categories{
@@ -142,59 +198,67 @@ padding:15px;
 
 <body class="home-page">
 
+<!-- SOCIAL LINKS -->
+<div class="social-left">
+<a href="https://youtube.com/@hexacomptech" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+<a href="https://facebook.com/hexacomputronics" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://instagram.com/hcomputronics" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="glass">
-
     <img src="images/logo.jpg" class="logo" alt="HEXA COMPUTRONICS">
-
     <div class="hero-text">
-      <h1>Best Computer Store in India – Laptops, Gaming PCs & IT Solutions</h1>
+      <h1>Best Computer Store in India Laptops Gaming PCs and IT Solutions</h1>
       <p>
         HEXA COMPUTRONICS provides high-performance gaming PCs, branded laptops,
         CCTV security systems and complete IT hardware solutions across India.
       </p>
     </div>
-
   </div>
 </section>
 
 <!-- CATEGORIES -->
 <section class="categories">
+  <div class="card">
+    <img src="images/laptop.jpg" alt="IT Hardware">
+    <h3>IT Hardware</h3>
+    <a href="hardware.html">Explore</a>
+  </div>
 
-<div class="card">
-<img src="images/laptop.jpg" alt="IT Hardware">
-<h3>IT Hardware</h3>
-<a href="hardware.html">Explore</a>
-</div>
+  <div class="card">
+    <img src="images/cctv.jpg" alt="Security Systems">
+    <h3>Security Systems</h3>
+    <a href="security.html">Explore</a>
+  </div>
 
-<div class="card">
-<img src="images/cctv.jpg" alt="Security Systems">
-<h3>Security Systems</h3>
-<a href="security.html">Explore</a>
-</div>
+  <div class="card">
+    <img src="images/switch.jpg" alt="Networking">
+    <h3>Networking</h3>
+    <a href="networking.html">Explore</a>
+  </div>
 
-<div class="card">
-<img src="images/switch.jpg" alt="Networking">
-<h3>Networking</h3>
-<a href="networking.html">Explore</a>
-</div>
+  <div class="card">
+    <img src="images/digitalproduct.jpg" alt="Digital Products">
+    <h3>Digital Products</h3>
+    <a href="digital-products.html">Explore</a>
+  </div>
 
-<div class="card">
-<img src="images/digitalproduct.jpg" alt="Digital Products">
-<h3>Digital Products</h3>
-<a href="digital-products.html">Explore</a>
-</div>
-
-<div class="card">
-<img src="images/refurbished.jpg" alt="Refurbished Products">
-<h3>Refurbished Products</h3>
-<a href="refurbished.html">Explore</a>
-</div>
-
+  <div class="card">
+    <img src="images/refurbished.jpg" alt="Refurbished Products">
+    <h3>Refurbished Products</h3>
+    <a href="refurbished.html">Explore</a>
+  </div>
 </section>
 
 <footer>
+<a href="privacy-policy.html">Privacy</a> |
+<a href="terms.html">Terms</a> |
+<a href="refund-policy.html">Refund</a> |
+<a href="contact.html">Contact</a>
+
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
 
