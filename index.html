@@ -9,54 +9,63 @@
 
 <meta name="description" content="HEXA COMPUTRONICS is a leading computer store in India offering laptops, gaming PCs, CCTV cameras, printers and IT accessories at best prices with nationwide delivery.">
 
-<meta name="keywords" content="best computer store in India, gaming PC India, laptop shop India, buy computer parts online India">
-
-<meta name="robots" content="index, follow">
-<meta name="author" content="HEXA COMPUTRONICS">
-<link rel="canonical" href="https://hexacomputer.in/">
-
-<meta property="og:title" content="Best Computer Store in India – HEXA COMPUTRONICS">
-<meta property="og:description" content="Buy laptops, gaming PCs, computer parts & IT accessories at best price in India.">
-<meta property="og:url" content="https://hexacomputer.in">
-<meta property="og:type" content="website">
-
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-/* ================= HERO FIXED ================= */
+/* ================= TRICOLOR BACKGROUND ================= */
+
+body.home-page{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
 
 .hero{
 display:flex;
 justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px 20px;   /* height हटाया */
+align-items:flex-start;
+padding:30px 20px 10px 20px;
 }
 
 .glass{
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(25px);
-border-radius:25px;
-padding:40px 30px;
-max-width:850px;
+display:flex;
+align-items:center;
+gap:25px;
+background:rgba(255,255,255,0.75);
+border-radius:20px;
+padding:30px 35px;
+max-width:900px;
 width:100%;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
+/* Small Left Logo */
 .logo{
-width:120px;
-margin-bottom:15px;
+width:65px;
+height:auto;
+flex-shrink:0;
+}
+
+/* Text Wrapper */
+.hero-text{
+text-align:left;
 }
 
 .hero h1{
 font-family:'Orbitron',sans-serif;
-font-size:2rem;
-margin-bottom:10px;
+font-size:1.8rem;
+margin:0 0 6px 0;
+color:#000;
 }
 
 .hero p{
-font-size:1rem;
+margin:0;
+color:#333;
+font-size:0.95rem;
 }
 
 /* ================= CATEGORY GRID ================= */
@@ -65,18 +74,18 @@ font-size:1rem;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-padding:30px 20px 60px;
+padding:20px 25px 50px;
 max-width:1200px;
 margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
+background:rgba(255,255,255,0.15);
 border-radius:15px;
 overflow:hidden;
 text-align:center;
 transition:0.4s;
-border:1px solid rgba(255,255,255,0.1);
+border:1px solid rgba(0,0,0,0.1);
 }
 
 .card img{
@@ -99,13 +108,32 @@ text-decoration:none;
 border-radius:25px;
 }
 
+/* ================= MOBILE ================= */
+
 @media(max-width:768px){
-.hero{
-padding:25px 15px;
+
+.glass{
+flex-direction:column;
+text-align:center;
+padding:20px;
 }
+
+.hero-text{
+text-align:center;
+}
+
+.logo{
+width:55px;
+}
+
 .hero h1{
-font-size:1.4rem;
+font-size:1.3rem;
 }
+
+.categories{
+padding:15px;
+}
+
 }
 
 </style>
@@ -118,10 +146,8 @@ font-size:1.4rem;
 <section class="hero">
   <div class="glass">
 
-    <!-- Left Small Logo -->
     <img src="images/logo.jpg" class="logo" alt="HEXA COMPUTRONICS">
 
-    <!-- Right Text -->
     <div class="hero-text">
       <h1>Best Computer Store in India – Laptops, Gaming PCs & IT Solutions</h1>
       <p>
@@ -132,6 +158,7 @@ font-size:1.4rem;
 
   </div>
 </section>
+
 <!-- CATEGORIES -->
 <section class="categories">
 
@@ -148,7 +175,7 @@ font-size:1.4rem;
 </div>
 
 <div class="card">
-<img src="images/switch.jpg" alt="Networking Products">
+<img src="images/switch.jpg" alt="Networking">
 <h3>Networking</h3>
 <a href="networking.html">Explore</a>
 </div>
@@ -173,4 +200,3 @@ font-size:1.4rem;
 
 </body>
 </html>
-
