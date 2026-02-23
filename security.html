@@ -9,7 +9,7 @@
 
 <style>
 
-/* SAME GLOBAL STYLE */
+/* ===== GLOBAL ===== */
 
 body{
 margin:0;
@@ -19,38 +19,19 @@ color:white;
 overflow-x:hidden;
 }
 
-body::before{
-content:"";
-position:fixed;
-top:-150px;
-left:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-body::after{
-content:"";
-position:fixed;
-bottom:-150px;
-right:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
+/* ===== NAVBAR ===== */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 35px;
+padding:14px 35px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav .logo{
@@ -62,85 +43,137 @@ nav ul{
 display:flex;
 gap:20px;
 list-style:none;
+margin:0;
+padding:0;
 }
 
 nav ul li a{
 color:white;
 text-decoration:none;
 font-size:14px;
+transition:0.3s;
 }
 
-/* HERO */
-
-.page-hero{
-min-height:45vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
+nav ul li a:hover{
+color:#00f3ff;
 }
 
-.hero-box{
-position:relative;
-max-width:1000px;
-width:100%;
-height:300px;
-overflow:hidden;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-}
+/* ===== HERO ===== */
 
-.hero-bg-img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:1;
-}
-
-.hero-box::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-z-index:2;
-}
-
-.hero-content{
-position:relative;
-z-index:3;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.category-hero{
 text-align:center;
+padding:70px 20px 40px;
 }
 
-.hero-content h1{
-font-size:2rem;
+.category-hero h1{
+font-family:'Orbitron',sans-serif;
+font-size:2.2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+margin-bottom:10px;
 }
 
-.hero-content p{
-color:#ddd;
-font-size:14px;
+.category-hero p{
+color:#ccc;
+font-size:15px;
 }
+
+/* ===== SUBCATEGORY GRID ===== */
+
+.subcategory-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px 25px;
+max-width:1200px;
+margin:auto;
+}
+
+.subcategory-card{
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+overflow:hidden;
+transition:0.3s;
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+text-align:center;
+}
+
+.subcategory-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.subcategory-card h3{
+margin:15px 0 8px;
+font-size:18px;
+}
+
+.subcategory-card p{
+font-size:14px;
+color:#ccc;
+padding:0 15px;
+}
+
+.subcategory-card a{
+display:inline-block;
+margin:15px;
+padding:8px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+text-decoration:none;
+border-radius:25px;
+font-size:14px;
+transition:0.3s;
+}
+
+.subcategory-card:hover{
+transform:translateY(-8px);
+box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+
+/* ===== CTA ===== */
+
+.cta-section{
+padding:40px 20px;
+text-align:center;
+background:rgba(255,255,255,0.05);
+margin:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.cta-section h2{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.cta-section a{
+display:inline-block;
+padding:8px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
 
 footer{
 text-align:center;
-padding:15px;
+padding:20px;
 border-top:1px solid rgba(255,255,255,0.1);
-margin-top:20px;
+font-size:13px;
 }
 
+/* ===== MOBILE ===== */
+
 @media(max-width:768px){
-.hero-box{height:220px;}
-.hero-content h1{font-size:1.5rem;}
+.category-hero h1{font-size:1.6rem;}
+.subcategory-grid{padding:20px;}
+nav ul{display:none;}
 }
 
 </style>
@@ -160,124 +193,94 @@ margin-top:20px;
 </ul>
 </nav>
 
-<section class="page-hero">
-<div class="hero-box">
-
-<img src="images/security-hero.jpg" class="hero-bg-img">
-
-<div class="hero-content">
-<h1>Security & CCTV Solutions</h1>
-<p>Advanced Surveillance Systems for Home & Business</p>
-</div>
-
-</div>
+<section class="category-hero">
+<h1>Security & Surveillance Solutions</h1>
+<p>Advanced CCTV & Monitoring Systems</p>
 </section>
 
-<!-- YAHAN APNA EXISTING GRID CONTENT SAME PASTE KARO -->
-    <!-- ===== PRODUCT GRID (4 IN ONE ROW) ===== -->
-<section style="
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-padding:50px 20px;
-max-width:1300px;
-margin:auto;
-">
+<section class="subcategory-grid">
 
-<!-- PRODUCT 1 -->
-<div class="product-card">
-<img src="images/cctv.jpg" alt="CCTV Camera">
-<h3>2MP HD CCTV Camera</h3>
-<p>High-definition indoor & outdoor security camera.</p>
-<p class="price">₹9,499</p>
-<a href="cctv.html" 
-style="
-display:inline-block;
-margin-top:10px;
-padding:8px 18px;
-background:#FF6B00;
-color:white;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
-">
-View Products
-</a>
-
+<div class="subcategory-card">
+<img src="images/cctv.jpg" alt="CCTV Cameras">
+<h3>CCTV Cameras</h3>
+<p>Indoor & Outdoor Surveillance Cameras</p>
+<a href="cctv.html">View Products</a>
 </div>
 
-<!-- PRODUCT 2 -->
-<div class="product-card">
-<img src="images/cctv2.jpg" alt="DVR System">
-<h3>4 Channel DVR System</h3>
-<p>Full HD recording with remote mobile access.</p>
-<p class="price">₹4,999</p>
-<a href="dvr.html" 
-style="
-display:inline-block;
-margin-top:10px;
-padding:8px 18px;
-background:#FF6B00;
-color:white;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
-">
-View Products
-</a>
-
+<div class="subcategory-card">
+<img src="images/dvr.jpg" alt="DVR NVR">
+<h3>DVR / NVR Systems</h3>
+<p>Recording & Monitoring Solutions</p>
+<a href="dvr.html">View Products</a>
 </div>
 
-<!-- PRODUCT 3 -->
-<div class="product-card">
-<img src="images/biometric.jpg" alt="Biometric Machine">
-<h3>Biometric Attendance System</h3>
-<p>Fingerprint based smart attendance solution.</p>
-<p class="price">₹3,299</p>
-<a href="biometric.html" 
-style="
-display:inline-block;
-margin-top:10px;
-padding:8px 18px;
-background:#FF6B00;
-color:white;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
-">
-View Products
-</a>
-
+<div class="subcategory-card">
+<img src="images/security-access.jpg" alt="Access Control">
+<h3>Access Control</h3>
+<p>Biometric & RFID Entry Systems</p>
+<a href="access-control.html">View Products</a>
 </div>
 
-<!-- PRODUCT 4 -->
-<div class="product-card">
-<img src="images/nvr.jpg" alt="NVR System">
-<h3>8 Channel NVR Kit</h3>
-<p>Advanced IP camera system for offices.</p>
-<p class="price">₹7,999</p>
-<a href="nvr.html" 
-style="
-display:inline-block;
-margin-top:10px;
-padding:8px 18px;
-background:#FF6B00;
-color:white;
-border-radius:5px;
-text-decoration:none;
-font-weight:bold;
-">
-View Products
-</a>
-
+<div class="subcategory-card">
+<img src="images/alarm.jpg" alt="Alarm Systems">
+<h3>Alarm Systems</h3>
+<p>Intrusion & Fire Alarm Solutions</p>
+<a href="alarm.html">View Products</a>
 </div>
 
 </section>
 
+<section class="cta-section">
+<h2>Need Complete Security Setup?</h2>
+<a href="contact.html">Contact Now</a>
+</section>
 
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
+<!-- CHAT BUTTON -->
+<div class="chatbot-btn" onclick="toggleChat()">💬</div>
 
+<div id="chatBox" style="
+position:fixed;
+bottom:90px;
+right:20px;
+width:280px;
+background:#111;
+color:white;
+border-radius:15px;
+padding:15px;
+display:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+z-index:9999;
+">
+<b>HEXA Support</b><br>
+<input type="text" id="userInput" placeholder="Type message..." onkeydown="handleKey(event)" style="width:100%;margin-top:10px;padding:8px;border-radius:5px;border:none;">
+<div id="chatContent" style="margin-top:10px;font-size:13px;"></div>
+</div>
+
+<script>
+function toggleChat(){
+const chat=document.getElementById("chatBox");
+chat.style.display = chat.style.display==="block" ? "none" : "block";
+}
+
+function handleKey(event){
+if(event.key==="Enter"){
+let input=document.getElementById("userInput");
+let content=document.getElementById("chatContent");
+
+let userText=input.value.toLowerCase();
+let reply="Please contact us on WhatsApp for detailed support.";
+
+if(userText.includes("price")) reply="Please tell us which product price you need.";
+if(userText.includes("laptop")) reply="We provide gaming and business laptops.";
+if(userText.includes("cctv")) reply="We provide complete CCTV installation solutions.";
+
+content.innerHTML="<br><b>You:</b> "+input.value+"<br><b>AI:</b> "+reply;
+input.value="";
+}
+}
+</script>
 </body>
 </html>
