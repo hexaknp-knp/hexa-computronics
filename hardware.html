@@ -9,7 +9,7 @@
 
 <style>
 
-/* ================= GLOBAL ================= */
+/* ===== GLOBAL ===== */
 
 body{
 margin:0;
@@ -19,42 +19,19 @@ color:white;
 overflow-x:hidden;
 }
 
-/* Neon Glow Background */
-
-body::before{
-content:"";
-position:fixed;
-top:-150px;
-left:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-body::after{
-content:"";
-position:fixed;
-bottom:-150px;
-right:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-/* ================= NAV ================= */
+/* ===== NAVBAR ===== */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 35px;
+padding:14px 35px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav .logo{
@@ -81,169 +58,141 @@ nav ul li a:hover{
 color:#00f3ff;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 
-.page-hero{
-min-height:45vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-/* Glass Container */
-.hero-box{
-position:relative;
-max-width:1000px;
-width:100%;
-height:300px;
-overflow:hidden;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-box-shadow:0 8px 30px rgba(0,0,0,0.4);
-}
-
-/* Image */
-.hero-bg-img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-top:0;
-left:0;
-z-index:1;
-}
-
-/* Dark Overlay */
-.hero-box::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-z-index:2;
-}
-
-/* Text */
-.hero-content{
-position:relative;
-z-index:3;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.category-hero{
 text-align:center;
-padding:20px;
+padding:70px 20px 40px;
 }
 
-.hero-content h1{
-font-size:2rem;
+.category-hero h1{
+font-family:'Orbitron',sans-serif;
+font-size:2.2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 margin-bottom:10px;
 }
 
-.hero-content p{
-color:#ddd;
-font-size:14px;
+.category-hero p{
+color:#ccc;
+font-size:15px;
 }
 
-/* ================= GRID ================= */
+/* ===== SUBCATEGORY GRID ===== */
 
-.hardware-grid{
+.subcategory-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:30px 25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px 25px;
 max-width:1200px;
 margin:auto;
 }
 
-.hardware-card{
+.subcategory-card{
 background:rgba(255,255,255,0.05);
-border-radius:18px;
-padding:15px;
-text-align:center;
+border-radius:20px;
+overflow:hidden;
 transition:0.3s;
 border:1px solid rgba(255,255,255,0.1);
 backdrop-filter:blur(12px);
+text-align:center;
 }
 
-.hardware-card img{
+.subcategory-card img{
 width:100%;
-height:150px;
+height:180px;
 object-fit:cover;
-border-radius:12px;
 }
 
-.hardware-card h3{
-margin:12px 0 8px;
-font-size:16px;
+.subcategory-card h3{
+margin:15px 0 8px;
+font-size:18px;
 }
 
-.hardware-card p{
-font-size:13px;
+.subcategory-card p{
+font-size:14px;
 color:#ccc;
+padding:0 15px;
 }
 
-.buy-btn{
+.subcategory-card a{
 display:inline-block;
-margin-top:10px;
-padding:7px 18px;
+margin:15px;
+padding:8px 22px;
 background:linear-gradient(45deg,#00f3ff,#ff6b00);
 color:white;
 text-decoration:none;
-border-radius:20px;
-font-size:13px;
+border-radius:25px;
+font-size:14px;
 transition:0.3s;
 }
 
-.buy-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px rgba(0,243,255,0.6);
-}
-
-.hardware-card:hover{
-transform:translateY(-6px);
+.subcategory-card:hover{
+transform:translateY(-8px);
 box-shadow:0 8px 25px rgba(0,0,0,0.5);
 }
 
-/* ================= CTA ================= */
+/* ===== CTA ===== */
 
 .cta-section{
-padding:35px;
+padding:40px 20px;
 text-align:center;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
 margin:20px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,0.1);
 }
 
 .cta-section h2{
-font-size:18px;
-margin-bottom:8px;
+font-size:20px;
+margin-bottom:10px;
 }
 
-/* ================= FOOTER ================= */
+.cta-section a{
+display:inline-block;
+padding:8px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
 
 footer{
 text-align:center;
-padding:15px;
+padding:20px;
 border-top:1px solid rgba(255,255,255,0.1);
-margin-top:20px;
 font-size:13px;
 }
 
-/* ================= MOBILE ================= */
+/* ===== CHATBOT FLOAT ===== */
+
+.chatbot-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:55px;
+height:55px;
+background:#00f3ff;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:22px;
+cursor:pointer;
+z-index:1000;
+box-shadow:0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
-.hero-box{height:220px;}
-.hero-content h1{font-size:1.5rem;}
-.hardware-grid{padding:20px;}
+.category-hero h1{font-size:1.6rem;}
+.subcategory-grid{padding:20px;}
+nav ul{display:none;}
 }
 
 </style>
@@ -263,67 +212,60 @@ font-size:13px;
 </ul>
 </nav>
 
-<section class="page-hero">
-  <div class="hero-box">
-
-    <img src="images/it-hardware.jpg" class="hero-bg-img">
-
-    <div class="hero-content">
-      <h1>IT Hardware & Accessories</h1>
-      <p>High Performance Business & Home IT Solutions</p>
-    </div>
-
-  </div>
+<section class="category-hero">
+<h1>IT Hardware & Accessories</h1>
+<p>High Performance Business & Home IT Solutions</p>
 </section>
 
-<section class="hardware-grid">
+<section class="subcategory-grid">
 
-<div class="hardware-card">
+<div class="subcategory-card">
 <img src="images/laptop2.jpg" alt="Laptop">
 <h3>Laptops</h3>
 <p>Business & Gaming Laptops Available</p>
-<a href="laptops.html" class="buy-btn">View Products</a>
+<a href="laptops.html">View Products</a>
 </div>
 
-<div class="hardware-card">
+<div class="subcategory-card">
 <img src="images/placeholder.jpg" alt="Desktop">
 <h3>Desktop Systems</h3>
 <p>Custom & Branded Desktop Computers</p>
-<a href="desktops.html" class="buy-btn">View Products</a>
+<a href="desktops.html">View Products</a>
 </div>
 
-<div class="hardware-card">
+<div class="subcategory-card">
 <img src="images/placeholder.jpg" alt="Printer">
 <h3>Printers</h3>
 <p>Laser & Inkjet Printers for Office</p>
-<a href="printers.html" class="buy-btn">View Products</a>
+<a href="printers.html">View Products</a>
 </div>
 
-<div class="hardware-card">
+<div class="subcategory-card">
 <img src="images/placeholder.jpg" alt="UPS">
 <h3>UPS & Power Backup</h3>
 <p>Reliable Power Solutions</p>
-<a href="ups.html" class="buy-btn">View Products</a>
+<a href="ups.html">View Products</a>
 </div>
 
-<div class="hardware-card">
+<div class="subcategory-card">
 <img src="images/placeholder.jpg" alt="Accessories">
 <h3>Computer Accessories</h3>
 <p>Keyboard, Mouse, Cables & More</p>
-<a href="accessories.html" class="buy-btn">View Products</a>
+<a href="accessories.html">View Products</a>
 </div>
 
 </section>
 
 <section class="cta-section">
 <h2>Need Complete Office IT Setup?</h2>
-<p>Contact HEXA COMPUTRONICS Today</p>
-<a href="contact.html" class="buy-btn">Contact Now</a>
+<a href="contact.html">Contact Now</a>
 </section>
 
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
+
+<div class="chatbot-btn">💬</div>
 
 </body>
 </html>
