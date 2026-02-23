@@ -40,13 +40,32 @@ border-radius:10px;
 
 .pay-btn{
 display:block;
-margin:15px auto;
+margin:12px auto;
 padding:10px 20px;
 background:linear-gradient(45deg,#00f3ff,#ff6b00);
 color:white;
 border-radius:25px;
 text-decoration:none;
-width:80%;
+width:85%;
+cursor:pointer;
+}
+
+.cod-form{
+display:none;
+margin-top:15px;
+}
+
+.cod-form input, .cod-form textarea{
+width:90%;
+padding:8px;
+margin:6px 0;
+border-radius:8px;
+border:none;
+}
+
+hr{
+margin:25px 0;
+opacity:0.2;
 }
 </style>
 </head>
@@ -61,21 +80,46 @@ width:80%;
 <p><strong>Amount:</strong> ₹<span id="productPrice"></span></p>
 <p><strong>Order ID:</strong> <span id="orderID"></span></p>
 
-<hr style="margin:20px 0;opacity:0.2;">
+<hr>
 
 <h2>Pay via Google Pay</h2>
 <img src="images/gpay-qr.jpg" class="qr-img" alt="GPay QR">
 
-<p>After payment send screenshot on WhatsApp: 9935529306</p>
-
 <a id="whatsappBtn" class="pay-btn" target="_blank">
-Send Payment Screenshot
+Send Payment Screenshot on WhatsApp
 </a>
+
+<hr>
+
+<h2>Other Payment Options</h2>
+
+<button class="pay-btn" onclick="alert('Razorpay Integration Coming Soon')">
+Pay Online (Razorpay – Coming Soon)
+</button>
+
+<button class="pay-btn" onclick="toggleCOD()">
+Cash on Delivery
+</button>
+
+<div class="cod-form" id="codForm">
+
+<h3>Enter Delivery Details</h3>
+
+<input type="text" id="codName" placeholder="Full Name">
+<input type="text" id="codMobile" placeholder="Mobile Number">
+<textarea id="codAddress" placeholder="Full Delivery Address"></textarea>
+
+<button class="pay-btn" onclick="submitCOD()">
+Confirm COD Order
+</button>
+
+</div>
 
 </div>
 
 <script>
 
+// Get URL parameters
 const params = new URLSearchParams(window.location.search);
 const product = params.get("product");
 const price = params.get("price");
@@ -86,9 +130,32 @@ document.getElementById("productPrice").innerText = price || "0";
 const orderID = "HX" + Math.floor(Math.random()*1000000);
 document.getElementById("orderID").innerText = orderID;
 
-const whatsappMessage = `Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${product}%0AAmount: ₹${price}%0AI have completed payment.`;
+// WhatsApp auto message
+const whatsappMessage = `Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${product}%0AAmount: ₹${price}%0AI have completed UPI payment.`;
 document.getElementById("whatsappBtn").href =
 "https://wa.me/919935529306?text=" + whatsappMessage;
+
+// Toggle COD form
+function toggleCOD(){
+let form=document.getElementById("codForm");
+form.style.display = form.style.display==="block" ? "none" : "block";
+}
+
+// Submit COD
+function submitCOD(){
+let name=document.getElementById("codName").value;
+let mobile=document.getElementById("codMobile").value;
+let address=document.getElementById("codAddress").value;
+
+if(!name || !mobile || !address){
+alert("Please fill all COD details.");
+return;
+}
+
+let message=`Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${product}%0AAmount: ₹${price}%0APayment Mode: Cash on Delivery%0AName: ${name}%0AMobile: ${mobile}%0AAddress: ${address}`;
+
+window.open("https://wa.me/919935529306?text="+message);
+}
 
 </script>
 
