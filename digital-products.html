@@ -3,54 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Security Systems | HEXA COMPUTRONICS</title>
+<title>Digital Products | HEXA COMPUTRONICS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* SAME GLOBAL STYLE */
 
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
 background:#0f172a;
 color:white;
-overflow-x:hidden;
 }
 
-body::before{
-content:"";
-position:fixed;
-top:-150px;
-left:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#00f3ff 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
-body::after{
-content:"";
-position:fixed;
-bottom:-150px;
-right:-150px;
-width:700px;
-height:350px;
-background:radial-gradient(circle,#ff6b00 0%,transparent 70%);
-z-index:-1;
-filter:blur(120px);
-}
-
+/* NAV */
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 35px;
+padding:14px 35px;
 background:rgba(255,255,255,0.05);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,0.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav .logo{
@@ -62,6 +39,8 @@ nav ul{
 display:flex;
 gap:20px;
 list-style:none;
+margin:0;
+padding:0;
 }
 
 nav ul li a{
@@ -70,77 +49,78 @@ text-decoration:none;
 font-size:14px;
 }
 
+nav ul li a:hover{
+color:#00f3ff;
+}
+
 /* HERO */
-
-.page-hero{
-min-height:45vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.hero-box{
-position:relative;
-max-width:1000px;
-width:100%;
-height:300px;
-overflow:hidden;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.2);
-}
-
-.hero-bg-img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:1;
-}
-
-.hero-box::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.55);
-z-index:2;
-}
-
-.hero-content{
-position:relative;
-z-index:3;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+.category-hero{
 text-align:center;
+padding:70px 20px 40px;
 }
 
-.hero-content h1{
+.category-hero h1{
+font-family:'Orbitron',sans-serif;
 font-size:2rem;
 background:linear-gradient(to right,#00f3ff,#ff6b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.hero-content p{
-color:#ddd;
+/* GRID */
+.subcategory-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+padding:40px 25px;
+max-width:1200px;
+margin:auto;
+}
+
+.subcategory-card{
+background:rgba(255,255,255,0.05);
+border-radius:20px;
+overflow:hidden;
+text-align:center;
+padding-bottom:15px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.subcategory-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.subcategory-card h3{
+margin:15px 0 8px;
+}
+
+.subcategory-card p{
 font-size:14px;
+color:#ccc;
+padding:0 15px;
+}
+
+.subcategory-card a{
+display:inline-block;
+margin-top:10px;
+padding:8px 22px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
 }
 
 footer{
 text-align:center;
-padding:15px;
+padding:20px;
 border-top:1px solid rgba(255,255,255,0.1);
-margin-top:20px;
+font-size:13px;
 }
 
 @media(max-width:768px){
-.hero-box{height:220px;}
-.hero-content h1{font-size:1.5rem;}
+nav ul{display:none;}
 }
 
 </style>
@@ -160,60 +140,39 @@ margin-top:20px;
 </ul>
 </nav>
 
-<section class="page-hero">
-<div class="hero-box">
-
-<img src="images/digital-hero.jpg" class="hero-bg-img">
-
-<div class="hero-content">
-<h1>Digital Products</h1>
-<p>Premium Software & Digital Solutions</p>
-</div>
-
-</div>
+<section class="category-hero">
+<h1>Digital Products & Licenses</h1>
+<p>Software, Antivirus & Online Services</p>
 </section>
 
-<!-- YAHAN APNA EXISTING GRID CONTENT SAME PASTE KARO -->
-<!-- 4 PRODUCT GRID -->
-<section style="
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-padding:50px 20px;
-max-width:1300px;
-margin:auto;
-">
+<section class="subcategory-grid">
 
-<div class="product-card">
-<img src="images/switch.jpg">
-<h3>Ebook Collection</h3>
-<p>Editable description here. Add features & benefits.</p>
-<p class="price">₹8,499</p>
-<a href="ebook.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<div class="subcategory-card">
+<img src="images/antivirus.jpg">
+<h3>Antivirus Software</h3>
+<p>Premium Internet Security Solutions</p>
+<a href="antivirus.html">View Products</a>
 </div>
 
-<div class="product-card">
-<img src="images/router.jpg">
-<h3>Software Tools</h3>
-<p>Editable description here..</p>
-<p class="price">₹4,999</p>
-<a href="softwaretools.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<div class="subcategory-card">
+<img src="images/windows.jpg">
+<h3>Windows Licenses</h3>
+<p>Genuine Windows Activation Keys</p>
+<a href="windows.html">View Products</a>
 </div>
 
-<div class="product-card">
-<img src="images/lan.jpg">
-<h3>Business Templates Pack</h3>
-<p>Editable description here.</p>
-<p class="price">₹1,299</p>
-<a href="template.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<div class="subcategory-card">
+<img src="images/office.jpg">
+<h3>MS Office</h3>
+<p>Microsoft Office Genuine Licenses</p>
+<a href="office.html">View Products</a>
 </div>
 
-<div class="product-card">
-<img src="images/firewall.jpg">
-<h3>Enterprise Firewall</h3>
-<p>Advanced security firewall system.</p>
-<p class="price">₹22,999</p>
-<a href="audiobooks.html" style="display:inline-block;margin-top:10px;padding:8px 18px;background:#FF6B00;color:white;border-radius:5px;text-decoration:none;font-weight:bold;">View Products</a>
+<div class="subcategory-card">
+<img src="images/cloud.jpg">
+<h3>Cloud Services</h3>
+<p>Online Backup & Storage Solutions</p>
+<a href="cloud.html">View Products</a>
 </div>
 
 </section>
@@ -221,6 +180,19 @@ margin:auto;
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
 </footer>
+
+<!-- TAWK CHATBOT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/699c0b6bd737701c38a63a28/1ji4op7ip';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 </body>
 </html>
