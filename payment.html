@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
@@ -17,29 +16,28 @@ color:white;
 text-align:center;
 }
 
-/* HEADER */
-.header{
-padding:40px 20px 20px;
-}
-
-.header h1{
-font-family:'Orbitron',sans-serif;
-background:linear-gradient(to right,#00f3ff,#ff6b00);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* PAYMENT BOX */
 .payment-box{
 max-width:500px;
-margin:30px auto;
+margin:40px auto;
 background:rgba(255,255,255,0.05);
 padding:25px;
 border-radius:20px;
 border:1px solid rgba(255,255,255,0.1);
 }
 
-/* BUTTONS */
+h1{
+font-family:'Orbitron',sans-serif;
+background:linear-gradient(to right,#00f3ff,#ff6b00);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.qr-img{
+width:220px;
+margin:15px auto;
+border-radius:10px;
+}
+
 .pay-btn{
 display:block;
 margin:15px auto;
@@ -50,84 +48,48 @@ border-radius:25px;
 text-decoration:none;
 width:80%;
 }
-
-.qr-img{
-width:220px;
-margin:15px auto;
-border-radius:10px;
-}
-
-/* COD FORM */
-.cod-form{
-display:none;
-margin-top:20px;
-}
-
-.cod-form input{
-width:90%;
-padding:8px;
-margin:6px 0;
-border-radius:8px;
-border:none;
-}
-
-footer{
-margin-top:40px;
-padding:20px;
-font-size:13px;
-border-top:1px solid rgba(255,255,255,0.1);
-}
-
 </style>
 </head>
 
 <body>
 
-<div class="header">
-<h1>Secure Payment</h1>
-<p>Complete your purchase securely</p>
-</div>
-
 <div class="payment-box">
 
-<h2>Pay via UPI (Google Pay)</h2>
-<p>Scan the QR code below to complete payment</p>
+<h1>Order Summary</h1>
 
-<img src="images/gpay-qr.jpg" class="qr-img" alt="GPay QR Code">
+<p><strong>Product:</strong> <span id="productName"></span></p>
+<p><strong>Amount:</strong> ₹<span id="productPrice"></span></p>
+<p><strong>Order ID:</strong> <span id="orderID"></span></p>
 
-<p>After payment, send screenshot on WhatsApp: <b>9935529306</b></p>
+<hr style="margin:20px 0;opacity:0.2;">
 
-<hr style="margin:25px 0;opacity:0.2;">
+<h2>Pay via Google Pay</h2>
+<img src="images/gpay-qr.jpg" class="qr-img" alt="GPay QR">
 
-<h2>Other Payment Options</h2>
+<p>After payment send screenshot on WhatsApp: 9935529306</p>
 
-<a href="#" class="pay-btn" onclick="alert('Razorpay coming soon')">
-Pay Online (Razorpay – Coming Soon)
+<a id="whatsappBtn" class="pay-btn" target="_blank">
+Send Payment Screenshot
 </a>
 
-<a href="#" class="pay-btn" onclick="toggleCOD()">
-Cash on Delivery
-</a>
-
-<div class="cod-form" id="codForm">
-<h3>COD Order Details</h3>
-<input type="text" placeholder="Full Name">
-<input type="text" placeholder="Mobile Number">
-<input type="text" placeholder="Delivery Address">
-<a href="https://wa.me/919935529306" class="pay-btn">Confirm COD via WhatsApp</a>
 </div>
-
-</div>
-
-<footer>
-<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
-</footer>
 
 <script>
-function toggleCOD(){
-let form=document.getElementById("codForm");
-form.style.display=form.style.display==="block"?"none":"block";
-}
+
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+const price = params.get("price");
+
+document.getElementById("productName").innerText = product || "Product";
+document.getElementById("productPrice").innerText = price || "0";
+
+const orderID = "HX" + Math.floor(Math.random()*1000000);
+document.getElementById("orderID").innerText = orderID;
+
+const whatsappMessage = `Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${product}%0AAmount: ₹${price}%0AI have completed payment.`;
+document.getElementById("whatsappBtn").href =
+"https://wa.me/919935529306?text=" + whatsappMessage;
+
 </script>
 
 </body>
