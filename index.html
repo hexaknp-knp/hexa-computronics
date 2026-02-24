@@ -5,13 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="verification" content="25102aaf5e4bb6a9e358f94d26d676ac" />
- 
+
 <title>Best Computer Store in India | Laptops, Gaming PC & IT Solutions – HEXA COMPUTRONICS</title>
 
 <meta name="description" content="HEXA COMPUTRONICS is a leading computer store in India offering laptops, gaming PCs, CCTV cameras and IT accessories.">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -22,10 +23,10 @@
  "telephone": "+919935529306"
 }
 </script>
+
 <style>
 
-/* ================= TRICOLOR BACKGROUND ================= */
-
+/* BODY */
 body.home-page{
 margin:0;
 font-family:'Rajdhani',sans-serif;
@@ -33,8 +34,7 @@ background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
 
-/* ================= SOCIAL LEFT ================= */
-
+/* SOCIAL LEFT */
 .social-left{
 position:fixed;
 top:50%;
@@ -67,8 +67,7 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
 display:flex;
 justify-content:center;
@@ -86,6 +85,12 @@ padding:30px 35px;
 max-width:950px;
 width:100%;
 box-shadow:0 10px 30px rgba(0,0,0,0.25);
+animation:float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-5px);}
 }
 
 .logo{
@@ -112,8 +117,7 @@ color:#333;
 font-size:0.95rem;
 }
 
-/* ================= CATEGORY GRID ================= */
-
+/* CATEGORY GRID */
 .categories{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -151,8 +155,7 @@ text-decoration:none;
 border-radius:25px;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
@@ -172,118 +175,19 @@ margin-top:10px;
 font-size:13px;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:768px){
-
 .social-left{display:none;}
-
-.glass{
-flex-direction:column;
-text-align:center;
-padding:20px;
+.glass{flex-direction:column;text-align:center;padding:20px;}
+.hero-text{text-align:center;}
+.logo{width:55px;}
+.hero h1{font-size:1.2rem;}
+.categories{padding:15px;}
 }
 
-.hero-text{
-text-align:center;
-}
+.desktop-break{display:block;}
+@media(max-width:768px){.desktop-break{display:none;}}
 
-.logo{
-width:55px;
-}
-
-.hero h1{
-font-size:1.2rem;
-white-space:normal; /* allow wrap on mobile */
-}
-
-.categories{
-padding:15px;
-}
-
-}
-.desktop-break{
-display:block;
-}
-
-@media(max-width:768px){
-.desktop-break{
-display:none;
-}
-}
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:55px;
-height:55px;
-display:flex;
-justify-content:center;
-align-items:center;
-border-radius:50%;
-font-size:22px;
-color:white;
-z-index:1000;
-box-shadow:0 6px 15px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
-}
-.chat-btn{
-position:fixed;
-bottom:90px;
-right:20px;
-width:55px;
-height:55px;
-background:#00f3ff;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:22px;
-cursor:pointer;
-z-index:1000;
-box-shadow:0 6px 15px rgba(0,0,0,0.3);
-}
-
-.chat-box{
-position:fixed;
-bottom:160px;
-right:20px;
-width:280px;
-background:#111;
-color:white;
-border-radius:15px;
-padding:15px;
-display:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
-}
-
-.chat-box input{
-width:100%;
-padding:8px;
-border:none;
-border-radius:5px;
-margin-top:10px;
-}
-  /*============sticky NVBAR==============*/
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-}
-/*=========Hero Subtle Animation============*/
- .glass{
-animation:float 3s ease-in-out infinite alternate;
-}
-
-@keyframes float{
-from{transform:translateY(0);}
-to{transform:translateY(-5px);}
-} 
 </style>
 
 </head>
@@ -300,52 +204,52 @@ to{transform:translateY(-5px);}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="glass">
-    <img src="images/logo.jpg" class="logo" alt="HEXA COMPUTRONICS">
-    <div class="hero-text">
-      <h1>
+<div class="glass">
+<img src="images/logo.jpg" class="logo" alt="HEXA COMPUTRONICS">
+<div class="hero-text">
+<h1>
 Best Computer Store in India<br class="desktop-break">
 Laptops Gaming PCs and IT Solutions
 </h1>
-      <p>
-        HEXA COMPUTRONICS provides high-performance gaming PCs, branded laptops,
-        CCTV security systems and complete IT hardware solutions across India.
-      </p>
-    </div>
-  </div>
+<p>
+HEXA COMPUTRONICS provides high-performance gaming PCs, branded laptops,
+CCTV security systems and complete IT hardware solutions across India.
+</p>
+</div>
+</div>
 </section>
 
 <!-- CATEGORIES -->
 <section class="categories">
-  <div class="card">
-    <img src="images/laptop.jpg" alt="IT Hardware" loading="lazy">
-    <h3>IT Hardware</h3>
-    <a href="hardware.html">Explore</a>
-  </div>
+<div class="card">
+<img src="images/laptop.jpg" alt="IT Hardware">
+<h3>IT Hardware</h3>
+<a href="hardware.html">Explore</a>
+</div>
 
-  <div class="card">
-    <img src="images/cctv.jpg" alt="Security Systems" loading="lazy">
-    <h3>Security Systems</h3>
-    <a href="security.html">Explore</a>
-  </div>
+<div class="card">
+<img src="images/cctv.jpg" alt="Security Systems">
+<h3>Security Systems</h3>
+<a href="security.html">Explore</a>
+</div>
 
-  <div class="card">
-    <img src="images/switch.jpg" alt="Networking" loading="lazy">
-    <h3>Networking</h3>
-    <a href="networking.html">Explore</a>
-  </div>
+<div class="card">
+<img src="images/switch.jpg" alt="Networking">
+<h3>Networking</h3>
+<a href="networking.html">Explore</a>
+</div>
 
-  <div class="card">
-    <img src="images/digitalproduct.jpg" alt="Digital Products">
-    <h3>Digital Products</h3>
-    <a href="digital-products.html">Explore</a>
-  </div>
+<div class="card">
+<img src="images/digitalproduct.jpg" alt="Digital Products">
+<h3>Digital Products</h3>
+<a href="digital-products.html">Explore</a>
+</div>
 
-  <div class="card">
-    <img src="images/refurbished.jpg" alt="Refurbished Products" loading="lazy">
-    <h3>Refurbished Products</h3>
-    <a href="refurbished.html">Explore</a>
-  </div>
+<div class="card">
+<img src="images/refurbished.jpg" alt="Refurbished Products">
+<h3>Refurbished Products</h3>
+<a href="refurbished.html">Explore</a>
+</div>
 </section>
 
 <footer>
@@ -356,54 +260,6 @@ Laptops Gaming PCs and IT Solutions
 
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
-<!-- CHAT BUTTON -->
 
-
- <script>
-function toggleChat(){
-const chat=document.getElementById("chatBox");
-chat.style.display = chat.style.display==="block" ? "none" : "block";
-}
-
-function handleKey(event){
-if(event.key==="Enter"){
-let input=document.getElementById("userInput");
-let content=document.getElementById("chatContent");
-
-let userText=input.value.toLowerCase();
-let reply="Please contact us on WhatsApp for detailed support.";
-
-if(userText.includes("price")) reply="Please tell us which product price you need.";
-if(userText.includes("laptop")) reply="We provide gaming and business laptops.";
-if(userText.includes("cctv")) reply="We provide complete CCTV installation solutions.";
-
-content.innerHTML="<br><b>You:</b> "+input.value+"<br><b>AI:</b> "+reply;
-input.value="";
-}
-}
-</script> 
- /* ============= TWAK CAHTBOAT ===================*/
- <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/699c0b6bd737701c38a63a28/1ji4op7ip';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
