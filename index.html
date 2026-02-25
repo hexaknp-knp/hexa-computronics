@@ -34,6 +34,25 @@ background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
 
+/* NAVIGATION */
+nav{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px;
+background:#000;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#00f3ff;
+}
+
 /* SOCIAL LEFT */
 .social-left{
 position:fixed;
@@ -183,6 +202,7 @@ font-size:13px;
 .logo{width:55px;}
 .hero h1{font-size:1.2rem;}
 .categories{padding:15px;}
+nav{flex-wrap:wrap;}
 }
 
 .desktop-break{display:block;}
@@ -193,6 +213,18 @@ font-size:13px;
 </head>
 
 <body class="home-page">
+
+<!-- NAVIGATION -->
+<nav>
+<a href="index.html">Home</a>
+<a href="hardware.html">Hardware</a>
+<a href="security.html">Security</a>
+<a href="networking.html">Networking</a>
+<a href="digital-products.html">Digital</a>
+<a href="refurbished.html">Refurbished</a>
+<a href="amazon-store.html">Amazon Store</a>
+<a href="contact.html">Contact</a>
+</nav>
 
 <!-- SOCIAL LINKS -->
 <div class="social-left">
@@ -220,6 +252,7 @@ CCTV security systems and complete IT hardware solutions across India.
 
 <!-- CATEGORIES -->
 <section class="categories">
+
 <div class="card">
 <img src="images/laptop.jpg" alt="IT Hardware">
 <h3>IT Hardware</h3>
@@ -249,6 +282,7 @@ CCTV security systems and complete IT hardware solutions across India.
 <h3>Refurbished Products</h3>
 <a href="refurbished.html">Explore</a>
 </div>
+
 </section>
 
 <footer>
@@ -263,4 +297,3 @@ CCTV security systems and complete IT hardware solutions across India.
 
 </body>
 </html>
-
