@@ -34,61 +34,97 @@ background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
 
-/* PREMIUM NAVIGATION */
+/* GLASS PREMIUM NAVIGATION */
 nav{
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
-gap:28px;
-padding:16px 20px;
-background:rgba(0,0,0,0.85);
-backdrop-filter:blur(10px);
+padding:15px 25px;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(12px);
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
-nav a{
-color:#ffffff;
+nav .logo-text{
+font-family:'Orbitron',sans-serif;
+color:#fff;
+font-size:16px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav ul li a{
+color:#fff;
 text-decoration:none;
 font-size:14px;
 font-weight:600;
-letter-spacing:0.5px;
-transition:0.3s ease;
+transition:0.3s;
 position:relative;
 }
 
-nav a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:#00f3ff;
-transition:0.3s;
-}
-
-nav a:hover{
+nav ul li a:hover{
 color:#00f3ff;
 }
 
-nav a:hover::after{
-width:100%;
-}
-
-/* AMAZON BUTTON STYLE */
-nav .amazon-btn{
+/* Amazon Highlight */
+.amazon-btn{
 background:linear-gradient(45deg,#ff9900,#ff6600);
 padding:6px 16px;
 border-radius:20px;
 color:#fff !important;
 }
 
-nav .amazon-btn:hover{
+.amazon-btn:hover{
 background:linear-gradient(45deg,#ffaa33,#ff3300);
 }
+
+/* Hamburger */
+.menu-toggle{
+display:none;
+font-size:22px;
+color:#fff;
+cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+flex-wrap:wrap;
+}
+
+nav ul{
+flex-direction:column;
+width:100%;
+display:none;
+margin-top:10px;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
+border-radius:10px;
+}
+
+nav ul.active{
+display:flex;
+}
+
+.menu-toggle{
+display:block;
+}
+
+}
+
+
+
+
 
 /* SOCIAL LEFT */
 .social-left{
@@ -253,16 +289,23 @@ nav{flex-wrap:wrap;}
 
 <!-- NAVIGATION -->
 <nav>
-<a href="index.html">Home</a>
-<a href="hardware.html">Hardware</a>
-<a href="security.html">Security</a>
-<a href="networking.html">Networking</a>
-<a href="digital-products.html">Digital</a>
-<a href="refurbished.html">Refurbished</a>
-<a href="amazon-store.html" class="amazon-btn">Amazon Store</a>
-<a href="contact.html">Contact</a>
-</nav>
+<div class="logo-text">HEXA COMPUTRONICS</div>
 
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<ul id="navMenu">
+<li><a href="index.html">Home</a></li>
+<li><a href="hardware.html">Hardware</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="networking.html">Networking</a></li>
+<li><a href="digital-products.html">Digital</a></li>
+<li><a href="refurbished.html">Refurbished</a></li>
+<li><a href="amazon-store.html" class="amazon-btn">Amazon Store</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
 <!-- SOCIAL LINKS -->
 <div class="social-left">
 <a href="https://youtube.com/@hexacomptech" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
@@ -331,7 +374,12 @@ CCTV security systems and complete IT hardware solutions across India.
 
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
-
+<script>
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 </body>
 </html>
+
 
