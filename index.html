@@ -34,23 +34,60 @@ background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* PREMIUM NAVIGATION */
 nav{
 display:flex;
 justify-content:center;
-gap:25px;
-padding:15px;
-background:#000;
+align-items:center;
+gap:28px;
+padding:16px 20px;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 nav a{
-color:#fff;
+color:#ffffff;
 text-decoration:none;
 font-size:14px;
+font-weight:600;
+letter-spacing:0.5px;
+transition:0.3s ease;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#00f3ff;
+transition:0.3s;
 }
 
 nav a:hover{
 color:#00f3ff;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* AMAZON BUTTON STYLE */
+nav .amazon-btn{
+background:linear-gradient(45deg,#ff9900,#ff6600);
+padding:6px 16px;
+border-radius:20px;
+color:#fff !important;
+}
+
+nav .amazon-btn:hover{
+background:linear-gradient(45deg,#ffaa33,#ff3300);
 }
 
 /* SOCIAL LEFT */
@@ -222,7 +259,7 @@ nav{flex-wrap:wrap;}
 <a href="networking.html">Networking</a>
 <a href="digital-products.html">Digital</a>
 <a href="refurbished.html">Refurbished</a>
-<a href="amazon-store.html">Amazon Store</a>
+<a href="amazon-store.html" class="amazon-btn">Amazon Store</a>
 <a href="contact.html">Contact</a>
 </nav>
 
@@ -297,3 +334,4 @@ CCTV security systems and complete IT hardware solutions across India.
 
 </body>
 </html>
+
