@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Payment - HEXA COMPUTRONICS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial;background:#f4f4f4;text-align:center;margin:0;}
+.container{max-width:400px;margin:80px auto;background:#fff;padding:30px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+button{background:#00f3ff;color:#000;padding:14px 25px;border:none;border-radius:30px;font-size:16px;font-weight:bold;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>₹1 Test Payment</h2>
+<p>Testing Razorpay Integration</p>
+<button id="rzp-button1">Pay ₹1</button>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+"key": "rzp_live_YOURKEY",
+"amount": "100",
+"currency": "INR",
+"name": "HEXA COMPUTRONICS",
+"description": "Test Payment ₹1",
+"handler": function (response){
+window.location.href="thank-you.html";
+}
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+rzp1.open();
+e.preventDefault();
+}
+</script>
+
+</body>
+</html>
