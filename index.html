@@ -8,24 +8,13 @@
 
 <title>Best Computer & Digital Tech Store in India | Hardware, Smart Picks & Buying Guides – HEXA COMPUTRONICS</title>
 
-<meta name="description" content="HEXA COMPUTRONICS offers IT hardware, smart tech recommendations, and expert digital buying guides for Indian customers. Secure payments and trusted affiliate picks.">
+<meta name="description" content="HEXA COMPUTRONICS offers IT hardware, smart tech recommendations and expert digital buying guides for Indian customers. Secure payments and trusted affiliate picks.">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "ComputerStore",
- "name": "HEXA COMPUTRONICS",
- "url": "https://hexacomputer.in",
- "areaServed": ["India"],
- "telephone": "+919935529306"
-}
-</script>
-
 <style>
-body.home-page{
+body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
 background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
@@ -38,11 +27,9 @@ justify-content:space-between;
 align-items:center;
 padding:15px 25px;
 background:rgba(0,0,0,0.75);
-backdrop-filter:blur(12px);
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
 nav .logo-text{
@@ -53,7 +40,7 @@ font-size:16px;
 
 nav ul{
 display:flex;
-gap:25px;
+gap:20px;
 list-style:none;
 margin:0;
 padding:0;
@@ -64,7 +51,6 @@ color:#fff;
 text-decoration:none;
 font-size:14px;
 font-weight:600;
-transition:0.3s;
 }
 
 nav ul li a:hover{color:#00f3ff;}
@@ -76,23 +62,16 @@ border-radius:20px;
 color:#fff !important;
 }
 
-.menu-toggle{display:none;font-size:22px;color:#fff;cursor:pointer;}
+.menu-toggle{display:none;color:#fff;font-size:22px;cursor:pointer;}
 
 @media(max-width:768px){
 nav{flex-wrap:wrap;}
-nav ul{
-flex-direction:column;
-width:100%;
-display:none;
-margin-top:10px;
-background:rgba(0,0,0,0.9);
-padding:15px 0;
-border-radius:10px;
-}
+nav ul{flex-direction:column;width:100%;display:none;background:#000;margin-top:10px;}
 nav ul.active{display:flex;}
 .menu-toggle{display:block;}
 }
 
+/* HERO */
 .hero{
 display:flex;
 justify-content:center;
@@ -102,7 +81,7 @@ padding:30px 20px;
 .glass{
 display:flex;
 align-items:center;
-gap:25px;
+gap:20px;
 background:rgba(255,255,255,0.9);
 border-radius:20px;
 padding:30px;
@@ -120,11 +99,14 @@ margin:0 0 6px;
 color:#000;
 }
 
-.hero-text p{
-color:#333;
-font-size:0.95rem;
+.hero-text p{color:#333;font-size:0.95rem;}
+
+@media(max-width:768px){
+.glass{flex-direction:column;text-align:center;}
+.hero-text h1{font-size:1.2rem;}
 }
 
+/* CATEGORY */
 .categories{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -135,7 +117,7 @@ margin:auto;
 }
 
 .card{
-background:rgba(255,255,255,0.85);
+background:#ffffffdd;
 border-radius:15px;
 padding:20px;
 text-align:center;
@@ -158,6 +140,27 @@ text-decoration:none;
 font-size:14px;
 }
 
+/* DIGITAL SECTION */
+.digital-section{
+background:#000;
+color:#fff;
+padding:60px 20px;
+text-align:center;
+}
+
+.digital-section a{
+display:inline-block;
+padding:14px 30px;
+background:#00f3ff;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+font-size:16px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
@@ -171,15 +174,10 @@ text-decoration:none;
 margin:0 8px;
 font-size:14px;
 }
-
-@media(max-width:768px){
-.glass{flex-direction:column;text-align:center;}
-.hero-text h1{font-size:1.2rem;}
-}
 </style>
 </head>
 
-<body class="home-page">
+<body>
 
 <nav>
 <div class="logo-text">HEXA COMPUTRONICS</div>
@@ -198,10 +196,10 @@ font-size:14px;
 
 <section class="hero">
 <div class="glass">
-<img src="images/logo.jpg" class="logo" alt="HEXA COMPUTRONICS">
+<img src="images/logo.jpg" class="logo">
 <div class="hero-text">
 <h1>India’s Smart Computer & Digital Tech Store</h1>
-<p>IT Hardware, Smart Tech Picks & Expert Buying Guides — trusted recommendations for Indian customers.</p>
+<p>IT Hardware, Smart Tech Picks & Expert Buying Guides for Indian customers.</p>
 </div>
 </div>
 </section>
@@ -210,64 +208,40 @@ font-size:14px;
 <div class="card"><img src="images/laptop.jpg"><h3>IT Hardware</h3><a href="hardware.html">Explore</a></div>
 <div class="card"><img src="images/cctv.jpg"><h3>Security Systems</h3><a href="security.html">Explore</a></div>
 <div class="card"><img src="images/switch.jpg"><h3>Networking</h3><a href="networking.html">Explore</a></div>
-<div class="card"><img src="images/digitalproduct.jpg"><h3>Digital Buying Guides</h3><a href="digital-products.html">Explore</a></div>
+<div class="card"><img src="images/digitalproduct.jpg"><h3>Digital Guides</h3><a href="digital-products.html">Explore</a></div>
 <div class="card"><img src="images/refurbished.jpg"><h3>Refurbished</h3><a href="refurbished.html">Explore</a></div>
 </section>
 
-<section style="max-width:1100px;margin:50px auto;padding:20px;">
-<h2 style="text-align:center;font-family:'Orbitron';color:#000;">
-⭐ Top Picks for Indian Buyers
-</h2>
+<section style="max-width:1100px;margin:50px auto;padding:20px;text-align:center;">
+<h2 style="font-family:'Orbitron';color:#000;">⭐ Top Picks for Indian Buyers</h2>
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;margin-top:30px;">
-
-<div style="background:#fff;padding:20px;border-radius:15px;text-align:center;">
-<h4>Best Gaming Mouse Under ₹999</h4>
-<a href="https://amzn.to/4r5GOAt" target="_blank"
-style="display:inline-block;margin-top:12px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">
-Check on Amazon
-</a>
+<div style="background:#fff;padding:20px;border-radius:15px;">
+<h4>Gaming Mouse Under ₹999</h4>
+<a href="https://amzn.to/4r5GOAt" target="_blank" style="display:inline-block;margin-top:10px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">Check on Amazon</a>
 </div>
 
-<div style="background:#fff;padding:20px;border-radius:15px;text-align:center;">
+<div style="background:#fff;padding:20px;border-radius:15px;">
 <h4>SSD 256GB Upgrade</h4>
-<a href="https://amzn.to/4r5GOAK" target="_blank"
-style="display:inline-block;margin-top:12px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">
-Check on Amazon
-</a>
+<a href="https://amzn.to/4r5GOAK" target="_blank" style="display:inline-block;margin-top:10px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">Check on Amazon</a>
 </div>
 
-<div style="background:#fff;padding:20px;border-radius:15px;text-align:center;">
-<h4>Budget Laptop for Students</h4>
-<a href="https://amzn.to/4cQaYUO" target="_blank"
-style="display:inline-block;margin-top:12px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">
-Check on Amazon
-</a>
+<div style="background:#fff;padding:20px;border-radius:15px;">
+<h4>Budget Laptop</h4>
+<a href="https://amzn.to/4cQaYUO" target="_blank" style="display:inline-block;margin-top:10px;padding:10px 20px;background:#ff9900;color:#fff;border-radius:25px;text-decoration:none;font-weight:bold;">Check on Amazon</a>
 </div>
-
 </div>
 </section>
 
 <section class="digital-section">
-<h2>📘 HEXA Digital Buying Guide</h2>
-<p>Step-by-step expert guide to choose the right laptop, PC & accessories in India.</p>
+<h2 style="font-family:'Orbitron';margin-bottom:15px;">📘 HEXA Digital Buying Guide</h2>
+<p>Step-by-step guide to choose the right laptop & PC in India.</p>
 <a href="checkout.html">Buy Now ₹299</a>
-<p style="font-size:13px;margin-top:15px;color:#ccc;">
-✔ Secure Razorpay Payment<br>
-✔ Instant Download After Payment<br>
+<p style="font-size:13px;margin-top:20px;color:#ccc;">
+✔ Secure Razorpay Payment <br>
+✔ Instant Download After Payment <br>
 ✔ No Physical Shipping
 </p>
-</section>
-
-<section style="background:#f4f4f4;padding:40px 20px;text-align:center;">
-<h2 style="font-family:'Orbitron';color:#000;">🛡 Why Trust HEXA COMPUTRONICS?</h2>
-
-<div style="max-width:900px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
-<div><h4>✔ Secure Payments</h4><p>Powered by Razorpay</p></div>
-<div><h4>✔ Instant Access</h4><p>Download immediately after purchase</p></div>
-<div><h4>✔ Affiliate Transparency</h4><p>We recommend trusted products only</p></div>
-<div><h4>✔ WhatsApp Support</h4><p>Direct expert guidance</p></div>
-</div>
 </section>
 
 <footer>
@@ -279,13 +253,36 @@ Check on Amazon
 <a href="contact.html">Contact</a>
 </div>
 
+<div style="margin:15px 0;">
+<a href="https://youtube.com/@hexacomptech" target="_blank"><i class="fab fa-youtube fa-lg"></i></a>
+<a href="https://facebook.com/hexacomputronics" target="_blank"><i class="fab fa-facebook fa-lg"></i></a>
+<a href="https://instagram.com/hcomputronics" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+</div>
+
 <p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P</p>
 </footer>
+
+<a href="https://wa.me/919935529306" target="_blank"
+style="position:fixed;bottom:20px;right:20px;background:#25D366;width:55px;height:55px;display:flex;justify-content:center;align-items:center;border-radius:50%;color:#fff;font-size:22px;z-index:9999;box-shadow:0 6px 15px rgba(0,0,0,0.3);text-decoration:none;">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 function toggleMenu(){
 document.getElementById("navMenu").classList.toggle("active");
 }
+</script>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/699c0b6bd737701c38a63a28/1ji4op7ip';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
 
 </body>
