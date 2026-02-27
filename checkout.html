@@ -3,39 +3,76 @@
 <head>
 <title>Secure Checkout - HEXA COMPUTRONICS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{font-family:Arial;background:#f4f4f4;margin:0;text-align:center;}
-.container{max-width:500px;margin:50px auto;background:#fff;padding:30px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);}
-button{background:#3399cc;color:#fff;padding:12px 25px;border:none;border-radius:25px;font-size:16px;cursor:pointer;}
-button:hover{opacity:0.9;}
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+text-align:center;
+}
+
+.container{
+max-width:500px;
+margin:60px auto;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+button{
+background:#00f3ff;
+color:#000;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+button:hover{
+opacity:0.9;
+}
 </style>
 </head>
+
 <body>
 
 <div class="container">
 <h2>Ultimate PC Buying Guide 2026</h2>
-<p>Price: ₹299</p>
-<p>Instant Download After Payment</p>
+<p><strong>Price: ₹299</strong></p>
+<p>✔ Instant Download After Payment</p>
+<p>✔ Secure Payment via Razorpay</p>
 
-<button id="rzp-button1">Pay Securely with Razorpay</button>
+<button id="rzp-button1">Pay Securely ₹299</button>
 </div>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <script>
 var options = {
-"key": "rzp_key",
+"key": "rzp_live_SLFCOQlEEX9giJ",  // 🔴 REPLACE WITH YOUR LIVE KEY ID
 "amount": "29900",
 "currency": "INR",
 "name": "HEXA COMPUTRONICS",
-"description": "Digital Product Purchase",
+"description": "Ultimate PC Buying Guide 2026",
+"image": "https://hexacomputer.in/images/logo.jpg",
 "handler": function (response){
-window.location.href="thank-you.html";
+    window.location.href = "thank-you.html";
+},
+"theme": {
+    "color": "#00f3ff"
 }
 };
+
 var rzp1 = new Razorpay(options);
+
 document.getElementById('rzp-button1').onclick = function(e){
-rzp1.open();
-e.preventDefault();
+    rzp1.open();
+    e.preventDefault();
 }
 </script>
 
