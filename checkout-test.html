@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>₹1 Test Payment - HEXA COMPUTRONICS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+text-align:center;
+}
+
+.container{
+max-width:500px;
+margin:60px auto;
+background:#fff;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+button{
+background:#00f3ff;
+color:#000;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+button:hover{
+opacity:0.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>₹1 Test Payment</h2>
+<p>This is a Razorpay integration test.</p>
+
+<input type="email" id="userEmail" placeholder="Enter your email"
+style="padding:10px;width:80%;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+<button id="rzp-button1">Pay ₹1</button>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+    "key": "rzp_live_SLFCOQlEEX9giJ",  // keep your Live Key ID
+    "amount": "100",   // ₹1 = 100 paise
+    "currency": "INR",
+    "name": "HEXA COMPUTRONICS",
+    "description": "Test Payment ₹1",
+    "handler": function (response){
+
+        var email = document.getElementById("userEmail").value;
+
+        if(email === ""){
+            alert("Please enter your email before payment.");
+            return;
+        }
+
+        var productName = "₹1 Test Payment";
+        var amount = "1";
+
+        fetch("https://script.google.com/macros/s/AKfycbyEfcHHVov6HZb8gTMwmtdfYOvlQSgT3ymweMN81DpaXeRaVijI7c-8OA6FgBKFUy_9/exec", {
+            method: "POST",
+            body: JSON.stringify({
+                email: email,
+                payment_id: response.razorpay_payment_id,
+                product_name: productName,
+                amount: amount
+            })
+        }).then(function(){
+            window.location.href = "thank-you.html";
+        });
+
+    },
+    "theme": {
+        "color": "#00f3ff"
+    }
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+
+</body>
+</html>
