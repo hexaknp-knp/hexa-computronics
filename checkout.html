@@ -64,6 +64,7 @@ var options = {
 "description": "Ultimate PC Buying Guide 2026",
 "image": "https://hexacomputer.in/images/logo.jpg",
 "handler": function (response){
+
     var email = document.getElementById("userEmail").value;
 
     if(email === ""){
@@ -71,7 +72,16 @@ var options = {
         return;
     }
 
-    window.location.href = "thank-you.html";
+    fetch("https://script.google.com/macros/s/AKfycbxMFdEJQl0wmp1Sop9x-HZ2MlqrD7Sz8ZB4jDwm0iYwhIqtW2nIYiBQiTlI0XeSfF83xQ/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            email: email,
+            payment_id: response.razorpay_payment_id
+        })
+    }).then(function(){
+        window.location.href = "thank-you.html";
+    });
+
 },
 "theme": {
     "color": "#00f3ff"
