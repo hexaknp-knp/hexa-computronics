@@ -47,6 +47,9 @@ opacity:0.9;
 <p>✔ Instant Download After Payment</p>
 <p>✔ Secure Payment via Razorpay</p>
 
+<input type="email" id="userEmail" placeholder="Enter your email"
+style="padding:10px;width:80%;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
 <button id="rzp-button1">Pay Securely ₹299</button>
 </div>
 
@@ -61,6 +64,13 @@ var options = {
 "description": "Ultimate PC Buying Guide 2026",
 "image": "https://hexacomputer.in/images/logo.jpg",
 "handler": function (response){
+    var email = document.getElementById("userEmail").value;
+
+    if(email === ""){
+        alert("Please enter your email before payment.");
+        return;
+    }
+
     window.location.href = "thank-you.html";
 },
 "theme": {
