@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Digital Buying Guides & Software | HEXA COMPUTRONICS</title>
+<title>Digital Products | HEXA COMPUTRONICS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
@@ -11,254 +11,107 @@
 body{
 margin:0;
 font-family:'Rajdhani',sans-serif;
-background:#0f172a;
-color:white;
+background:#f4f4f4;
 }
 
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 35px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,0.1);
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-nav .logo{
-font-family:'Orbitron',sans-serif;
-font-size:18px;
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-margin:0;
-padding:0;
-}
-
-nav ul li a{
-color:white;
-text-decoration:none;
-font-size:14px;
-}
-
-nav ul li a:hover{
-color:#00f3ff;
-}
-
-/* HERO */
-.category-hero{
+header{
+background:#000;
+color:#fff;
 text-align:center;
-padding:70px 20px 40px;
-}
-
-.category-hero h1{
-font-family:'Orbitron',sans-serif;
-font-size:2rem;
-background:linear-gradient(to right,#00f3ff,#ff6b00);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.category-hero p{
-color:#ccc;
-margin-top:10px;
-}
-
-/* SECTION TITLE */
-.section-title{
-text-align:center;
+padding:30px 20px;
 font-family:'Orbitron';
-margin:50px 0 20px;
 }
 
-/* GRID */
-.product-grid{
+.products{
+max-width:1100px;
+margin:50px auto;
+padding:20px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-padding:20px 25px 60px;
-max-width:1200px;
-margin:auto;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
-.product-card{
-background:rgba(255,255,255,0.05);
-border-radius:20px;
+.card{
+background:#fff;
+border-radius:15px;
 padding:20px;
 text-align:center;
-border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
-.product-card:hover{
+.card:hover{
 transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.product-card img{
+.card img{
 width:100%;
-height:180px;
+border-radius:10px;
+height:200px;
 object-fit:cover;
-border-radius:15px;
 }
 
-.product-card h3{
+.card h3{
 margin:15px 0 10px;
+font-family:'Orbitron';
 }
 
-.product-card p{
+.card p{
 font-size:14px;
-color:#ccc;
+color:#555;
 }
 
-.product-card a{
+.card a{
 display:inline-block;
-margin-top:12px;
+margin-top:15px;
 padding:10px 25px;
-background:linear-gradient(45deg,#00f3ff,#ff6b00);
-color:white;
+background:#00f3ff;
+color:#000;
 border-radius:25px;
 text-decoration:none;
 font-weight:bold;
 }
 
-/* TRUST */
-.trust{
-background:#000;
-padding:50px 20px;
-text-align:center;
-}
-
-.trust p{
-color:#ccc;
-font-size:14px;
-}
-
 footer{
 text-align:center;
-padding:20px;
-border-top:1px solid rgba(255,255,255,0.1);
-font-size:13px;
-}
-
-@media(max-width:768px){
-nav ul{display:none;}
+padding:25px;
+background:#000;
+color:#fff;
+margin-top:50px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<div class="logo">HEXA COMPUTRONICS</div>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="hardware.html">Hardware</a></li>
-<li><a href="security.html">Security</a></li>
-<li><a href="digital-products.html">Digital</a></li>
-<li><a href="refurbished.html">Refurbished</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
+<header>
+<h1>🚀 Digital Products</h1>
+<p>Premium AI Courses & Expert Buying Guides</p>
+</header>
 
-<section class="category-hero">
-<h1>Premium Digital Products</h1>
-<p>Expert Buying Guides, Software & Smart Digital Solutions for India</p>
-</section>
+<section class="products">
 
-<!-- ================= HEXA OWN PRODUCTS ================= -->
+<!-- AI PRODUCT -->
+<div class="card">
+<img src="images/ai-cover.jpg" alt="AI Income Mastery">
+<h3>AI Income Mastery System 2026</h3>
+<p>Learn ChatGPT, AI Videos & AI Art Monetization Step-By-Step.</p>
+<a href="products/ai-income.html">View Details</a>
+</div>
 
-<h2 class="section-title">📘 HEXA Digital Guides</h2>
-
-<section class="product-grid">
-
-<div class="product-card">
-<img src="images/digitalproduct.jpg">
-<h3>Ultimate PC Buying Guide 2026</h3>
-<p>Step-by-step guide to choose the right laptop & PC in India.</p>
+<!-- EXISTING LAPTOP GUIDE -->
+<div class="card">
+<img src="images/digitalproduct.jpg" alt="Laptop Buying Guide">
+<h3>Premium Laptop Buying Guide</h3>
+<p>Expert guide to choose the right laptop & PC in India.</p>
 <a href="checkout.html">Buy Now ₹299</a>
 </div>
 
-<!-- Add more HEXA guides here later -->
-
-</section>
-
-<!-- ================= SOFTWARE & LICENSES ================= -->
-
-<h2 class="section-title">💻 Software & Digital Licenses</h2>
-
-<section class="product-grid">
-
-<div class="product-card">
-<img src="images/antivirus.jpg">
-<h3>Antivirus Software</h3>
-<p>Premium internet security solutions.</p>
-<a href="antivirus.html">View Products</a>
-</div>
-
-<div class="product-card">
-<img src="images/windows.jpg">
-<h3>Windows Licenses</h3>
-<p>Genuine Windows activation keys.</p>
-<a href="windows.html">View Products</a>
-</div>
-
-<div class="product-card">
-<img src="images/office.jpg">
-<h3>Microsoft Office</h3>
-<p>Original MS Office digital licenses.</p>
-<a href="office.html">View Products</a>
-</div>
-
-<div class="product-card">
-<img src="images/cloud.jpg">
-<h3>Cloud Services</h3>
-<p>Online backup & storage solutions.</p>
-<a href="cloud.html">View Products</a>
-</div>
-
-  <!-- DIGITAL PRODUCT TEMPLATE -->
-<div class="product-card">
-<img src="images/your-product-image.jpg">
-<h3>Product Title</h3>
-<p>Short benefit description (what problem it solves).</p>
-<a href="checkout.html">Buy Now ₹PRICE</a>
-</div>
-
-</section>
-
-<!-- ================= TRUST SECTION ================= -->
-
-<section class="trust">
-<h2 style="font-family:'Orbitron';">Why Buy Digital from HEXA?</h2>
-<p>✔ Secure Razorpay Payments<br>
-✔ Instant Access After Payment<br>
-✔ Expert Curated Products<br>
-✔ WhatsApp Support Available</p>
 </section>
 
 <footer>
-<p>© 2026 HEXA COMPUTRONICS | Kanpur, U.P | 9935529306</p>
+<p>© 2026 HEXA COMPUTRONICS | Secure Payments via Razorpay</p>
 </footer>
-
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/699c0b6bd737701c38a63a28/1ji4op7ip';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
 
 </body>
 </html>
