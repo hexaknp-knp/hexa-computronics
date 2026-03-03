@@ -137,15 +137,56 @@ Launch Offer ₹99 Only
 </div>
 
 <!-- 🔥 REPLACE THIS LINK WITH YOUR REAL RAZORPAY PAYMENT LINK -->
-<a href="https://rzp.io/rzp/ObIY4h4M" class="btn">
-  Pay ₹99 Now
-</a>
+<div class="box">
 
-<br><br>
+<h2>Complete Your Purchase</h2>
 
-<a href="download.html" style="color:#00f3ff;">
-Already Paid? Click Here To Download
-</a>
+<input type="text" id="name" placeholder="Full Name" required><br><br>
+<input type="email" id="email" placeholder="Email Address" required><br><br>
+<input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+
+<button id="payBtn" class="btn">Pay ₹99 Now</button>
+
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById('payBtn').onclick = function(e){
+
+var name = document.getElementById('name').value;
+var email = document.getElementById('email').value;
+var phone = document.getElementById('phone').value;
+
+if(!name || !email || !phone){
+alert("Please fill all details");
+return;
+}
+
+var options = {
+"key": "rzp_live_SLFCOQlEEX9giJ",
+"amount": "9900",
+"currency": "INR",
+"name": "HEXA COMPUTRONICS",
+"description": "AI Income Mastery System",
+"handler": function (response){
+window.location.href = "download.html";
+},
+"prefill": {
+"name": name,
+"email": email,
+"contact": phone
+},
+"theme": {
+"color": "#00f3ff"
+}
+};
+
+var rzp1 = new Razorpay(options);
+rzp1.open();
+e.preventDefault();
+}
+</script>
 
 <p class="trust">
 ✔ Secure Razorpay Payment <br>
