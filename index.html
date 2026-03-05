@@ -20,7 +20,39 @@ font-family:'Rajdhani',sans-serif;
 background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
 overflow-x:hidden;
 }
+.dropdown{
+position:relative;
+}
 
+.dropdown-menu{
+display:none;
+position:absolute;
+top:35px;
+background:#000;
+padding:10px;
+border-radius:10px;
+list-style:none;
+min-width:180px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.dropdown-menu li{
+margin:8px 0;
+}
+
+.dropdown-menu a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
+
+.dropdown-menu a:hover{
+color:#00f3ff;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
+}
 nav{
 display:flex;
 justify-content:space-between;
@@ -399,6 +431,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 </body>
 </html>
+
 
 
 
