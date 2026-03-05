@@ -156,28 +156,45 @@ let message=`Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${produc
 window.open("https://wa.me/919935529306?text="+message);
 }
 
-</script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
 
+document.getElementById('rzp-button').onclick = function(e){
+
+var price = document.getElementById("productPrice").innerText;
+var product = document.getElementById("productName").innerText;
+var order = document.getElementById("orderID").innerText;
+
 var options = {
-"key": "rzp_live_SLFCOQlEEX9giJ",
-"amount": 10000,
+
+"key": "RAZORPAY_KEY_ID",
+
+"amount": price * 100,
+
 "currency": "INR",
+
 "name": "HEXA COMPUTRONICS",
-"description": "Digital Product Purchase",
+
+"description": product,
+
 "handler": function (response){
-alert("Payment Successful!");
+
+alert("Payment Successful! Order ID: " + order);
+
 }
+
 };
 
-var rzp1 = new Razorpay(options);
+var rzp = new Razorpay(options);
 
-document.getElementById('rzp-button').onclick = function(e){
-rzp1.open();
+rzp.open();
+
 e.preventDefault();
+
 }
+
+</script>
 
 </script>
 </body>
