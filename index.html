@@ -276,21 +276,318 @@ font-size:14px;
 
 <a href="#">⚙ Tech Tools</a>
 
-<ul class="dropdown-menu">
+<!DOCTYPE html>
 
-<li><a href="laptop-finder.html">Laptop Finder</a></li>
+<html lang="en">
+<head>
 
-<li><a href="ssd-finder.html">SSD Finder</a></li>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="verification" content="25102aaf5e4bb6a9e358f94d26d676ac" />
 
-<li><a href="router-finder.html">Router Finder</a></li>
+<title>Best Computer & Digital Tech Store in India | Hardware, Smart Picks & Buying Guides – HEXA COMPUTRONICS</title>
 
-<li><a href="pc-build.html">PC Build Tool</a></li>
+<meta name="description" content="HEXA COMPUTRONICS offers IT hardware, smart tech recommendations and expert digital buying guides for Indian customers. Secure payments and trusted affiliate picks.">
 
-<li><a href="laptop-compare.html">Laptop Compare</a></li>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:linear-gradient(to bottom,#ff9933 0%, #ffffff 45%, #138808 100%);
+overflow-x:hidden;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+background:rgba(0,0,0,0.8);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav .logo-text{
+font-family:'Orbitron',sans-serif;
+color:#fff;
+font-size:16px;
+}
+
+nav ul{
+display:flex;
+gap:20px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav ul li a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+}
+
+nav ul li a:hover{color:#00f3ff;}
+
+.amazon-btn{
+background:linear-gradient(45deg,#ff9900,#ff6600);
+padding:6px 16px;
+border-radius:20px;
+color:#fff !important;
+}
+
+.menu-toggle{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+@media(max-width:768px){
+nav{flex-wrap:wrap;}
+nav ul{flex-direction:column;width:100%;display:none;background:#000;margin-top:10px;}
+nav ul.active{display:flex;}
+.menu-toggle{display:block;}
+}
+
+/* dropdown */
+
+.dropdown{position:relative;}
+
+.dropdown-menu{
+display:none;
+position:absolute;
+top:35px;
+background:#000;
+padding:10px;
+border-radius:10px;
+list-style:none;
+min-width:200px;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.dropdown-menu li{margin:6px 0;}
+
+.dropdown-menu a{
+color:#fff;
+text-decoration:none;
+display:block;
+padding:6px 10px;
+}
+
+.dropdown-menu a:hover{
+background:#111;
+color:#00f3ff;
+}
+
+.dropdown-menu.show{
+display:block;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:center;
+padding:40px 20px;
+}
+
+.glass{
+display:flex;
+align-items:center;
+gap:20px;
+background:rgba(255,255,255,0.95);
+border-radius:20px;
+padding:35px;
+max-width:1000px;
+width:100%;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.logo{width:70px;}
+
+.hero-text h1{
+font-family:'Orbitron',sans-serif;
+font-size:1.7rem;
+margin:0 0 10px;
+color:#000;
+}
+
+.hero-text p{
+color:#333;
+font-size:1rem;
+margin-bottom:15px;
+}
+
+.hero-btns a{
+display:inline-block;
+padding:10px 20px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+margin-right:10px;
+margin-top:5px;
+}
+
+.btn-dark{background:#000;color:#fff;}
+.btn-primary{background:#00f3ff;color:#000;}
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:40px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#ffffffdd;
+border-radius:15px;
+padding:20px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:130px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.card a{
+display:inline-block;
+padding:8px 18px;
+background:linear-gradient(45deg,#ffaa33,#00f3ff);
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+margin-top:10px;
+}
+
+.digital-section{
+background:#000;
+color:#fff;
+padding:70px 20px;
+text-align:center;
+}
+
+.digital-section a{
+display:inline-block;
+padding:14px 35px;
+background:#00f3ff;
+color:#000;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+font-size:17px;
+box-shadow:0 5px 15px rgba(0,0,0,0.4);
+margin-top:15px;
+}
+
+.trust-section{
+background:#fff;
+padding:50px 20px;
+text-align:center;
+}
+
+.trust-grid{
+max-width:1000px;
+margin:30px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#000;
+color:#fff;
+}
+
+footer a{
+color:#00f3ff;
+text-decoration:none;
+margin:0 8px;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo-text">HEXA COMPUTRONICS</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<ul id="navMenu">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="hardware.html">Hardware</a></li>
+<li><a href="security.html">Security</a></li>
+<li><a href="networking.html">Networking</a></li>
+
+<li class="dropdown">
+
+<a href="#" onclick="toggleTools(event)">⚙ Tech Tools</a>
+
+<ul class="dropdown-menu" id="toolsMenu">
+
+<li><a href="laptop-finder.html">💻 Laptop Finder</a></li>
+<li><a href="ssd-finder.html">⚡ SSD Finder</a></li>
+<li><a href="router-finder.html">📡 Router Finder</a></li>
+<li><a href="pc-build.html">🖥 PC Build Tool</a></li>
+<li><a href="laptop-compare.html">⚖ Laptop Compare</a></li>
 
 </ul>
 
 </li>
+
+<li><a href="digital-products.html">Digital</a></li>
+<li><a href="refurbished.html">Refurbished</a></li>
+<li><a href="amazon-store.html" class="amazon-btn">Amazon Store</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("active");
+}
+
+function toggleTools(event){
+
+event.preventDefault();
+
+var menu=document.getElementById("toolsMenu");
+
+menu.classList.toggle("show");
+
+}
+
+</script>
+
+</body>
+</html>
+
 
 <li><a href="digital-products.html">Digital</a></li>
 
@@ -431,6 +728,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 </body>
 </html>
+
 
 
 
