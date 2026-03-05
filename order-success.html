@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Order Confirmed | HEXA COMPUTRONICS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Rajdhani',sans-serif;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.box{
+max-width:500px;
+margin:auto;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:20px;
+}
+
+.whatsapp-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Order Confirmed 🎉</h1>
+
+<p>Your order has been placed successfully.</p>
+
+<p><strong>Order ID:</strong> <span id="orderID"></span></p>
+<p><strong>Product:</strong> <span id="productName"></span></p>
+<p><strong>Amount:</strong> ₹<span id="productPrice"></span></p>
+
+<p>Our team will contact you shortly.</p>
+
+<a id="whatsappOrder" class="whatsapp-btn" target="_blank">
+Contact on WhatsApp
+</a>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const order = params.get("order");
+const product = params.get("product");
+const price = params.get("price");
+
+document.getElementById("orderID").innerText = order;
+document.getElementById("productName").innerText = product;
+document.getElementById("productPrice").innerText = price;
+
+const message = `Hello HEXA COMPUTRONICS,%0AOrder ID: ${order}%0AProduct: ${product}%0AAmount: ₹${price}`;
+
+document.getElementById("whatsappOrder").href =
+"https://wa.me/919935529306?text=" + message;
+
+</script>
+
+</body>
+</html>
