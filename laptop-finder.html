@@ -26,16 +26,38 @@ select,button{padding:10px;margin:10px}
 
 <script>
 
-function findLaptop(){
-
-var use=document.getElementById("use").value
-var result=document.getElementById("result")
-
 if(use=="office")
-result.innerHTML="Acer Aspire 3 <br><a href='https://amzn.to/4cQaYUO'>View on Amazon</a>"
+result.innerHTML = `
+<div style="
+background:#111;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+text-align:center;
+">
 
-if(use=="coding")
-result.innerHTML="Lenovo IdeaPad Slim 3 <br><a href='https://amzn.to/4cQaYUO'>View on Amazon</a>"
+<h3 style="color:#00f3ff;">Acer Aspire 3</h3>
+
+<p>Best laptop for office work and students.</p>
+
+<a href="https://amzn.to/4cQaYUO"
+target="_blank"
+style="
+display:inline-block;
+padding:12px 25px;
+background:#007bff;
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+">
+
+Check Price on Amazon
+
+</a>
+
+</div>
+`
 
 if(use=="gaming")
 result.innerHTML="ASUS TUF Gaming <br><a href='https://amzn.to/4cQaYUO'>View on Amazon</a>"
