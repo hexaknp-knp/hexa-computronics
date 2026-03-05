@@ -187,7 +187,10 @@ var options = {
 
 "handler": function (response){
 
-alert("Payment Successful! Order ID: " + order);
+window.location.href =
+"order-success.html?order=" + order +
+"&product=" + product +
+"&price=" + price;
 
 }
 
