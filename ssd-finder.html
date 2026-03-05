@@ -20,9 +20,37 @@ button{padding:10px;margin:10px}
 
 function findSSD(){
 
-document.getElementById("result").innerHTML=
-"Recommended SSD: Crucial BX500 240GB <br><a href='https://amzn.to/4r5GOAK'>Check Price</a>"
+document.getElementById("result").innerHTML = `
+<div style="
+background:#111;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+text-align:center;
+">
 
+<h3 style="color:#00f3ff;">Crucial BX500 SSD</h3>
+
+<p>Best SSD upgrade for faster laptop performance.</p>
+
+<a href="https://amzn.to/4r5GOAK"
+target="_blank"
+style="
+display:inline-block;
+padding:12px 25px;
+background:#007bff;
+color:#fff;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+">
+
+Check Price on Amazon
+
+</a>
+
+</div>
+`
 }
 
 </script>
