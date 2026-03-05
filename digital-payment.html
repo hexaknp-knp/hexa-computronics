@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Product Payment | HEXA COMPUTRONICS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.payment-box{
+max-width:500px;
+margin:40px auto;
+background:rgba(255,255,255,0.05);
+padding:25px;
+border-radius:20px;
+}
+
+.pay-btn{
+display:block;
+margin:12px auto;
+padding:12px 20px;
+background:linear-gradient(45deg,#00f3ff,#ff6b00);
+color:white;
+border-radius:25px;
+text-decoration:none;
+width:85%;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="payment-box">
+
+<h1>Digital Product Payment</h1>
+
+<p><strong>Product:</strong> <span id="productName"></span></p>
+<p><strong>Amount:</strong> ₹<span id="productPrice"></span></p>
+
+<button class="pay-btn" id="rzp-button">
+Pay & Download
+</button>
+
+</div>
+
+<script>
+
+// Get product info
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+const price = params.get("price");
+
+document.getElementById("productName").innerText = product;
+document.getElementById("productPrice").innerText = price;
+
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+document.getElementById('rzp-button').onclick = function(e){
+
+var options = {
+
+"key": "RAZORPAY_KEY_ID",
+
+"amount": price * 100,
+
+"currency": "INR",
+
+"name": "HEXA COMPUTRONICS",
+
+"description": product,
+
+"handler": function (response){
+
+window.location.href =
+"digital-success.html?product=" + product + "&price=" + price;
+
+}
+
+};
+
+var rzp = new Razorpay(options);
+rzp.open();
+
+e.preventDefault();
+
+}
+
+</script>
+
+</body>
+</html>
