@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -68,6 +69,7 @@ margin:25px 0;
 opacity:0.2;
 }
 </style>
+
 </head>
 
 <body>
@@ -92,6 +94,7 @@ Send Payment Screenshot on WhatsApp
 <hr>
 
 <h2>Other Payment Options</h2>
+
 <button class="pay-btn" id="rzp-button">
 Pay Online via Razorpay
 </button>
@@ -156,6 +159,10 @@ let message=`Hello HEXA COMPUTRONICS,%0AOrder ID: ${orderID}%0AProduct: ${produc
 window.open("https://wa.me/919935529306?text="+message);
 }
 
+</script>
+
+<!-- Razorpay Script -->
+
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
@@ -168,7 +175,7 @@ var order = document.getElementById("orderID").innerText;
 
 var options = {
 
-"key": "RAZORPAY_KEY_ID",
+"key": "rzp_live_SLFCOQlEEX9giJ",
 
 "amount": price * 100,
 
@@ -196,6 +203,5 @@ e.preventDefault();
 
 </script>
 
-</script>
 </body>
 </html>
