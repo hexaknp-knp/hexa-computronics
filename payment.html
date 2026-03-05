@@ -83,7 +83,7 @@ opacity:0.2;
 <hr>
 
 <h2>Pay via Google Pay</h2>
-<img src="images/pnbPay_Qr.png" class="qr-img" alt="GPay QR">
+<img src="images/pnbpay_Qr.png" class="qr-img" alt="GPay QR">
 
 <a id="whatsappBtn" class="pay-btn" target="_blank">
 Send Payment Screenshot on WhatsApp
@@ -92,9 +92,8 @@ Send Payment Screenshot on WhatsApp
 <hr>
 
 <h2>Other Payment Options</h2>
-
-<button class="pay-btn" onclick="alert('Razorpay Integration Coming Soon')">
-Pay Online (Razorpay – Coming Soon)
+<button class="pay-btn" id="rzp-button">
+Pay Online via Razorpay
 </button>
 
 <button class="pay-btn" onclick="toggleCOD()">
@@ -158,6 +157,28 @@ window.open("https://wa.me/919935529306?text="+message);
 }
 
 </script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
+<script>
+
+var options = {
+"key": "RAZORPAY_KEY_ID",
+"amount": 10000,
+"currency": "INR",
+"name": "HEXA COMPUTRONICS",
+"description": "Digital Product Purchase",
+"handler": function (response){
+alert("Payment Successful!");
+}
+};
+
+var rzp1 = new Razorpay(options);
+
+document.getElementById('rzp-button').onclick = function(e){
+rzp1.open();
+e.preventDefault();
+}
+
+</script>
 </body>
 </html>
