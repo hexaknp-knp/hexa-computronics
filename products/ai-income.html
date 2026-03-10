@@ -6,49 +6,91 @@
 
 <title>AI Income Mastery System 2026 | HEXA COMPUTRONICS</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 
+*{box-sizing:border-box}
+
 body{
-font-family:Arial;
-background:#0f172a;
+margin:0;
+font-family:'Rajdhani',sans-serif;
+background:linear-gradient(135deg,#1a0033,#4b00ff,#000428);
 color:white;
 text-align:center;
-padding:20px;
 }
 
 .container{
-max-width:800px;
+max-width:1000px;
 margin:auto;
+padding:25px 15px;
 }
 
 h1{
-font-size:26px;
+font-family:'Orbitron';
+font-size:28px;
+}
+
+.subtitle{
+color:#ddd;
+margin-bottom:20px;
+}
+
+.cover{
+max-width:240px;
+width:90%;
+border-radius:15px;
+margin:15px auto;
+box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 .price{
-font-size:28px;
+font-size:32px;
 color:#ffd700;
-margin:20px 0;
+margin:15px 0;
 }
 
-.btn{
-display:inline-block;
-padding:15px 35px;
-background:#00f3ff;
-color:#000;
-border-radius:40px;
-font-weight:bold;
-text-decoration:none;
-cursor:pointer;
+.box{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:14px;
+margin:25px 0;
 }
+
+ul{list-style:none;padding:0}
+
+li{margin:10px 0}
 
 input{
 width:90%;
 max-width:350px;
-padding:12px;
-margin:8px;
-border-radius:6px;
+padding:14px;
+border-radius:8px;
 border:none;
+margin:8px;
+font-size:15px;
+}
+
+.btn{
+background:#00f3ff;
+color:black;
+padding:16px 36px;
+border-radius:40px;
+font-weight:bold;
+border:none;
+cursor:pointer;
+font-size:17px;
+margin-top:10px;
+}
+
+.btn:hover{
+background:#00c6d0;
+}
+
+.trust{
+margin-top:25px;
+font-size:14px;
+color:#ccc;
 }
 
 #downloadSection{
@@ -56,32 +98,79 @@ display:none;
 margin-top:30px;
 }
 
-</style>
+.timer{
+font-size:20px;
+color:#ffd700;
+margin-top:10px;
+}
 
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>AI Income Mastery System 2026</h1>
+<h1>AI INCOME MASTERY SYSTEM 2026</h1>
 
-<p>Learn how to make money using ChatGPT, AI Videos & AI Tools</p>
+<p class="subtitle">
+Turn ChatGPT, AI Videos & AI Tools into Multiple Income Streams
+</p>
+
+<img src="../images/ai-cover.jpg" class="cover">
 
 <div class="price">
-<del>₹1999</del><br>
+<del style="font-size:18px;color:#ccc;">₹1999</del><br>
 🔥 Launch Offer ₹199
 </div>
 
-<input type="text" id="name" placeholder="Full Name"><br>
-<input type="email" id="email" placeholder="Email"><br>
-<input type="tel" id="phone" placeholder="Phone"><br>
+<div class="timer">
+Offer Ends In: <span id="countdown"></span>
+</div>
 
+<div class="box">
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>✔ ChatGPT Income Methods</li>
+<li>✔ AI Video Automation</li>
+<li>✔ AI Art Selling</li>
+<li>✔ Freelancing With AI</li>
+<li>✔ Online Passive Income Systems</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Exclusive Bonuses</h2>
+
+<ul>
+<li>✔ 50 ChatGPT Prompts</li>
+<li>✔ 100 AI Art Prompts</li>
+<li>✔ Client Proposal Templates</li>
+<li>✔ Viral Content Formula Sheet</li>
+</ul>
+
+</div>
+
+<div class="box">
+
+<h2>Complete Your Purchase</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+<br>
+<input type="email" id="email" placeholder="Email Address">
+<br>
+<input type="tel" id="phone" placeholder="Phone Number">
 <br>
 
 <button class="btn" onclick="startPayment()">
 Pay ₹199 Securely
 </button>
+
+</div>
 
 <div id="downloadSection">
 
@@ -92,6 +181,12 @@ Download Your Product
 </a>
 
 </div>
+
+<p class="trust">
+✔ Secure Razorpay Payment<br>
+✔ Instant Digital Access<br>
+✔ Beginner Friendly System
+</p>
 
 </div>
 
@@ -114,9 +209,27 @@ setTimeout(function(){
 
 document.getElementById("downloadSection").style.display="block";
 
-},4000);
+},5000);
 
 }
+
+var time=900;
+var x=setInterval(function(){
+
+var minutes=Math.floor(time/60);
+var seconds=time%60;
+
+document.getElementById("countdown").innerHTML=
+minutes+"m "+seconds+"s";
+
+time--;
+
+if(time<0){
+clearInterval(x);
+document.getElementById("countdown").innerHTML="Expired";
+}
+
+},1000);
 
 </script>
 
