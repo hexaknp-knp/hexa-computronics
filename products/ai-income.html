@@ -301,6 +301,40 @@ window.location.replace("download.html");
 var rzp1 = new Razorpay(options);
 rzp1.open();
 e.preventDefault();
+<!-- RAZORPAY PAYMENT BUTTON -->
+<!-- BUY NOW BUTTON -->
+
+<div style="text-align:center;margin-top:30px;">
+
+<button onclick="startPayment()" style="
+background:#22c55e;
+color:white;
+padding:16px 40px;
+font-size:20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+">
+
+Buy Now – ₹199 Instant Access
+
+</button>
+
+</div>
+
+
+<script>
+
+function startPayment(){
+
+window.open("https://rzp.io/rzp/DjcrPniL","_blank");
+
+setTimeout(function(){
+
+alert("After completing payment you will get download access");
+
+},2000);
 
 }
 
