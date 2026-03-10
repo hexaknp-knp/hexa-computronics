@@ -1,16 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Income Mastery System 2026 | HEXA COMPUTRONICS</title>
+<title>AI Income Mastery System | HEXA COMPUTRONICS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-
-*{box-sizing:border-box}
 
 body{
 margin:0;
@@ -21,7 +20,7 @@ text-align:center;
 }
 
 .container{
-max-width:1000px;
+max-width:900px;
 margin:auto;
 padding:25px 15px;
 }
@@ -37,15 +36,15 @@ margin-bottom:20px;
 }
 
 .cover{
-max-width:240px;
+max-width:250px;
 width:90%;
-border-radius:15px;
-margin:15px auto;
+border-radius:14px;
+margin:20px auto;
 box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
 .price{
-font-size:32px;
+font-size:30px;
 color:#ffd700;
 margin:15px 0;
 }
@@ -57,9 +56,14 @@ border-radius:14px;
 margin:25px 0;
 }
 
-ul{list-style:none;padding:0}
+ul{
+list-style:none;
+padding:0;
+}
 
-li{margin:10px 0}
+li{
+margin:8px 0;
+}
 
 input{
 width:90%;
@@ -74,47 +78,37 @@ font-size:15px;
 .btn{
 background:#00f3ff;
 color:black;
-padding:16px 36px;
+padding:16px 35px;
 border-radius:40px;
 font-weight:bold;
 border:none;
 cursor:pointer;
-font-size:17px;
+font-size:16px;
 margin-top:10px;
 }
 
 .btn:hover{
-background:#00c6d0;
+background:#00c9d4;
 }
 
 .trust{
-margin-top:25px;
+margin-top:20px;
 font-size:14px;
 color:#ccc;
 }
 
-#downloadSection{
-display:none;
-margin-top:30px;
-}
-
-.timer{
-font-size:20px;
-color:#ffd700;
-margin-top:10px;
-}
-
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>AI INCOME MASTERY SYSTEM 2026</h1>
+<h1>AI INCOME MASTERY SYSTEM</h1>
 
 <p class="subtitle">
-Turn ChatGPT, AI Videos & AI Tools into Multiple Income Streams
+Learn how to make money using ChatGPT, AI Videos and AI Tools
 </p>
 
 <img src="../images/ai-cover.jpg" class="cover">
@@ -123,14 +117,10 @@ Turn ChatGPT, AI Videos & AI Tools into Multiple Income Streams
 <del style="font-size:18px;color:#ccc;">₹1999</del><br>
 🔥 Launch Offer ₹199
 </div>
-  
+
 <a href="#payment" class="btn">
 Buy Now – ₹199
 </a>
-
-<div class="timer">
-Offer Ends In: <span id="countdown"></span>
-</div>
 
 <div class="box">
 
@@ -141,48 +131,20 @@ Offer Ends In: <span id="countdown"></span>
 <li>✔ AI Video Automation</li>
 <li>✔ AI Art Selling</li>
 <li>✔ Freelancing With AI</li>
-<li>✔ Online Passive Income Systems</li>
+<li>✔ Online Passive Income</li>
 </ul>
 
 </div>
 
-<div class="box">
-
-<h2>Exclusive Bonuses</h2>
-
-<ul>
-<li>✔ 50 ChatGPT Prompts</li>
-<li>✔ 100 AI Art Prompts</li>
-<li>✔ Client Proposal Templates</li>
-<li>✔ Viral Content Formula Sheet</li>
-</ul>
-
-</div>
-
-<div class="box">
+<div class="box" id="payment">
 
 <h2>Complete Your Purchase</h2>
 
-<input type="text" id="name" placeholder="Full Name">
-<br>
-<input type="email" id="email" placeholder="Email Address">
-<br>
-<input type="tel" id="phone" placeholder="Phone Number">
-<br>
+<input type="text" id="name" placeholder="Full Name"><br> <input type="email" id="email" placeholder="Email Address"><br> <input type="tel" id="phone" placeholder="Phone Number"><br>
 
-<button class="btn" onclick="startPayment()">
+<button class="btn" onclick="payNow()">
 Pay ₹199 Securely
 </button>
-
-</div>
-
-<div id="downloadSection">
-
-<h2>Payment Completed</h2>
-
-<a href="download.html" class="btn">
-Download Your Product
-</a>
 
 </div>
 
@@ -196,57 +158,20 @@ Download Your Product
 
 <script>
 
-function startPayment(){
+function payNow(){
 
 var name=document.getElementById("name").value;
 var email=document.getElementById("email").value;
 var phone=document.getElementById("phone").value;
 
-if(name==""||email==""||phone==""){
-alert("Please fill all details");
-return;
-}
-
-window.open("https://rzp.io/rzp/DjcrPniL","_blank");
-
-<script>
-
-function startPayment(){
-
-var name=document.getElementById("name").value;
-var email=document.getElementById("email").value;
-var phone=document.getElementById("phone").value;
-
-if(name==""||email==""||phone==""){
-alert("Please fill all details");
+if(name=="" || email=="" || phone==""){
+alert("Please fill all details first");
 return;
 }
 
 window.location.href="https://rzp.io/rzp/DjcrPniL";
 
 }
-
-</script>
-
-}
-
-var time=900;
-var x=setInterval(function(){
-
-var minutes=Math.floor(time/60);
-var seconds=time%60;
-
-document.getElementById("countdown").innerHTML=
-minutes+"m "+seconds+"s";
-
-time--;
-
-if(time<0){
-clearInterval(x);
-document.getElementById("countdown").innerHTML="Expired";
-}
-
-},1000);
 
 </script>
 
