@@ -123,6 +123,10 @@ Turn ChatGPT, AI Videos & AI Tools into Multiple Income Streams
 <del style="font-size:18px;color:#ccc;">₹1999</del><br>
 🔥 Launch Offer ₹199
 </div>
+  
+<a href="#payment" class="btn">
+Buy Now – ₹199
+</a>
 
 <div class="timer">
 Offer Ends In: <span id="countdown"></span>
@@ -205,11 +209,24 @@ return;
 
 window.open("https://rzp.io/rzp/DjcrPniL","_blank");
 
-setTimeout(function(){
+<script>
 
-document.getElementById("downloadSection").style.display="block";
+function startPayment(){
 
-},5000);
+var name=document.getElementById("name").value;
+var email=document.getElementById("email").value;
+var phone=document.getElementById("phone").value;
+
+if(name==""||email==""||phone==""){
+alert("Please fill all details");
+return;
+}
+
+window.location.href="https://rzp.io/rzp/DjcrPniL";
+
+}
+
+</script>
 
 }
 
