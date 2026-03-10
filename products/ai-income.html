@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,8 +9,6 @@
 <meta name="description" content="Learn AI income methods using ChatGPT, AI videos and AI art. Start earning online with the AI Income Mastery System.">
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Meta Pixel Code -->
 
 <script>
 !function(f,b,e,v,n,t,s)
@@ -33,9 +30,7 @@ fbq('track', 'PageView');
 
 <style>
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
 body{
 margin:0;
@@ -80,10 +75,7 @@ border-radius:15px;
 margin:22px 0;
 }
 
-ul{
-list-style:none;
-padding:0;
-}
+ul{list-style:none;padding:0;}
 
 li{
 margin:8px 0;
@@ -157,34 +149,30 @@ display:none;
 text-align:center;
 }
 
-iframe{
-border-radius:10px;
+#stickyBuy{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#00f3ff;
+text-align:center;
+padding:14px;
+z-index:9999;
+display:none;
 }
 
-@media(max-width:600px){
-
-h1{
-font-size:20px;
+#stickyBuy a{
+color:#000;
+font-weight:bold;
+font-size:18px;
+text-decoration:none;
 }
 
-.subtitle{
-font-size:14px;
+@media(max-width:700px){
+#stickyBuy{display:block;}
 }
 
-.price{
-font-size:26px;
-}
-
-li{
-font-size:14px;
-}
-
-.btn{
-font-size:15px;
-padding:14px 25px;
-}
-
-}
+iframe{border-radius:10px;}
 
 </style>
 
@@ -204,14 +192,16 @@ Turn ChatGPT, AI Videos & AI Art Into Multiple Income Streams — Even If You’
 
 <div class="price">
 <del style="color:#ccc;font-size:18px;">₹1999</del><br>
-🔥 Launch Offer ₹99 Only
+🔥 Limited Launch Offer ₹199 Only
 </div>
 
 <p style="color:#00ffcc;font-size:14px;">
-⚡ Instant access after payment
+⚡ Instant access after payment <br>
+✔ Secure Razorpay Checkout <br>
+✔ Instant Download Access
 </p>
 
-<a href="#payment" class="btn">Get Instant Access</a>
+<a href="#payment" class="btn">Get Instant Access Now</a>
 
 <div id="countdown" style="margin-top:15px;font-size:18px;color:#ffd700;">
 Offer Ends In: <span id="timer"></span>
@@ -222,12 +212,10 @@ Offer Ends In: <span id="timer"></span>
 <h2>🎥 Watch How This System Works</h2>
 
 <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;">
-
 <iframe src="https://www.youtube.com/embed/K5sD0IBree8"
 style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
 allowfullscreen>
 </iframe>
-
 </div>
 
 </div>
@@ -267,9 +255,11 @@ allowfullscreen>
 Enter details to unlock your training instantly
 </p>
 
-<input type="text" id="name" placeholder="Full Name" required><br> <input type="email" id="email" placeholder="Email Address" required><br> <input type="tel" id="phone" placeholder="Phone Number" required><br>
+<input type="text" id="name" placeholder="Full Name" required><br>
+<input type="email" id="email" placeholder="Email Address" required><br>
+<input type="tel" id="phone" placeholder="Phone Number" required><br>
 
-<button id="payBtn" class="btn">Pay ₹99 Now</button>
+<button id="payBtn" class="btn">Pay ₹199 Securely</button>
 
 </div>
 
@@ -290,7 +280,7 @@ return;
 
 var options = {
 "key": "rzp_live_SLFCOQlEEX9giJ",
-amount: 9900,
+amount: 19900,
 "currency": "INR",
 "name": "HEXA COMPUTRONICS",
 "description": "AI Income Mastery System",
@@ -316,67 +306,21 @@ e.preventDefault();
 
 </script>
 
-<script>
-
-var time = 900;
-
-var x = setInterval(function() {
-
-var minutes = Math.floor(time / 60);
-var seconds = time % 60;
-
-document.getElementById("timer").innerHTML =
-minutes + "m " + seconds + "s ";
-
-time--;
-
-if (time < 0) {
-clearInterval(x);
-document.getElementById("timer").innerHTML = "Expired";
-}
-
-}, 1000);
-
-</script>
-
-<div id="salesPopup">
-🔥 Someone from India just bought AI Income Mastery
+<div id="stickyBuy">
+<a href="#payment">Buy Now ₹199</a>
 </div>
 
-<script>
-
-setInterval(function(){
-
-var popup = document.getElementById("salesPopup");
-
-popup.style.display = "block";
-
-setTimeout(function(){
-
-popup.style.display = "none";
-
-},4000);
-
-},12000);
-
-</script>
-
 <p class="trust">
-
-✔ Secure Razorpay Payment <br>✔ Instant Digital Access <br>✔ No Physical Shipping <br>✔ WhatsApp Support Available
-
+✔ Secure Razorpay Payment <br>
+✔ Instant Digital Access <br>
+✔ No Physical Shipping <br>
+✔ WhatsApp Support Available
 </p>
 
 </div>
 
 <footer>
-
 © 2026 HEXA COMPUTRONICS | Secure Digital Delivery
-
-<p style="margin-top:8px;font-size:13px;">
-<a href="https://www.sigmatraffic.com/" target="_blank">Traffic Exchange</a>
-</p>
-
 </footer>
 
 </body>
