@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AI Income Mastery System | HEXA COMPUTRONICS</title>
+<title>AI Income Mastery System 2026 | HEXA COMPUTRONICS</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 
@@ -156,6 +156,8 @@ Pay ₹199 Securely
 
 </div>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <script>
 
 function payNow(){
@@ -169,7 +171,33 @@ alert("Please fill all details first");
 return;
 }
 
-window.location.href="https://rzp.io/rzp/zpvK6u8";
+var options = {
+"key": "rzp_live_SLFCOQlEEX9giJ",
+"amount": "19900",
+"currency": "INR",
+"name": "HEXA COMPUTRONICS",
+"description": "AI Income Mastery System",
+
+"handler": function (response){
+
+window.location.href="download.html";
+
+},
+
+"prefill": {
+"name": name,
+"email": email,
+"contact": phone
+},
+
+"theme": {
+"color": "#00f3ff"
+}
+
+};
+
+var rzp1 = new Razorpay(options);
+rzp1.open();
 
 }
 
