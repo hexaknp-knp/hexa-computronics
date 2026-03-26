@@ -38,6 +38,7 @@ padding:20px;
 text-align:center;
 box-shadow:0 8px 20px rgba(0,0,0,0.1);
 transition:0.3s;
+position: relative;
 }
 
 .card:hover{
@@ -52,24 +53,89 @@ object-fit:cover;
 }
 
 .card h3{
-margin:15px 0 10px;
+margin:15px 0 5px; /* Margin adjust kiya gaya hai stars ke liye */
 font-family:'Orbitron';
+}
+
+/* Star Rating Style */
+.stars {
+color: #ffcc00;
+font-size: 15px;
+margin-bottom: 10px;
+}
+.stars span {
+color: #777;
+font-size: 13px;
+margin-left: 5px;
+font-weight: 600;
 }
 
 .card p{
 font-size:14px;
 color:#555;
+margin-bottom: 15px;
 }
 
-.card a{
+/* Original Button Style */
+.card a.btn-main{
 display:inline-block;
-margin-top:15px;
 padding:10px 25px;
 background:#00f3ff;
 color:#000;
 border-radius:25px;
 text-decoration:none;
 font-weight:bold;
+}
+
+/* Dual Button Styles for Cybersecurity Ebook */
+.btn-group {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.btn-group a {
+display: block;
+padding: 10px;
+border-radius: 25px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.btn-reader {
+background: #e0e0e0;
+color: #333;
+}
+.btn-reader:hover {
+background: #d0d0d0;
+}
+
+.btn-plr {
+background: #000;
+color: #00f3ff;
+border: 1px solid #00f3ff;
+box-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+.btn-plr:hover {
+background: #00f3ff;
+color: #000;
+}
+
+/* Best Seller Badge */
+.badge {
+position: absolute;
+top: -10px;
+left: 50%;
+transform: translateX(-50%);
+background: #00f3ff;
+color: #000;
+padding: 5px 15px;
+border-radius: 20px;
+font-weight: bold;
+font-size: 12px;
+font-family: 'Orbitron';
+box-shadow: 0 4px 10px rgba(0, 243, 255, 0.3);
 }
 
 footer{
@@ -86,25 +152,38 @@ margin-top:50px;
 
 <header>
 <h1>🚀 Digital Products</h1>
-<p>Premium AI Courses & Expert Buying Guides</p>
+<p>Premium Courses, Ebooks & Expert Buying Guides by Hexa Computronics</p>
 </header>
 
 <section class="products">
 
-<!-- AI PRODUCT -->
+<div class="card" style="border: 1px solid #00f3ff;">
+<div class="badge">🔥 BEST SELLER</div>
+<img src="images/cybersecurity-cover.jpg" alt="Hack-Proof Your Digital Life">
+<h3>Hack-Proof Your Digital Life</h3>
+<div class="stars">⭐⭐⭐⭐⭐ <span>4.9/5 (42 Reviews)</span></div>
+<p>Ultimate guide to Mobile & PC security. Protect data from hackers + Video Tutorials.</p>
+<div class="btn-group">
+<a href="YOUR_RAZORPAY_199_LINK" class="btn-reader">Read Only ₹199</a>
+<a href="YOUR_RAZORPAY_499_LINK" class="btn-plr">PLR/MRR Rights ₹499</a>
+</div>
+<a href="cybersecurity.html" style="display:block; margin-top:12px; font-size:13px; color:#666; text-decoration:underline;">View Full Details</a>
+</div>
+
 <div class="card">
 <img src="images/ai-cover.jpg" alt="AI Income Mastery">
 <h3>AI Income Mastery System 2026</h3>
+<div class="stars">⭐⭐⭐⭐⭐ <span>4.8/5 (35 Reviews)</span></div>
 <p>Learn ChatGPT, AI Videos & AI Art Monetization Step-By-Step.</p>
-<a href="products/ai-income.html">View Details</a>
+<a href="products/ai-income.html" class="btn-main">View Details</a>
 </div>
 
-<!-- EXISTING LAPTOP GUIDE -->
 <div class="card">
 <img src="images/digitalproduct.jpg" alt="Laptop Buying Guide">
 <h3>Premium Laptop Buying Guide</h3>
+<div class="stars">⭐⭐⭐⭐⭐ <span>4.9/5 (87 Reviews)</span></div>
 <p>Expert guide to choose the right laptop & PC in India.</p>
-<a href="checkout.html">Buy Now ₹299</a>
+<a href="checkout.html" class="btn-main">Buy Now ₹299</a>
 </div>
 
 </section>
@@ -112,7 +191,7 @@ margin-top:50px;
 <footer>
 <p>© 2026 HEXA COMPUTRONICS | Secure Payments via Razorpay</p>
 <p style="margin-top:8px;font-size:13px;">
-<a href="https://www.sigmatraffic.com/" target="_blank">Traffic Exchange</a>
+<a href="https://www.sigmatraffic.com/" target="_blank" style="color:#00f3ff;">Traffic Exchange</a>
 </p>
 </footer>
 
