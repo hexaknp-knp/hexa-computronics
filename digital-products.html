@@ -43,6 +43,7 @@ position: relative;
 
 .card:hover{
 transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -53,8 +54,9 @@ object-fit:cover;
 }
 
 .card h3{
-margin:15px 0 5px; /* Margin adjust kiya gaya hai stars ke liye */
+margin:15px 0 5px; 
 font-family:'Orbitron';
+color: #000;
 }
 
 /* Star Rating Style */
@@ -64,16 +66,19 @@ font-size: 15px;
 margin-bottom: 10px;
 }
 .stars span {
-color: #777;
+color: #555;
 font-size: 13px;
 margin-left: 5px;
 font-weight: 600;
 }
 
+/* Product Details Text Color Updated for High Contrast */
 .card p{
-font-size:14px;
-color:#555;
+font-size:15px;
+color:#333; /* Darker color kiya gaya hai taaki sharp dikhe */
+font-weight: 600;
 margin-bottom: 15px;
+line-height: 1.4;
 }
 
 /* Original Button Style */
@@ -105,7 +110,7 @@ transition: 0.3s;
 
 .btn-reader {
 background: #e0e0e0;
-color: #333;
+color: #000; /* Isko bhi sharp black kiya gaya hai */
 }
 .btn-reader:hover {
 background: #d0d0d0;
@@ -167,7 +172,7 @@ margin-top:50px;
 <a href="YOUR_RAZORPAY_199_LINK" class="btn-reader">Read Only ₹199</a>
 <a href="YOUR_RAZORPAY_499_LINK" class="btn-plr">PLR/MRR Rights ₹499</a>
 </div>
-<a href="cybersecurity.html" style="display:block; margin-top:12px; font-size:13px; color:#666; text-decoration:underline;">View Full Details</a>
+<a href="cybersecurity.html" style="display:block; margin-top:12px; font-size:14px; font-weight:bold; color:#007acc; text-decoration:underline;">View Full Details</a>
 </div>
 
 <div class="card">
